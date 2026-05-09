@@ -52,7 +52,7 @@
     "entityId": "zns:262abd82d9899483c66636f6643a606b",
     "publicKey": "ed25519:/KsCgJOXTD0Hn/yEaIVu6OZmV5AQk6wUsehf4s3ue/k=",
     "status": "online",
-    "lastUpdatedAt": "2026-05-09T18:05:20.506Z",
+    "lastUpdatedAt": "2026-05-09T18:09:41.943Z",
     "registry": "zns01.zynd.ai",
     "category": "finance",
     "tags": [
@@ -170,7 +170,7 @@
   "signatures": [
     {
       "protected": "eyJhbGciOiAiRWREU0EiLCAidHlwIjogImFnZW50LWNhcmQramNzK2p3cyJ9",
-      "signature": "fMKjyaIcLAE7oUbjldIi1HQoA6DD6CeKMDX6nWuWlLr9vDX72wiWL-HsYPCcvRZT3RSOgv76xlBmHTUETeW_Cg",
+      "signature": "upgiRB2hnk-oqalAwysv3usWrYH5lqs7byiy1YGb5wRQ2plhJvfQCDzPw5Rd2Wpdnbuq8ub0nootRIL6UHKaDg",
       "header": {
         "kid": "ed25519:/KsCgJOXTD0Hn/yEaIVu6OZmV5AQk6wUsehf4s3ue/k="
       }
