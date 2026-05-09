@@ -42,3 +42,4 @@ Thumbs.db
 
 # Graphify cache (auto-generated)
 graphify-out/cache/
+.well-known/

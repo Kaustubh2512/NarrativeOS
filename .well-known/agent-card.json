@@ -1,0 +1,179 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "narrativeos-cognitive",
+  "description": "NarrativeOS multi-agent reasoning mesh \u2014 narrative intelligence, sentiment analysis, adversarial debate, and confidence-weighted trading signals",
+  "version": "0.1.0",
+  "url": "http://localhost:5000/a2a/v1",
+  "preferredTransport": "JSONRPC",
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": true,
+    "stateTransitionHistory": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "narrative-analysis",
+      "name": "Financial Narrative Analysis",
+      "description": "Analyzes financial news, SEC filings, and social media posts to detect emerging narratives and generate confidence-weighted trading signals",
+      "tags": [
+        "narrative",
+        "sentiment",
+        "debate",
+        "signal"
+      ],
+      "examples": [
+        "NarrativeEvent batch with NVDA earnings news -> BUY signal at 88% confidence",
+        "SEC 8-K filings for multiple tickers -> Topic clusters with momentum scores"
+      ]
+    }
+  ],
+  "securitySchemes": {
+    "zyndSig": {
+      "type": "http",
+      "scheme": "ed25519-envelope",
+      "description": "Per-message Ed25519 signature in Message.metadata['x-zynd-auth']. See zynd-a2a-communication spec."
+    }
+  },
+  "security": [
+    {
+      "zyndSig": []
+    }
+  ],
+  "x-zynd": {
+    "version": 1,
+    "entityId": "zns:262abd82d9899483c66636f6643a606b",
+    "publicKey": "ed25519:/KsCgJOXTD0Hn/yEaIVu6OZmV5AQk6wUsehf4s3ue/k=",
+    "status": "online",
+    "lastUpdatedAt": "2026-05-09T18:05:20.506Z",
+    "registry": "zns01.zynd.ai",
+    "category": "finance",
+    "tags": [
+      "narrative",
+      "sentiment",
+      "debate",
+      "trading",
+      "market-analysis"
+    ],
+    "inputSchema": {
+      "additionalProperties": true,
+      "properties": {
+        "content": {
+          "default": "",
+          "title": "Content",
+          "type": "string"
+        },
+        "sender_id": {
+          "default": "unknown",
+          "title": "Sender Id",
+          "type": "string"
+        },
+        "sender_did": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sender Did"
+        },
+        "sender_public_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sender Public Key"
+        },
+        "receiver_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Receiver Id"
+        },
+        "message_type": {
+          "default": "query",
+          "title": "Message Type",
+          "type": "string"
+        },
+        "message_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message Id"
+        },
+        "conversation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Conversation Id"
+        },
+        "in_reply_to": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "In Reply To"
+        },
+        "metadata": {
+          "additionalProperties": true,
+          "title": "Metadata",
+          "type": "object"
+        }
+      },
+      "title": "AgentPayload",
+      "type": "object"
+    }
+  },
+  "provider": {
+    "organization": "yuvi",
+    "url": "https://zns01.zynd.ai"
+  },
+  "signatures": [
+    {
+      "protected": "eyJhbGciOiAiRWREU0EiLCAidHlwIjogImFnZW50LWNhcmQramNzK2p3cyJ9",
+      "signature": "fMKjyaIcLAE7oUbjldIi1HQoA6DD6CeKMDX6nWuWlLr9vDX72wiWL-HsYPCcvRZT3RSOgv76xlBmHTUETeW_Cg",
+      "header": {
+        "kid": "ed25519:/KsCgJOXTD0Hn/yEaIVu6OZmV5AQk6wUsehf4s3ue/k="
+      }
+    }
+  ]
+}
