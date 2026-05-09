@@ -1,6 +1,5 @@
 import pytest
 from httpx import ASGITransport, AsyncClient
-
 from agents.visualization_agent.app import app
 
 

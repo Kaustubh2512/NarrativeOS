@@ -4,6 +4,7 @@ from agents.models import (
     DebatePosition,
     DebateRound,
     DebateSummary,
+    NarrativeEvent,
     SentimentVector,
     TopicCluster,
 )
@@ -117,14 +118,14 @@ class ArbiterAgent:
         bear_score = bear.confidence
 
         if bull_score > bear_score + 0.1:
-            ruling = "Bull case prevails — narrative momentum and sentiment support continued upside."
+            ruling = f"Bull case prevails — narrative momentum and sentiment support continued upside."
             ruling_detail = f"Bull confidence {bull_score:.0%} vs Bear confidence {bear_score:.0%}. "
             if sentiment.instability_score > 0.5:
                 ruling_detail += "However, elevated instability warrants monitoring for reversal signals."
             elif sentiment.uncertainty > 0.4:
                 ruling_detail += "Moderate uncertainty suggests position sizing should be conservative."
         elif bear_score > bull_score + 0.1:
-            ruling = "Bear case prevails — risk factors and instability outweigh optimistic positioning."
+            ruling = f"Bear case prevails — risk factors and instability outweigh optimistic positioning."
             ruling_detail = f"Bear confidence {bear_score:.0%} vs Bull confidence {bull_score:.0%}. "
         else:
             ruling = "Balanced — both cases have merit. Awaiting additional catalysts for directional conviction."
