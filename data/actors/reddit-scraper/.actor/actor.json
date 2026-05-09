@@ -4,9 +4,10 @@
   "version": "0.1",
   "buildTag": "latest",
   "title": "NarrativeOS Reddit Scraper",
-  "description": "Scrapes financial subreddits for narrative intelligence — extracts posts, ticker mentions, and sentiment signals.",
+  "description": "Scrapes financial subreddits via RSS feeds — extracts posts, ticker mentions, and normalized events. No API keys needed.",
   "dockerfile": "../Dockerfile",
   "input": "./input_schema.json",
+  "permissions": ["PROXY"],
   "storages": {
     "dataset": {
       "actorSpecification": 1,

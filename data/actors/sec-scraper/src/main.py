@@ -1,6 +1,9 @@
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from apify import Actor
-from data.pipelines.normalize import normalize_sec_filing
-from data.stream.event_bus import EventBus
+from src.normalize import normalize_sec_filing
 
 import httpx
 from bs4 import BeautifulSoup
@@ -45,7 +48,6 @@ async def main() -> None:
         form_types: list[str] = inp.get("form_types", ["10-K", "10-Q", "8-K"])
         max_filings: int = inp.get("max_filings", 5)
 
-        event_bus = EventBus()
         filings: list[dict] = []
 
         async with httpx.AsyncClient(timeout=30, headers=SEC_HEADERS, follow_redirects=True) as client:
@@ -87,8 +89,9 @@ async def main() -> None:
                     desc = cols[2].get_text(strip=True) if len(cols) > 2 else ""
                     date = cols[3].get_text(strip=True) if len(cols) > 3 else ""
 
+                    company_name = _get_company_name(soup)
                     filings.append({
-                        "company_name": _get_company_name(soup),
+                        "company_name": company_name,
                         "form_type": form_type,
                         "url": filing_url,
                         "description": desc,
@@ -106,16 +109,15 @@ async def main() -> None:
         for filing in filings:
             event = normalize_sec_filing(filing)
             await Actor.push_data(event)
-            event_bus.emit(event)
 
-        event_bus.flush()
         Actor.log.info("SEC scrape complete — %d events pushed", len(filings))
 
 
 def _get_company_name(soup: BeautifulSoup) -> str:
     tag = soup.select_one("span.companyName")
     if tag:
-        return tag.get_text(strip=True).split("(CIK")[0].strip()
+        raw = tag.get_text(strip=True)
+        return raw.split("CIK")[0].strip().rstrip(",")
     return ""
 
 

@@ -4,12 +4,840 @@
   "graph": {},
   "nodes": [
     {
+      "label": "config.py",
+      "file_type": "code",
+      "source_file": "data/config.py",
+      "source_location": "L1",
+      "id": "data_config_py",
+      "community": 17,
+      "norm_label": "config.py"
+    },
+    {
+      "label": "Settings",
+      "file_type": "code",
+      "source_file": "data/config.py",
+      "source_location": "L5",
+      "id": "data_config_settings",
+      "community": 17,
+      "norm_label": "settings"
+    },
+    {
+      "label": "BaseSettings",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basesettings",
+      "community": 17,
+      "norm_label": "basesettings"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "data/stream/__init__.py",
+      "source_location": "L1",
+      "id": "data_stream_init_py",
+      "community": 18,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "event_bus.py",
+      "file_type": "code",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L1",
+      "id": "data_stream_event_bus_py",
+      "community": 12,
+      "norm_label": "event_bus.py"
+    },
+    {
+      "label": "EventBus",
+      "file_type": "code",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L10",
+      "id": "stream_event_bus_eventbus",
+      "community": 12,
+      "norm_label": "eventbus"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L11",
+      "id": "stream_event_bus_eventbus_init",
+      "community": 12,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".emit()",
+      "file_type": "code",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L16",
+      "id": "stream_event_bus_eventbus_emit",
+      "community": 12,
+      "norm_label": ".emit()"
+    },
+    {
+      "label": ".flush()",
+      "file_type": "code",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L20",
+      "id": "stream_event_bus_eventbus_flush",
+      "community": 12,
+      "norm_label": ".flush()"
+    },
+    {
+      "label": ".close()",
+      "file_type": "code",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L36",
+      "id": "stream_event_bus_eventbus_close",
+      "community": 12,
+      "norm_label": ".close()"
+    },
+    {
+      "label": "normalize.py",
+      "file_type": "code",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L1",
+      "id": "data_pipelines_normalize_py",
+      "community": 1,
+      "norm_label": "normalize.py"
+    },
+    {
+      "label": "build_event_id()",
+      "file_type": "code",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L8",
+      "id": "pipelines_normalize_build_event_id",
+      "community": 1,
+      "norm_label": "build_event_id()"
+    },
+    {
+      "label": "normalize_reddit_post()",
+      "file_type": "code",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L14",
+      "id": "pipelines_normalize_normalize_reddit_post",
+      "community": 1,
+      "norm_label": "normalize_reddit_post()"
+    },
+    {
+      "label": "normalize_article()",
+      "file_type": "code",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L38",
+      "id": "pipelines_normalize_normalize_article",
+      "community": 1,
+      "norm_label": "normalize_article()"
+    },
+    {
+      "label": "normalize_sec_filing()",
+      "file_type": "code",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L60",
+      "id": "pipelines_normalize_normalize_sec_filing",
+      "community": 1,
+      "norm_label": "normalize_sec_filing()"
+    },
+    {
+      "label": "_to_iso()",
+      "file_type": "code",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L83",
+      "id": "pipelines_normalize_to_iso",
+      "community": 1,
+      "norm_label": "_to_iso()"
+    },
+    {
+      "label": "_now_iso()",
+      "file_type": "code",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L93",
+      "id": "pipelines_normalize_now_iso",
+      "community": 1,
+      "norm_label": "_now_iso()"
+    },
+    {
+      "label": "_extract_domain()",
+      "file_type": "code",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L97",
+      "id": "pipelines_normalize_extract_domain",
+      "community": 1,
+      "norm_label": "_extract_domain()"
+    },
+    {
+      "label": "_detect_post_type()",
+      "file_type": "code",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L105",
+      "id": "pipelines_normalize_detect_post_type",
+      "community": 1,
+      "norm_label": "_detect_post_type()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "data/pipelines/__init__.py",
+      "source_location": "L1",
+      "id": "data_pipelines_init_py",
+      "community": 19,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "entity_extractor.py",
+      "file_type": "code",
+      "source_file": "data/pipelines/entity_extractor.py",
+      "source_location": "L1",
+      "id": "data_pipelines_entity_extractor_py",
+      "community": 1,
+      "norm_label": "entity_extractor.py"
+    },
+    {
+      "label": "ExtractedEntity",
+      "file_type": "code",
+      "source_file": "data/pipelines/entity_extractor.py",
+      "source_location": "L37",
+      "id": "pipelines_entity_extractor_extractedentity",
+      "community": 1,
+      "norm_label": "extractedentity"
+    },
+    {
+      "label": "NamedTuple",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "namedtuple",
+      "community": 1,
+      "norm_label": "namedtuple"
+    },
+    {
+      "label": "extract_tickers()",
+      "file_type": "code",
+      "source_file": "data/pipelines/entity_extractor.py",
+      "source_location": "L43",
+      "id": "pipelines_entity_extractor_extract_tickers",
+      "community": 1,
+      "norm_label": "extract_tickers()"
+    },
+    {
+      "label": "extract_entities()",
+      "file_type": "code",
+      "source_file": "data/pipelines/entity_extractor.py",
+      "source_location": "L56",
+      "id": "pipelines_entity_extractor_extract_entities",
+      "community": 1,
+      "norm_label": "extract_entities()"
+    },
+    {
+      "label": "test_pipeline.py",
+      "file_type": "code",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L1",
+      "id": "data_pipelines_test_pipeline_py",
+      "community": 1,
+      "norm_label": "test_pipeline.py"
+    },
+    {
+      "label": "test_ticker_extraction()",
+      "file_type": "code",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L15",
+      "id": "pipelines_test_pipeline_test_ticker_extraction",
+      "community": 1,
+      "norm_label": "test_ticker_extraction()"
+    },
+    {
+      "label": "test_entity_extraction()",
+      "file_type": "code",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L26",
+      "id": "pipelines_test_pipeline_test_entity_extraction",
+      "community": 1,
+      "norm_label": "test_entity_extraction()"
+    },
+    {
+      "label": "test_reddit_normalization()",
+      "file_type": "code",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L34",
+      "id": "pipelines_test_pipeline_test_reddit_normalization",
+      "community": 1,
+      "norm_label": "test_reddit_normalization()"
+    },
+    {
+      "label": "test_article_normalization()",
+      "file_type": "code",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L58",
+      "id": "pipelines_test_pipeline_test_article_normalization",
+      "community": 1,
+      "norm_label": "test_article_normalization()"
+    },
+    {
+      "label": "test_sec_normalization()",
+      "file_type": "code",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L77",
+      "id": "pipelines_test_pipeline_test_sec_normalization",
+      "community": 1,
+      "norm_label": "test_sec_normalization()"
+    },
+    {
+      "label": "Quick test for the data pipeline \u2014 entity extraction + normalization. Run: pytho",
+      "file_type": "rationale",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L1",
+      "id": "pipelines_test_pipeline_rationale_1",
+      "community": 1,
+      "norm_label": "quick test for the data pipeline \u2014 entity extraction + normalization. run: pytho"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L1",
+      "id": "data_actors_reddit_scraper_src_main_py",
+      "community": 5,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "data/actors/sec-scraper/src/main.py",
+      "source_location": "L39",
+      "id": "src_main_main",
+      "community": 5,
+      "norm_label": "main()"
+    },
+    {
+      "label": "_has_praw_credentials()",
+      "file_type": "code",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L34",
+      "id": "src_main_has_praw_credentials",
+      "community": 5,
+      "norm_label": "_has_praw_credentials()"
+    },
+    {
+      "label": "_scrape_via_praw()",
+      "file_type": "code",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L39",
+      "id": "src_main_scrape_via_praw",
+      "community": 5,
+      "norm_label": "_scrape_via_praw()"
+    },
+    {
+      "label": "_scrape_via_playwright()",
+      "file_type": "code",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L71",
+      "id": "src_main_scrape_via_playwright",
+      "community": 5,
+      "norm_label": "_scrape_via_playwright()"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L1",
+      "id": "data_actors_news_scraper_src_main_py",
+      "community": 5,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "_clean_html()",
+      "file_type": "code",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L79",
+      "id": "src_main_clean_html",
+      "community": 5,
+      "norm_label": "_clean_html()"
+    },
+    {
+      "label": "_get_author()",
+      "file_type": "code",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L85",
+      "id": "src_main_get_author",
+      "community": 5,
+      "norm_label": "_get_author()"
+    },
+    {
+      "label": "_source_name_from_url()",
+      "file_type": "code",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L95",
+      "id": "src_main_source_name_from_url",
+      "community": 5,
+      "norm_label": "_source_name_from_url()"
+    },
+    {
+      "label": "_resolve_url()",
+      "file_type": "code",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L102",
+      "id": "src_main_resolve_url",
+      "community": 5,
+      "norm_label": "_resolve_url()"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "data/actors/sec-scraper/src/main.py",
+      "source_location": "L1",
+      "id": "data_actors_sec_scraper_src_main_py",
+      "community": 5,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "_get_company_name()",
+      "file_type": "code",
+      "source_file": "data/actors/sec-scraper/src/main.py",
+      "source_location": "L115",
+      "id": "src_main_get_company_name",
+      "community": 5,
+      "norm_label": "_get_company_name()"
+    },
+    {
+      "label": "MEMBER_02_COGNITIVE.md",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L1",
+      "id": "member_02_cognitive_md",
+      "community": 6,
+      "norm_label": "member_02_cognitive.md"
+    },
+    {
+      "label": "Member 2: The Cognitive Lead (Zynd)",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L1",
+      "id": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
+      "community": 6,
+      "norm_label": "member 2: the cognitive lead (zynd)"
+    },
+    {
+      "label": "Domain",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L5",
+      "id": "narrativeos_member_02_cognitive_domain",
+      "community": 6,
+      "norm_label": "domain"
+    },
+    {
+      "label": "code:block1 (/agents/)",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L7",
+      "id": "narrativeos_member_02_cognitive_codeblock_1",
+      "community": 6,
+      "norm_label": "code:block1 (/agents/)"
+    },
+    {
+      "label": "Core Tool: Zynd AI \u2014 Full Feature Map",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L17",
+      "id": "narrativeos_member_02_cognitive_core_tool_zynd_ai_full_feature_map",
+      "community": 6,
+      "norm_label": "core tool: zynd ai \u2014 full feature map"
+    },
+    {
+      "label": "Sprint 1 Tasks",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L35",
+      "id": "narrativeos_member_02_cognitive_sprint_1_tasks",
+      "community": 6,
+      "norm_label": "sprint 1 tasks"
+    },
+    {
+      "label": "Deliverables",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L47",
+      "id": "narrativeos_member_02_cognitive_deliverables",
+      "community": 6,
+      "norm_label": "deliverables"
+    },
+    {
+      "label": "API Contract (Input)",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L55",
+      "id": "narrativeos_member_02_cognitive_api_contract_input",
+      "community": 6,
+      "norm_label": "api contract (input)"
+    },
+    {
+      "label": "API Contract (Output)",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L59",
+      "id": "narrativeos_member_02_cognitive_api_contract_output",
+      "community": 6,
+      "norm_label": "api contract (output)"
+    },
+    {
+      "label": "Dependencies",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L63",
+      "id": "narrativeos_member_02_cognitive_dependencies",
+      "community": 6,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "GitHub Copilot Usage",
+      "file_type": "document",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L69",
+      "id": "narrativeos_member_02_cognitive_github_copilot_usage",
+      "community": 6,
+      "norm_label": "github copilot usage"
+    },
+    {
+      "label": "MEMBER_01_SENSORY.md",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L1",
+      "id": "member_01_sensory_md",
+      "community": 7,
+      "norm_label": "member_01_sensory.md"
+    },
+    {
+      "label": "Member 1: The Sensory Lead (Apify)",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L1",
+      "id": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify",
+      "community": 7,
+      "norm_label": "member 1: the sensory lead (apify)"
+    },
+    {
+      "label": "Domain",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L5",
+      "id": "narrativeos_member_01_sensory_domain",
+      "community": 7,
+      "norm_label": "domain"
+    },
+    {
+      "label": "code:block1 (/data/)",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L7",
+      "id": "narrativeos_member_01_sensory_codeblock_1",
+      "community": 7,
+      "norm_label": "code:block1 (/data/)"
+    },
+    {
+      "label": "Core Tool: Apify \u2014 Full Feature Map",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L15",
+      "id": "narrativeos_member_01_sensory_core_tool_apify_full_feature_map",
+      "community": 7,
+      "norm_label": "core tool: apify \u2014 full feature map"
+    },
+    {
+      "label": "Sprint 1 Tasks",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L31",
+      "id": "narrativeos_member_01_sensory_sprint_1_tasks",
+      "community": 7,
+      "norm_label": "sprint 1 tasks"
+    },
+    {
+      "label": "Deliverables",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L43",
+      "id": "narrativeos_member_01_sensory_deliverables",
+      "community": 7,
+      "norm_label": "deliverables"
+    },
+    {
+      "label": "API Contract (Output)",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L50",
+      "id": "narrativeos_member_01_sensory_api_contract_output",
+      "community": 7,
+      "norm_label": "api contract (output)"
+    },
+    {
+      "label": "Dependencies",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L54",
+      "id": "narrativeos_member_01_sensory_dependencies",
+      "community": 7,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "GitHub Copilot Usage",
+      "file_type": "document",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L59",
+      "id": "narrativeos_member_01_sensory_github_copilot_usage",
+      "community": 7,
+      "norm_label": "github copilot usage"
+    },
+    {
+      "label": "API_CONTRACT.md",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L1",
+      "id": "api_contract_md",
+      "community": 3,
+      "norm_label": "api_contract.md"
+    },
+    {
+      "label": "API Contract \u2014 NarrativeOS Event Schemas",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L1",
+      "id": "narrativeos_api_contract_api_contract_narrativeos_event_schemas",
+      "community": 3,
+      "norm_label": "api contract \u2014 narrativeos event schemas"
+    },
+    {
+      "label": "NarrativeEvent (Member 1 \u2192 Member 2)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L7",
+      "id": "narrativeos_api_contract_narrativeevent_member_1_member_2",
+      "community": 3,
+      "norm_label": "narrativeevent (member 1 \u2192 member 2)"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L11",
+      "id": "narrativeos_api_contract_codeblock_1",
+      "community": 3,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "Fields",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L37",
+      "id": "narrativeos_api_contract_fields",
+      "community": 3,
+      "norm_label": "fields"
+    },
+    {
+      "label": "Delivery",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L55",
+      "id": "narrativeos_api_contract_delivery",
+      "community": 3,
+      "norm_label": "delivery"
+    },
+    {
+      "label": "AnalysisSignal (Member 2 \u2192 Member 3)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L62",
+      "id": "narrativeos_api_contract_analysissignal_member_2_member_3",
+      "community": 3,
+      "norm_label": "analysissignal (member 2 \u2192 member 3)"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L66",
+      "id": "narrativeos_api_contract_codeblock_2",
+      "community": 3,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "Fields",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L100",
+      "id": "narrativeos_api_contract_fields_100",
+      "community": 3,
+      "norm_label": "fields"
+    },
+    {
+      "label": "Webhook Endpoints (Contract Between Members)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L121",
+      "id": "narrativeos_api_contract_webhook_endpoints_contract_between_members",
+      "community": 3,
+      "norm_label": "webhook endpoints (contract between members)"
+    },
+    {
+      "label": "Member 1 \u2192 Member 3 (Apify \u2192 Superplane)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L123",
+      "id": "narrativeos_api_contract_member_1_member_3_apify_superplane",
+      "community": 3,
+      "norm_label": "member 1 \u2192 member 3 (apify \u2192 superplane)"
+    },
+    {
+      "label": "code:block3 (POST /api/v1/webhooks/apify-event)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L125",
+      "id": "narrativeos_api_contract_codeblock_3",
+      "community": 3,
+      "norm_label": "code:block3 (post /api/v1/webhooks/apify-event)"
+    },
+    {
+      "label": "Member 3 \u2192 Member 2 (Superplane \u2192 Zynd)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L131",
+      "id": "narrativeos_api_contract_member_3_member_2_superplane_zynd",
+      "community": 3,
+      "norm_label": "member 3 \u2192 member 2 (superplane \u2192 zynd)"
+    },
+    {
+      "label": "code:block4 (POST <zynd-agent-url>/webhook/analyze)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L133",
+      "id": "narrativeos_api_contract_codeblock_4",
+      "community": 3,
+      "norm_label": "code:block4 (post <zynd-agent-url>/webhook/analyze)"
+    },
+    {
+      "label": "Member 2 \u2192 Member 3 (Zynd \u2192 Superplane)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L139",
+      "id": "narrativeos_api_contract_member_2_member_3_zynd_superplane",
+      "community": 3,
+      "norm_label": "member 2 \u2192 member 3 (zynd \u2192 superplane)"
+    },
+    {
+      "label": "code:block5 (POST /api/v1/webhooks/signal)",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L141",
+      "id": "narrativeos_api_contract_codeblock_5",
+      "community": 3,
+      "norm_label": "code:block5 (post /api/v1/webhooks/signal)"
+    },
+    {
+      "label": "Versioning",
+      "file_type": "document",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L149",
+      "id": "narrativeos_api_contract_versioning",
+      "community": 3,
+      "norm_label": "versioning"
+    },
+    {
+      "label": "MEMBER_03_PLATFORM.md",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L1",
+      "id": "member_03_platform_md",
+      "community": 8,
+      "norm_label": "member_03_platform.md"
+    },
+    {
+      "label": "Member 3: The Platform Lead (Superplane)",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L1",
+      "id": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane",
+      "community": 8,
+      "norm_label": "member 3: the platform lead (superplane)"
+    },
+    {
+      "label": "Domain",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L5",
+      "id": "narrativeos_member_03_platform_domain",
+      "community": 8,
+      "norm_label": "domain"
+    },
+    {
+      "label": "code:block1 (/infra/)",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L7",
+      "id": "narrativeos_member_03_platform_codeblock_1",
+      "community": 8,
+      "norm_label": "code:block1 (/infra/)"
+    },
+    {
+      "label": "Core Tool: Superplane \u2014 Full Feature Map",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L18",
+      "id": "narrativeos_member_03_platform_core_tool_superplane_full_feature_map",
+      "community": 8,
+      "norm_label": "core tool: superplane \u2014 full feature map"
+    },
+    {
+      "label": "Sprint 1 Tasks",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L37",
+      "id": "narrativeos_member_03_platform_sprint_1_tasks",
+      "community": 8,
+      "norm_label": "sprint 1 tasks"
+    },
+    {
+      "label": "Deliverables",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L53",
+      "id": "narrativeos_member_03_platform_deliverables",
+      "community": 8,
+      "norm_label": "deliverables"
+    },
+    {
+      "label": "API Contract (Consumed)",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L62",
+      "id": "narrativeos_member_03_platform_api_contract_consumed",
+      "community": 8,
+      "norm_label": "api contract (consumed)"
+    },
+    {
+      "label": "Dependencies",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L66",
+      "id": "narrativeos_member_03_platform_dependencies",
+      "community": 8,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "GitHub Copilot Usage",
+      "file_type": "document",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L72",
+      "id": "narrativeos_member_03_platform_github_copilot_usage",
+      "community": 8,
+      "norm_label": "github copilot usage"
+    },
+    {
       "label": "TEAM_DIVISION.md",
       "file_type": "document",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L1",
       "id": "team_division_md",
-      "community": 1,
+      "community": 4,
       "norm_label": "team_division.md"
     },
     {
@@ -18,7 +846,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L1",
       "id": "narrativeos_team_division_narrativeos_team_work_division",
-      "community": 1,
+      "community": 4,
       "norm_label": "narrativeos team work division"
     },
     {
@@ -27,7 +855,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L7",
       "id": "narrativeos_team_division_team_responsibilities_3_members",
-      "community": 1,
+      "community": 4,
       "norm_label": "\ud83c\udfd7\ufe0f team responsibilities (3 members)"
     },
     {
@@ -36,7 +864,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L9",
       "id": "narrativeos_team_division_member_1_the_sensory_lead",
-      "community": 1,
+      "community": 4,
       "norm_label": "\ud83d\udc64 member 1: the sensory lead"
     },
     {
@@ -45,7 +873,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L18",
       "id": "narrativeos_team_division_member_2_the_cognitive_lead",
-      "community": 1,
+      "community": 4,
       "norm_label": "\ud83d\udc64 member 2: the cognitive lead"
     },
     {
@@ -54,7 +882,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L27",
       "id": "narrativeos_team_division_member_3_the_platform_lead",
-      "community": 1,
+      "community": 4,
       "norm_label": "\ud83d\udc64 member 3: the platform lead"
     },
     {
@@ -63,7 +891,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L38",
       "id": "narrativeos_team_division_shared_accelerator_github_copilot",
-      "community": 1,
+      "community": 4,
       "norm_label": "\ud83e\udd16 shared accelerator: github copilot"
     },
     {
@@ -72,7 +900,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L47",
       "id": "narrativeos_team_division_ai_accelerated_development",
-      "community": 1,
+      "community": 4,
       "norm_label": "\ud83e\udd16 ai-accelerated development"
     },
     {
@@ -81,7 +909,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L57",
       "id": "narrativeos_team_division_project_structure_proposal",
-      "community": 1,
+      "community": 4,
       "norm_label": "\ud83d\udcc2 project structure proposal"
     },
     {
@@ -90,7 +918,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L1",
       "id": "agents_md",
-      "community": 0,
+      "community": 2,
       "norm_label": "agents.md"
     },
     {
@@ -99,7 +927,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L1",
       "id": "narrativeos_agents_graphify",
-      "community": 0,
+      "community": 2,
       "norm_label": "graphify"
     },
     {
@@ -108,7 +936,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L11",
       "id": "narrativeos_agents_team_roles_tool_core",
-      "community": 0,
+      "community": 2,
       "norm_label": "team roles & tool core"
     },
     {
@@ -117,7 +945,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L33",
       "id": "narrativeos_agents_agents_md",
-      "community": 0,
+      "community": 2,
       "norm_label": "agents.md"
     },
     {
@@ -126,7 +954,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L35",
       "id": "narrativeos_agents_narrativeos",
-      "community": 0,
+      "community": 2,
       "norm_label": "narrativeos"
     },
     {
@@ -135,7 +963,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L41",
       "id": "narrativeos_agents_overview",
-      "community": 0,
+      "community": 2,
       "norm_label": "overview"
     },
     {
@@ -144,7 +972,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L76",
       "id": "narrativeos_agents_core_objectives",
-      "community": 0,
+      "community": 2,
       "norm_label": "core objectives"
     },
     {
@@ -153,7 +981,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L91",
       "id": "narrativeos_agents_high_level_system_architecture",
-      "community": 0,
+      "community": 2,
       "norm_label": "high-level system architecture"
     },
     {
@@ -162,7 +990,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L93",
       "id": "narrativeos_agents_codeblock_1",
-      "community": 0,
+      "community": 2,
       "norm_label": "code:text (apify actors)"
     },
     {
@@ -171,7 +999,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L111",
       "id": "narrativeos_agents_sponsor_technology_integration",
-      "community": 9,
+      "community": 2,
       "norm_label": "sponsor technology integration"
     },
     {
@@ -180,7 +1008,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L113",
       "id": "narrativeos_agents_zynd_ai",
-      "community": 9,
+      "community": 2,
       "norm_label": "zynd ai"
     },
     {
@@ -189,7 +1017,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L135",
       "id": "narrativeos_agents_apify",
-      "community": 9,
+      "community": 2,
       "norm_label": "apify"
     },
     {
@@ -198,7 +1026,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L160",
       "id": "narrativeos_agents_superplane",
-      "community": 9,
+      "community": 2,
       "norm_label": "superplane"
     },
     {
@@ -207,7 +1035,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L178",
       "id": "narrativeos_agents_github_copilot",
-      "community": 9,
+      "community": 2,
       "norm_label": "github copilot"
     },
     {
@@ -216,7 +1044,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L190",
       "id": "narrativeos_agents_agent_mesh_architecture",
-      "community": 0,
+      "community": 2,
       "norm_label": "agent mesh architecture"
     },
     {
@@ -225,7 +1053,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L211",
       "id": "narrativeos_agents_agent_registry_layer",
-      "community": 0,
+      "community": 2,
       "norm_label": "agent registry layer"
     },
     {
@@ -234,7 +1062,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L227",
       "id": "narrativeos_agents_agent_topology",
-      "community": 2,
+      "community": 0,
       "norm_label": "agent topology"
     },
     {
@@ -243,7 +1071,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L229",
       "id": "narrativeos_agents_1_data_acquisition_agent",
-      "community": 10,
+      "community": 0,
       "norm_label": "1. data acquisition agent"
     },
     {
@@ -252,7 +1080,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L231",
       "id": "narrativeos_agents_responsibility",
-      "community": 10,
+      "community": 0,
       "norm_label": "responsibility"
     },
     {
@@ -261,7 +1089,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L235",
       "id": "narrativeos_agents_sources",
-      "community": 10,
+      "community": 0,
       "norm_label": "sources"
     },
     {
@@ -270,7 +1098,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L245",
       "id": "narrativeos_agents_infrastructure",
-      "community": 10,
+      "community": 0,
       "norm_label": "infrastructure"
     },
     {
@@ -279,7 +1107,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L252",
       "id": "narrativeos_agents_outputs",
-      "community": 10,
+      "community": 0,
       "norm_label": "outputs"
     },
     {
@@ -288,7 +1116,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L266",
       "id": "narrativeos_agents_2_narrative_intelligence_agent",
-      "community": 6,
+      "community": 14,
       "norm_label": "2. narrative intelligence agent"
     },
     {
@@ -297,7 +1125,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L268",
       "id": "narrativeos_agents_responsibility_268",
-      "community": 6,
+      "community": 14,
       "norm_label": "responsibility"
     },
     {
@@ -306,7 +1134,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L272",
       "id": "narrativeos_agents_tasks",
-      "community": 6,
+      "community": 14,
       "norm_label": "tasks"
     },
     {
@@ -315,7 +1143,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L281",
       "id": "narrativeos_agents_outputs_281",
-      "community": 6,
+      "community": 14,
       "norm_label": "outputs"
     },
     {
@@ -324,7 +1152,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L293",
       "id": "narrativeos_agents_3_sentiment_reasoning_agent",
-      "community": 3,
+      "community": 0,
       "norm_label": "3. sentiment reasoning agent"
     },
     {
@@ -333,7 +1161,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L295",
       "id": "narrativeos_agents_responsibility_295",
-      "community": 3,
+      "community": 0,
       "norm_label": "responsibility"
     },
     {
@@ -342,7 +1170,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L299",
       "id": "narrativeos_agents_tasks_299",
-      "community": 3,
+      "community": 0,
       "norm_label": "tasks"
     },
     {
@@ -351,7 +1179,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L307",
       "id": "narrativeos_agents_outputs_307",
-      "community": 3,
+      "community": 0,
       "norm_label": "outputs"
     },
     {
@@ -360,7 +1188,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L318",
       "id": "narrativeos_agents_4_market_correlation_agent",
-      "community": 7,
+      "community": 15,
       "norm_label": "4. market correlation agent"
     },
     {
@@ -369,7 +1197,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L320",
       "id": "narrativeos_agents_responsibility_320",
-      "community": 7,
+      "community": 15,
       "norm_label": "responsibility"
     },
     {
@@ -378,7 +1206,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L324",
       "id": "narrativeos_agents_tasks_324",
-      "community": 7,
+      "community": 15,
       "norm_label": "tasks"
     },
     {
@@ -387,7 +1215,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L332",
       "id": "narrativeos_agents_example",
-      "community": 7,
+      "community": 15,
       "norm_label": "example"
     },
     {
@@ -396,7 +1224,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L347",
       "id": "narrativeos_agents_5_debate_agent_system",
-      "community": 2,
+      "community": 0,
       "norm_label": "5. debate agent system"
     },
     {
@@ -405,7 +1233,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L349",
       "id": "narrativeos_agents_responsibility_349",
-      "community": 2,
+      "community": 0,
       "norm_label": "responsibility"
     },
     {
@@ -414,7 +1242,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L353",
       "id": "narrativeos_agents_components",
-      "community": 11,
+      "community": 0,
       "norm_label": "components"
     },
     {
@@ -423,7 +1251,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L355",
       "id": "narrativeos_agents_bull_agent",
-      "community": 11,
+      "community": 0,
       "norm_label": "bull agent"
     },
     {
@@ -432,7 +1260,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L359",
       "id": "narrativeos_agents_bear_agent",
-      "community": 11,
+      "community": 0,
       "norm_label": "bear agent"
     },
     {
@@ -441,7 +1269,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L363",
       "id": "narrativeos_agents_neutral_agent",
-      "community": 11,
+      "community": 0,
       "norm_label": "neutral agent"
     },
     {
@@ -450,7 +1278,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L367",
       "id": "narrativeos_agents_arbiter_agent",
-      "community": 11,
+      "community": 0,
       "norm_label": "arbiter agent"
     },
     {
@@ -459,7 +1287,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L371",
       "id": "narrativeos_agents_goal",
-      "community": 2,
+      "community": 0,
       "norm_label": "goal"
     },
     {
@@ -468,7 +1296,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L377",
       "id": "narrativeos_agents_6_risk_intelligence_agent",
-      "community": 4,
+      "community": 10,
       "norm_label": "6. risk intelligence agent"
     },
     {
@@ -477,7 +1305,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L379",
       "id": "narrativeos_agents_responsibility_379",
-      "community": 4,
+      "community": 10,
       "norm_label": "responsibility"
     },
     {
@@ -486,7 +1314,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L383",
       "id": "narrativeos_agents_tasks_383",
-      "community": 4,
+      "community": 10,
       "norm_label": "tasks"
     },
     {
@@ -495,7 +1323,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L391",
       "id": "narrativeos_agents_outputs_391",
-      "community": 4,
+      "community": 10,
       "norm_label": "outputs"
     },
     {
@@ -504,7 +1332,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L397",
       "id": "narrativeos_agents_7_strategy_agent",
-      "community": 5,
+      "community": 11,
       "norm_label": "7. strategy agent"
     },
     {
@@ -513,7 +1341,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L399",
       "id": "narrativeos_agents_responsibility_399",
-      "community": 5,
+      "community": 11,
       "norm_label": "responsibility"
     },
     {
@@ -522,7 +1350,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L403",
       "id": "narrativeos_agents_tasks_403",
-      "community": 5,
+      "community": 11,
       "norm_label": "tasks"
     },
     {
@@ -531,7 +1359,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L411",
       "id": "narrativeos_agents_outputs_411",
-      "community": 5,
+      "community": 11,
       "norm_label": "outputs"
     },
     {
@@ -540,7 +1368,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L427",
       "id": "narrativeos_agents_8_visualization_agent",
-      "community": 2,
+      "community": 16,
       "norm_label": "8. visualization agent"
     },
     {
@@ -549,7 +1377,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L429",
       "id": "narrativeos_agents_responsibility_429",
-      "community": 2,
+      "community": 16,
       "norm_label": "responsibility"
     },
     {
@@ -558,7 +1386,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L433",
       "id": "narrativeos_agents_features",
-      "community": 2,
+      "community": 16,
       "norm_label": "features"
     },
     {
@@ -567,7 +1395,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L443",
       "id": "narrativeos_agents_frontend_stack",
-      "community": 2,
+      "community": 16,
       "norm_label": "frontend stack"
     },
     {
@@ -576,7 +1404,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L452",
       "id": "narrativeos_agents_agent_communication_model",
-      "community": 0,
+      "community": 2,
       "norm_label": "agent communication model"
     },
     {
@@ -585,7 +1413,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L475",
       "id": "narrativeos_agents_workflow_orchestration",
-      "community": 0,
+      "community": 2,
       "norm_label": "workflow orchestration"
     },
     {
@@ -594,7 +1422,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L496",
       "id": "narrativeos_agents_tradingagents_integration",
-      "community": 0,
+      "community": 2,
       "norm_label": "tradingagents integration"
     },
     {
@@ -603,7 +1431,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L517",
       "id": "narrativeos_agents_tech_stack",
-      "community": 8,
+      "community": 13,
       "norm_label": "tech stack"
     },
     {
@@ -612,7 +1440,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L519",
       "id": "narrativeos_agents_backend",
-      "community": 8,
+      "community": 13,
       "norm_label": "backend"
     },
     {
@@ -621,7 +1449,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L525",
       "id": "narrativeos_agents_ai_and_agent_infrastructure",
-      "community": 8,
+      "community": 13,
       "norm_label": "ai and agent infrastructure"
     },
     {
@@ -630,7 +1458,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L531",
       "id": "narrativeos_agents_workflow_infrastructure",
-      "community": 8,
+      "community": 13,
       "norm_label": "workflow infrastructure"
     },
     {
@@ -639,7 +1467,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L535",
       "id": "narrativeos_agents_internet_intelligence_layer",
-      "community": 8,
+      "community": 13,
       "norm_label": "internet intelligence layer"
     },
     {
@@ -648,7 +1476,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L543",
       "id": "narrativeos_agents_frontend",
-      "community": 8,
+      "community": 13,
       "norm_label": "frontend"
     },
     {
@@ -657,15 +1485,96 @@
       "source_file": "AGENTS.md",
       "source_location": "L553",
       "id": "narrativeos_agents_long_term_vision",
-      "community": 0,
+      "community": 2,
       "norm_label": "long-term vision"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "data/README.md",
+      "source_location": "L1",
+      "id": "data_readme_md",
+      "community": 9,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "NarrativeOS Data Pipeline \u2014 Local Test Runner",
+      "file_type": "document",
+      "source_file": "data/README.md",
+      "source_location": "L1",
+      "id": "data_readme_narrativeos_data_pipeline_local_test_runner",
+      "community": 9,
+      "norm_label": "narrativeos data pipeline \u2014 local test runner"
+    },
+    {
+      "label": "code:bash (# Setup)",
+      "file_type": "document",
+      "source_file": "data/README.md",
+      "source_location": "L5",
+      "id": "data_readme_codeblock_1",
+      "community": 9,
+      "norm_label": "code:bash (# setup)"
+    },
+    {
+      "label": "Deploy to Apify Cloud",
+      "file_type": "document",
+      "source_file": "data/README.md",
+      "source_location": "L34",
+      "id": "data_readme_deploy_to_apify_cloud",
+      "community": 9,
+      "norm_label": "deploy to apify cloud"
+    },
+    {
+      "label": "code:bash (# Install Apify CLI)",
+      "file_type": "document",
+      "source_file": "data/README.md",
+      "source_location": "L36",
+      "id": "data_readme_codeblock_2",
+      "community": 9,
+      "norm_label": "code:bash (# install apify cli)"
+    },
+    {
+      "label": "Set up schedules via Apify Console",
+      "file_type": "document",
+      "source_file": "data/README.md",
+      "source_location": "L56",
+      "id": "data_readme_set_up_schedules_via_apify_console",
+      "community": 9,
+      "norm_label": "set up schedules via apify console"
+    },
+    {
+      "label": "Webhook Setup",
+      "file_type": "document",
+      "source_file": "data/README.md",
+      "source_location": "L66",
+      "id": "data_readme_webhook_setup",
+      "community": 9,
+      "norm_label": "webhook setup"
+    },
+    {
+      "label": "Testing the pipeline",
+      "file_type": "document",
+      "source_file": "data/README.md",
+      "source_location": "L72",
+      "id": "data_readme_testing_the_pipeline",
+      "community": 9,
+      "norm_label": "testing the pipeline"
+    },
+    {
+      "label": "code:bash (source .venv/bin/activate)",
+      "file_type": "document",
+      "source_file": "data/README.md",
+      "source_location": "L74",
+      "id": "data_readme_codeblock_3",
+      "community": 9,
+      "norm_label": "code:bash (source .venv/bin/activate)"
     },
     {
       "label": "\ud83c\udfd7\ufe0f Core Pillars",
       "file_type": "document",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L7",
-      "community": 1,
+      "community": 4,
       "norm_label": "\ud83c\udfd7\ufe0f core pillars",
       "id": "narrativeos_team_division_core_pillars"
     },
@@ -674,7 +1583,7 @@
       "file_type": "document",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L9",
-      "community": 1,
+      "community": 4,
       "norm_label": "1. data & automation lead (member a)",
       "id": "narrativeos_team_division_1_data_automation_lead_member_a"
     },
@@ -683,7 +1592,7 @@
       "file_type": "document",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L19",
-      "community": 1,
+      "community": 4,
       "norm_label": "2. agent systems & logic architect (member b)",
       "id": "narrativeos_team_division_2_agent_systems_logic_architect_member_b"
     },
@@ -692,7 +1601,7 @@
       "file_type": "document",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L29",
-      "community": 1,
+      "community": 4,
       "norm_label": "3. infrastructure & platform lead (member c)",
       "id": "narrativeos_team_division_3_infrastructure_platform_lead_member_c"
     },
@@ -701,7 +1610,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L247",
-      "community": 6,
+      "community": 14,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_247"
     },
@@ -710,7 +1619,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L260",
-      "community": 6,
+      "community": 14,
       "norm_label": "outputs",
       "id": "narrativeos_agents_outputs_260"
     },
@@ -719,7 +1628,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L274",
-      "community": 3,
+      "community": 0,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_274"
     },
@@ -728,7 +1637,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L278",
-      "community": 3,
+      "community": 0,
       "norm_label": "tasks",
       "id": "narrativeos_agents_tasks_278"
     },
@@ -737,7 +1646,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L286",
-      "community": 3,
+      "community": 0,
       "norm_label": "outputs",
       "id": "narrativeos_agents_outputs_286"
     },
@@ -746,7 +1655,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L299",
-      "community": 7,
+      "community": 15,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_299"
     },
@@ -755,7 +1664,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L303",
-      "community": 7,
+      "community": 15,
       "norm_label": "tasks",
       "id": "narrativeos_agents_tasks_303"
     },
@@ -764,7 +1673,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L328",
-      "community": 2,
+      "community": 0,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_328"
     },
@@ -773,7 +1682,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L358",
-      "community": 4,
+      "community": 10,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_358"
     },
@@ -782,7 +1691,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L362",
-      "community": 4,
+      "community": 10,
       "norm_label": "tasks",
       "id": "narrativeos_agents_tasks_362"
     },
@@ -791,7 +1700,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L370",
-      "community": 4,
+      "community": 10,
       "norm_label": "outputs",
       "id": "narrativeos_agents_outputs_370"
     },
@@ -800,7 +1709,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L378",
-      "community": 5,
+      "community": 11,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_378"
     },
@@ -809,7 +1718,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L382",
-      "community": 5,
+      "community": 11,
       "norm_label": "tasks",
       "id": "narrativeos_agents_tasks_382"
     },
@@ -818,7 +1727,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L390",
-      "community": 5,
+      "community": 11,
       "norm_label": "outputs",
       "id": "narrativeos_agents_outputs_390"
     },
@@ -827,12 +1736,1197 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L408",
-      "community": 2,
+      "community": 16,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_408"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/config.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "data_config_py",
+      "target": "data_config_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "data/config.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "data_config_settings",
+      "target": "basesettings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "data_stream_event_bus_py",
+      "target": "stream_event_bus_eventbus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "stream_event_bus_eventbus",
+      "target": "stream_event_bus_eventbus_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "stream_event_bus_eventbus",
+      "target": "stream_event_bus_eventbus_emit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "stream_event_bus_eventbus",
+      "target": "stream_event_bus_eventbus_flush",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "stream_event_bus_eventbus",
+      "target": "stream_event_bus_eventbus_close",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "stream_event_bus_eventbus"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/stream/event_bus.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "stream_event_bus_eventbus_close",
+      "target": "stream_event_bus_eventbus_flush",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "data_pipelines_normalize_py",
+      "target": "pipelines_normalize_build_event_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "data_pipelines_normalize_py",
+      "target": "pipelines_normalize_normalize_reddit_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "data_pipelines_normalize_py",
+      "target": "pipelines_normalize_normalize_article",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "data_pipelines_normalize_py",
+      "target": "pipelines_normalize_normalize_sec_filing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "data_pipelines_normalize_py",
+      "target": "pipelines_normalize_to_iso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "data_pipelines_normalize_py",
+      "target": "pipelines_normalize_now_iso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "data_pipelines_normalize_py",
+      "target": "pipelines_normalize_extract_domain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "data_pipelines_normalize_py",
+      "target": "pipelines_normalize_detect_post_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_reddit_post",
+      "target": "pipelines_normalize_build_event_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_article",
+      "target": "pipelines_normalize_build_event_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_sec_filing",
+      "target": "pipelines_normalize_build_event_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_reddit_post",
+      "target": "pipelines_normalize_to_iso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_reddit_post",
+      "target": "pipelines_normalize_now_iso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_reddit_post",
+      "target": "pipelines_normalize_detect_post_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_reddit_post",
+      "target": "pipelines_entity_extractor_extract_tickers"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_reddit_post",
+      "target": "pipelines_entity_extractor_extract_entities"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "pipelines_test_pipeline_test_reddit_normalization",
+      "target": "pipelines_normalize_normalize_reddit_post"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "pipelines_normalize_normalize_reddit_post"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_article",
+      "target": "pipelines_normalize_to_iso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_article",
+      "target": "pipelines_normalize_now_iso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_article",
+      "target": "pipelines_normalize_extract_domain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_article",
+      "target": "pipelines_entity_extractor_extract_tickers"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_article",
+      "target": "pipelines_entity_extractor_extract_entities"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "pipelines_test_pipeline_test_article_normalization",
+      "target": "pipelines_normalize_normalize_article"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "pipelines_normalize_normalize_article"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_sec_filing",
+      "target": "pipelines_normalize_to_iso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "pipelines_normalize_normalize_sec_filing",
+      "target": "pipelines_normalize_now_iso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "pipelines_test_pipeline_test_sec_normalization",
+      "target": "pipelines_normalize_normalize_sec_filing"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/actors/sec-scraper/src/main.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "pipelines_normalize_normalize_sec_filing"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/normalize.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "pipelines_normalize_to_iso",
+      "target": "pipelines_normalize_now_iso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/entity_extractor.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "data_pipelines_entity_extractor_py",
+      "target": "pipelines_entity_extractor_extractedentity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/entity_extractor.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "data_pipelines_entity_extractor_py",
+      "target": "pipelines_entity_extractor_extract_tickers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/entity_extractor.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "data_pipelines_entity_extractor_py",
+      "target": "pipelines_entity_extractor_extract_entities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/entity_extractor.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "pipelines_entity_extractor_extractedentity",
+      "target": "namedtuple",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/entity_extractor.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "pipelines_entity_extractor_extract_entities",
+      "target": "pipelines_entity_extractor_extract_tickers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "pipelines_test_pipeline_test_ticker_extraction",
+      "target": "pipelines_entity_extractor_extract_tickers"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "pipelines_test_pipeline_test_entity_extraction",
+      "target": "pipelines_entity_extractor_extract_entities"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "data_pipelines_test_pipeline_py",
+      "target": "pipelines_test_pipeline_test_ticker_extraction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "data_pipelines_test_pipeline_py",
+      "target": "pipelines_test_pipeline_test_entity_extraction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "data_pipelines_test_pipeline_py",
+      "target": "pipelines_test_pipeline_test_reddit_normalization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "data_pipelines_test_pipeline_py",
+      "target": "pipelines_test_pipeline_test_article_normalization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "data_pipelines_test_pipeline_py",
+      "target": "pipelines_test_pipeline_test_sec_normalization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "data/pipelines/test_pipeline.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "pipelines_test_pipeline_rationale_1",
+      "target": "data_pipelines_test_pipeline_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "data_actors_reddit_scraper_src_main_py",
+      "target": "src_main_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "data_actors_reddit_scraper_src_main_py",
+      "target": "src_main_has_praw_credentials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "data_actors_reddit_scraper_src_main_py",
+      "target": "src_main_scrape_via_praw",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "data_actors_reddit_scraper_src_main_py",
+      "target": "src_main_scrape_via_playwright",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "src_main_has_praw_credentials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "src_main_scrape_via_praw",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/reddit-scraper/src/main.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "src_main_scrape_via_playwright",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "data_actors_news_scraper_src_main_py",
+      "target": "src_main_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "src_main_clean_html",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "src_main_get_author",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "src_main_source_name_from_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "src_main_resolve_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/sec-scraper/src/main.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "data_actors_sec_scraper_src_main_py",
+      "target": "src_main_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/sec-scraper/src/main.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "src_main_main",
+      "target": "src_main_get_company_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "data_actors_news_scraper_src_main_py",
+      "target": "src_main_clean_html",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "data_actors_news_scraper_src_main_py",
+      "target": "src_main_get_author",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "data_actors_news_scraper_src_main_py",
+      "target": "src_main_source_name_from_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/news-scraper/src/main.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "data_actors_news_scraper_src_main_py",
+      "target": "src_main_resolve_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/actors/sec-scraper/src/main.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "data_actors_sec_scraper_src_main_py",
+      "target": "src_main_get_company_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "member_02_cognitive_md",
+      "target": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
+      "target": "narrativeos_member_02_cognitive_domain"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
+      "target": "narrativeos_member_02_cognitive_core_tool_zynd_ai_full_feature_map"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
+      "target": "narrativeos_member_02_cognitive_sprint_1_tasks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
+      "target": "narrativeos_member_02_cognitive_deliverables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
+      "target": "narrativeos_member_02_cognitive_api_contract_input"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
+      "target": "narrativeos_member_02_cognitive_api_contract_output"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
+      "target": "narrativeos_member_02_cognitive_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
+      "target": "narrativeos_member_02_cognitive_github_copilot_usage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_02_COGNITIVE.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_02_cognitive_domain",
+      "target": "narrativeos_member_02_cognitive_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "member_01_sensory_md",
+      "target": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify",
+      "target": "narrativeos_member_01_sensory_domain"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify",
+      "target": "narrativeos_member_01_sensory_core_tool_apify_full_feature_map"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify",
+      "target": "narrativeos_member_01_sensory_sprint_1_tasks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify",
+      "target": "narrativeos_member_01_sensory_deliverables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify",
+      "target": "narrativeos_member_01_sensory_api_contract_output"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify",
+      "target": "narrativeos_member_01_sensory_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify",
+      "target": "narrativeos_member_01_sensory_github_copilot_usage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_01_SENSORY.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_01_sensory_domain",
+      "target": "narrativeos_member_01_sensory_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_contract_md",
+      "target": "narrativeos_api_contract_api_contract_narrativeos_event_schemas"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_api_contract_narrativeos_event_schemas",
+      "target": "narrativeos_api_contract_narrativeevent_member_1_member_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_api_contract_narrativeos_event_schemas",
+      "target": "narrativeos_api_contract_analysissignal_member_2_member_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L121",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_api_contract_narrativeos_event_schemas",
+      "target": "narrativeos_api_contract_webhook_endpoints_contract_between_members"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L149",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_api_contract_narrativeos_event_schemas",
+      "target": "narrativeos_api_contract_versioning"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_narrativeevent_member_1_member_2",
+      "target": "narrativeos_api_contract_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_narrativeevent_member_1_member_2",
+      "target": "narrativeos_api_contract_fields"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_narrativeevent_member_1_member_2",
+      "target": "narrativeos_api_contract_delivery"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_analysissignal_member_2_member_3",
+      "target": "narrativeos_api_contract_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_analysissignal_member_2_member_3",
+      "target": "narrativeos_api_contract_fields_100"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L123",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_webhook_endpoints_contract_between_members",
+      "target": "narrativeos_api_contract_member_1_member_3_apify_superplane"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L131",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_webhook_endpoints_contract_between_members",
+      "target": "narrativeos_api_contract_member_3_member_2_superplane_zynd"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_webhook_endpoints_contract_between_members",
+      "target": "narrativeos_api_contract_member_2_member_3_zynd_superplane"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L125",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_member_1_member_3_apify_superplane",
+      "target": "narrativeos_api_contract_codeblock_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L133",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_member_3_member_2_superplane_zynd",
+      "target": "narrativeos_api_contract_codeblock_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "API_CONTRACT.md",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_api_contract_member_2_member_3_zynd_superplane",
+      "target": "narrativeos_api_contract_codeblock_5"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "member_03_platform_md",
+      "target": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane",
+      "target": "narrativeos_member_03_platform_domain"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane",
+      "target": "narrativeos_member_03_platform_core_tool_superplane_full_feature_map"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane",
+      "target": "narrativeos_member_03_platform_sprint_1_tasks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane",
+      "target": "narrativeos_member_03_platform_deliverables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane",
+      "target": "narrativeos_member_03_platform_api_contract_consumed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane",
+      "target": "narrativeos_member_03_platform_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane",
+      "target": "narrativeos_member_03_platform_github_copilot_usage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MEMBER_03_PLATFORM.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_member_03_platform_domain",
+      "target": "narrativeos_member_03_platform_codeblock_1"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -849,9 +2943,9 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_team_division_narrativeos_team_work_division",
-      "target": "narrativeos_team_division_team_responsibilities_3_members",
-      "confidence_score": 1.0
+      "target": "narrativeos_team_division_team_responsibilities_3_members"
     },
     {
       "relation": "contains",
@@ -859,9 +2953,9 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_team_division_narrativeos_team_work_division",
-      "target": "narrativeos_team_division_shared_accelerator_github_copilot",
-      "confidence_score": 1.0
+      "target": "narrativeos_team_division_shared_accelerator_github_copilot"
     },
     {
       "relation": "contains",
@@ -899,9 +2993,9 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_team_division_team_responsibilities_3_members",
-      "target": "narrativeos_team_division_member_1_the_sensory_lead",
-      "confidence_score": 1.0
+      "target": "narrativeos_team_division_member_1_the_sensory_lead"
     },
     {
       "relation": "contains",
@@ -909,9 +3003,9 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_team_division_team_responsibilities_3_members",
-      "target": "narrativeos_team_division_member_2_the_cognitive_lead",
-      "confidence_score": 1.0
+      "target": "narrativeos_team_division_member_2_the_cognitive_lead"
     },
     {
       "relation": "contains",
@@ -919,9 +3013,9 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_team_division_team_responsibilities_3_members",
-      "target": "narrativeos_team_division_member_3_the_platform_lead",
-      "confidence_score": 1.0
+      "target": "narrativeos_team_division_member_3_the_platform_lead"
     },
     {
       "relation": "contains",
@@ -939,9 +3033,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_md",
-      "target": "narrativeos_agents_team_roles_tool_core",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_team_roles_tool_core"
     },
     {
       "relation": "contains",
@@ -1259,9 +3353,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L268",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_2_narrative_intelligence_agent",
-      "target": "narrativeos_agents_responsibility_268",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_responsibility_268"
     },
     {
       "relation": "contains",
@@ -1279,9 +3373,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L281",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_2_narrative_intelligence_agent",
-      "target": "narrativeos_agents_outputs_281",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_outputs_281"
     },
     {
       "relation": "contains",
@@ -1309,9 +3403,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L295",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_3_sentiment_reasoning_agent",
-      "target": "narrativeos_agents_responsibility_295",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_responsibility_295"
     },
     {
       "relation": "contains",
@@ -1319,9 +3413,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L299",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_3_sentiment_reasoning_agent",
-      "target": "narrativeos_agents_tasks_299",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_tasks_299"
     },
     {
       "relation": "contains",
@@ -1329,9 +3423,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L307",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_3_sentiment_reasoning_agent",
-      "target": "narrativeos_agents_outputs_307",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_outputs_307"
     },
     {
       "relation": "contains",
@@ -1369,9 +3463,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L320",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_4_market_correlation_agent",
-      "target": "narrativeos_agents_responsibility_320",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_responsibility_320"
     },
     {
       "relation": "contains",
@@ -1379,9 +3473,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L324",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_4_market_correlation_agent",
-      "target": "narrativeos_agents_tasks_324",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_tasks_324"
     },
     {
       "relation": "contains",
@@ -1419,9 +3513,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L349",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_5_debate_agent_system",
-      "target": "narrativeos_agents_responsibility_349",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_responsibility_349"
     },
     {
       "relation": "contains",
@@ -1499,9 +3593,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L379",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_6_risk_intelligence_agent",
-      "target": "narrativeos_agents_responsibility_379",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_responsibility_379"
     },
     {
       "relation": "contains",
@@ -1509,9 +3603,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L383",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_6_risk_intelligence_agent",
-      "target": "narrativeos_agents_tasks_383",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_tasks_383"
     },
     {
       "relation": "contains",
@@ -1519,9 +3613,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L391",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_6_risk_intelligence_agent",
-      "target": "narrativeos_agents_outputs_391",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_outputs_391"
     },
     {
       "relation": "contains",
@@ -1559,9 +3653,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L399",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_7_strategy_agent",
-      "target": "narrativeos_agents_responsibility_399",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_responsibility_399"
     },
     {
       "relation": "contains",
@@ -1569,9 +3663,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L403",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_7_strategy_agent",
-      "target": "narrativeos_agents_tasks_403",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_tasks_403"
     },
     {
       "relation": "contains",
@@ -1579,9 +3673,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L411",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_7_strategy_agent",
-      "target": "narrativeos_agents_outputs_411",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_outputs_411"
     },
     {
       "relation": "contains",
@@ -1619,9 +3713,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L429",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "narrativeos_agents_8_visualization_agent",
-      "target": "narrativeos_agents_responsibility_429",
-      "confidence_score": 1.0
+      "target": "narrativeos_agents_responsibility_429"
     },
     {
       "relation": "contains",
@@ -1706,6 +3800,86 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "data/README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "data_readme_md",
+      "target": "data_readme_narrativeos_data_pipeline_local_test_runner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/README.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "data_readme_narrativeos_data_pipeline_local_test_runner",
+      "target": "data_readme_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/README.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "data_readme_narrativeos_data_pipeline_local_test_runner",
+      "target": "data_readme_deploy_to_apify_cloud",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/README.md",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "data_readme_narrativeos_data_pipeline_local_test_runner",
+      "target": "data_readme_set_up_schedules_via_apify_console",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/README.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "data_readme_narrativeos_data_pipeline_local_test_runner",
+      "target": "data_readme_webhook_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/README.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "data_readme_narrativeos_data_pipeline_local_test_runner",
+      "target": "data_readme_testing_the_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/README.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "data_readme_deploy_to_apify_cloud",
+      "target": "data_readme_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data/README.md",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "data_readme_testing_the_pipeline",
+      "target": "data_readme_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L9",
       "weight": 1.0,
@@ -1734,5 +3908,6 @@
       "target": "narrativeos_team_division_3_infrastructure_platform_lead_member_c"
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "6306dbe2a44a5144696b2e0fb5bec18dc5c0c280"
 }

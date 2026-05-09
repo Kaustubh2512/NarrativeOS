@@ -1,6 +1,9 @@
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from apify import Actor
-from data.pipelines.normalize import normalize_article
-from data.stream.event_bus import EventBus
+from src.normalize import normalize_article
 
 import feedparser
 import httpx
@@ -19,7 +22,6 @@ async def main() -> None:
         web_sources: list[str] = inp.get("web_sources", [])
         max_articles: int = inp.get("max_articles", 50)
 
-        event_bus = EventBus()
         articles: list[dict] = []
 
         for rss_url in rss_sources:
@@ -70,9 +72,7 @@ async def main() -> None:
         for article in articles:
             event = normalize_article(article)
             await Actor.push_data(event)
-            event_bus.emit(event)
 
-        event_bus.flush()
         Actor.log.info("News scrape complete — %d events pushed", len(articles))
 
 
