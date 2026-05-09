@@ -1,0 +1,45 @@
+# =============================================================================
+# NarrativeOS — PagerDuty Integration Component
+# Used by: Execution canvas for high-confidence signal alerts
+# =============================================================================
+apiVersion: superplane.io/v1
+kind: Component
+metadata:
+  name: pagerduty-notifier
+  title: "PagerDuty Incident Manager"
+  description: "Creates PagerDuty incidents for critical pipeline events"
+  tags: [incident, pagerduty, alerting, critical]
+spec:
+  type: pagerduty
+  config:
+    integration_key_env: NARRATIVEOS_PAGERDUTY_INTEGRATION_KEY
+    api_url: "https://api.pagerduty.com"
+
+  severity_map:
+    critical:
+      level: critical
+      auto_resolve: false
+      urgency: high
+    warning:
+      level: warning
+      auto_resolve: true
+      resolve_timeout_minutes: 30
+      urgency: low
+
+  event_rules:
+    - name: pipeline-failure
+      condition: "pipeline.status == 'failed'"
+      severity: critical
+      summary_template: |
+        [NarrativeOS] Pipeline Failure — {{pipeline.name}}
+        Canvas: {{pipeline.canvas}}
+        Error: {{pipeline.error}}
+        Run ID: {{pipeline.run_id}}
+
+    - name: high-confidence-signal
+      condition: "signal.confidence >= 0.8"
+      severity: warning
+      summary_template: |
+        [NarrativeOS] High-Confidence Signal — {{signal.direction}} {{signal.ticker}}
+        Confidence: {{signal.confidence}}
+        Risk Score: {{signal.risk_score}}

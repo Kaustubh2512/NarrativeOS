@@ -1,0 +1,226 @@
+{
+  "dashboard": {
+    "title": "NarrativeOS — Pipeline Observability",
+    "description": "End-to-end visibility into the NarrativeOS event-driven pipeline: ingestion throughput, agent analysis latency, signal quality, and error rates.",
+    "tags": ["narrativeos", "pipeline", "superplane"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Events Ingested (Last 24h)",
+        "type": "stat",
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none",
+            "color": { "mode": "thresholds" },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                { "value": -1000000, "color": "green" },
+                { "value": 5000, "color": "yellow" },
+                { "value": 10000, "color": "red" }
+              ]
+            }
+          }
+        },
+        "targets": [
+          {
+            "expr": "sum(increase(narrativeos_events_ingested_total[24h]))",
+            "legendFormat": "Events"
+          }
+        ],
+        "gridPos": { "h": 8, "w": 4, "x": 0, "y": 0 }
+      },
+      {
+        "id": 2,
+        "title": "Pipeline Runs (7d)",
+        "type": "timeseries",
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none"
+          }
+        },
+        "targets": [
+          {
+            "expr": "increase(narrativeos_pipeline_runs_total[1h])",
+            "legendFormat": "{{canvas}} — {{status}}"
+          }
+        ],
+        "gridPos": { "h": 8, "w": 8, "x": 4, "y": 0 }
+      },
+      {
+        "id": 3,
+        "title": "Pipeline Latency (p50/p95/p99)",
+        "type": "timeseries",
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s"
+          }
+        },
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.50, sum(rate(narrativeos_pipeline_duration_seconds_bucket[5m])) by (le, canvas))",
+            "legendFormat": "{{canvas}} p50"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(narrativeos_pipeline_duration_seconds_bucket[5m])) by (le, canvas))",
+            "legendFormat": "{{canvas}} p95"
+          },
+          {
+            "expr": "histogram_quantile(0.99, sum(rate(narrativeos_pipeline_duration_seconds_bucket[5m])) by (le, canvas))",
+            "legendFormat": "{{canvas}} p99"
+          }
+        ],
+        "gridPos": { "h": 8, "w": 8, "x": 12, "y": 0 }
+      },
+      {
+        "id": 4,
+        "title": "Signals Generated (Last 7d)",
+        "type": "barchart",
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none"
+          }
+        },
+        "targets": [
+          {
+            "expr": "sum by (direction) (increase(narrativeos_signals_total[7d]))",
+            "legendFormat": "{{direction}}"
+          }
+        ],
+        "gridPos": { "h": 8, "w": 4, "x": 0, "y": 8 }
+      },
+      {
+        "id": 5,
+        "title": "Agent Processing Time (Avg)",
+        "type": "gauge",
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s",
+            "color": { "mode": "thresholds" },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                { "value": 0, "color": "green" },
+                { "value": 30, "color": "yellow" },
+                { "value": 60, "color": "red" }
+              ]
+            }
+          }
+        },
+        "targets": [
+          {
+            "expr": "avg(narrativeos_agent_processing_duration_seconds)",
+            "legendFormat": "Avg Agent Time"
+          }
+        ],
+        "gridPos": { "h": 8, "w": 4, "x": 4, "y": 8 }
+      },
+      {
+        "id": 6,
+        "title": "Error Rate by Canvas",
+        "type": "timeseries",
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percentunit"
+          }
+        },
+        "targets": [
+          {
+            "expr": "rate(narrativeos_pipeline_errors_total[1h]) / rate(narrativeos_pipeline_runs_total[1h])",
+            "legendFormat": "{{canvas}}"
+          }
+        ],
+        "gridPos": { "h": 8, "w": 8, "x": 8, "y": 8 }
+      },
+      {
+        "id": 7,
+        "title": "Signal Confidence Distribution",
+        "type": "histogram",
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none",
+            "color": { "mode": "palette-classic" }
+          }
+        },
+        "targets": [
+          {
+            "expr": "narrativeos_signal_confidence_bucket",
+            "legendFormat": "{{le}}"
+          }
+        ],
+        "gridPos": { "h": 8, "w": 8, "x": 0, "y": 16 }
+      },
+      {
+        "id": 8,
+        "title": "Active Pipeline Runs",
+        "type": "stat",
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "unit": "none",
+            "color": { "mode": "thresholds" },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                { "value": 0, "color": "green" },
+                { "value": 10, "color": "yellow" },
+                { "value": 25, "color": "red" }
+              ]
+            }
+          }
+        },
+        "targets": [
+          {
+            "expr": "sum(narrativeos_active_pipeline_runs)",
+            "legendFormat": "Active"
+          }
+        ],
+        "gridPos": { "h": 8, "w": 4, "x": 12, "y": 16 }
+      },
+      {
+        "id": 9,
+        "title": "Alert: Pipeline Failure Rate",
+        "type": "alert",
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {}
+        },
+        "targets": [
+          {
+            "expr": "rate(narrativeos_pipeline_errors_total[5m]) > 0.1"
+          }
+        ],
+        "alert": {
+          "alertRuleTags": { "severity": "critical", "team": "platform" },
+          "conditions": [
+            {
+              "evaluator": { "type": "gt", "params": [0.1] },
+              "operator": { "type": "and" },
+              "query": { "params": ["A", "5m", "now"] },
+              "reducer": { "type": "avg" }
+            }
+          ],
+          "noDataState": "ok",
+          "executionErrorState": "alerting",
+          "for": "5m",
+          "frequency": "1m",
+          "notifications": [
+            { "uid": "slack-narrativeos-alerts" },
+            { "uid": "pagerduty-narrativeos" }
+          ]
+        },
+        "gridPos": { "h": 8, "w": 8, "x": 4, "y": 24 }
+      }
+    ],
+    "schemaVersion": 38
+  },
+  "overwrite": true
+}

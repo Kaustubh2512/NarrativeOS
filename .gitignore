@@ -41,3 +41,7 @@ Thumbs.db
 
 # Graphify cache (auto-generated)
 graphify-out/cache/
+
+# Next.js build output
+.next/
+out/

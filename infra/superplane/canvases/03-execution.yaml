@@ -1,0 +1,274 @@
+# =============================================================================
+# NarrativeOS — Execution Canvas
+# Purpose: Risk-check, human approval, signal dispatch, notification
+# Trigger: Webhook from Analysis Canvas (AnalysisSignal)
+# Output: Final confirmed trading signal with full audit trail
+# =============================================================================
+apiVersion: superplane.io/v1
+kind: Canvas
+metadata:
+  name: narrativeos-execution
+  title: "NarrativeOS — Signal Execution Pipeline"
+  description: |
+    Receives AnalysisSignals from the Analysis canvas, performs final
+    risk validation, applies human-in-the-loop approval for BUY/SELL
+    signals above confidence threshold, and dispatches notifications.
+  tags: [execution, risk, hitl, signal, notification]
+spec:
+  trigger:
+    webhook:
+      path: /api/v1/webhooks/signal
+      method: POST
+
+  nodes:
+    - id: receive-signal
+      type: webhook
+      title: "Signal Receiver"
+      config:
+        path: /api/v1/webhooks/signal
+        schema:
+          type: object
+          properties:
+            signal_id:
+              type: string
+            ticker:
+              type: string
+            direction:
+              type: string
+              enum: [BUY, SELL, HOLD, WATCHLIST]
+            confidence:
+              type: number
+              minimum: 0
+              maximum: 1
+            risk_score:
+              type: number
+              minimum: 0
+              maximum: 1
+      output_map:
+        signal: "$.body"
+
+    - id: risk-gate
+      type: condition
+      title: "Risk Gate — Check Confidence & Risk"
+      config:
+        conditions:
+          - label: execute
+            expression: >
+              $['receive-signal'].signal.confidence >= 0.6 &&
+              $['receive-signal'].signal.risk_score <= 0.5
+          - label: review
+            expression: >
+              $['receive-signal'].signal.confidence >= 0.4 &&
+              $['receive-signal'].signal.confidence < 0.6
+          - label: reject
+            expression: >
+              $['receive-signal'].signal.confidence < 0.4 ||
+              $['receive-signal'].signal.risk_score > 0.7
+      input_map:
+        signal: "$['receive-signal'].signal"
+      output_map:
+        decision: "$.matched_label"
+
+    - id: log-rejected
+      type: noop
+      title: "Log Rejected Signal"
+      config:
+        log_level: warn
+        message: "Signal rejected — confidence too low or risk too high"
+      input_map:
+        signal: "$['receive-signal'].signal"
+
+    - id: human-approval
+      type: human-in-the-loop
+      title: "HITL — Manual Approval Required"
+      config:
+        approval_type: single
+        assigned_roles: [trader, risk_manager]
+        timeout_hours: 4
+        on_timeout: reject
+        notification:
+          channel: "#narrativeos-trading"
+          message_template: |
+            🚨 *Manual Approval Required*
+            Signal: `{{signal.direction}}` {{signal.ticker}}
+            Confidence: {{signal.confidence}}
+            Risk: {{signal.risk_score}}
+            Review: {{signal_execution_url}}
+        form_fields:
+          - key: approved
+            type: boolean
+            label: "Approve this signal for execution?"
+            required: true
+          - key: notes
+            type: text
+            label: "Approver notes"
+            required: false
+      input_map:
+        signal: "$['receive-signal'].signal"
+      output_map:
+        approval: "$.result"
+
+    - id: check-approval
+      type: condition
+      title: "Check Human Approval"
+      config:
+        conditions:
+          - label: approved
+            expression: "$['human-approval'].approval.approved == true"
+          - label: rejected
+            expression: "$['human-approval'].approval.approved == false"
+      input_map:
+        approval: "$['human-approval'].approval"
+      output_map:
+        is_approved: "$.matched_label"
+
+    - id: log-human-rejected
+      type: noop
+      title: "Log Human-Rejected Signal"
+      config:
+        log_level: info
+        message: "Signal rejected by human approver"
+      input_map:
+        signal: "$['receive-signal'].signal"
+        approval: "$['human-approval'].approval"
+
+    - id: strategy-execution
+      type: http-request
+      title: "Execute Strategy (Simulated)"
+      config:
+        url: "{{env.NARRATIVEOS_EXECUTION_API_URL}}"
+        method: POST
+        headers:
+          Content-Type: application/json
+        body:
+          signal: "$['receive-signal'].signal"
+          approval: "$['human-approval'].approval"
+          executed_at: "{{now}}"
+          mode: "simulated"
+        timeout_ms: 15000
+      input_map:
+        signal: "$['receive-signal'].signal"
+        approval: "$['human-approval'].approval"
+      output_map:
+        execution_result: "$.body"
+
+    - id: finalize-signal
+      type: expression
+      title: "Finalize Signal Record"
+      config:
+        expression: |
+          Object.assign({}, $['receive-signal'].signal, {
+            status: "EXECUTED",
+            executed_at: new Date().toISOString(),
+            approval: $['human-approval'].approval,
+            execution_result: $['strategy-execution'].execution_result,
+            pipeline: "execution-canvas-v1"
+          })
+      input_map:
+        signal: "$['receive-signal'].signal"
+        approval: "$['human-approval'].approval"
+        execution: "$['strategy-execution'].execution_result"
+      output_map:
+        finalized_signal: "$.result"
+
+    - id: store-executed-signal
+      type: dataset
+      title: "Store Executed Signal"
+      config:
+        dataset_name: "executed_signals"
+        partition_by: ticker
+        retention_days: 730
+      input_map:
+        signal: "$['finalize-signal'].finalized_signal"
+
+    - id: notify-buy-sell
+      type: component
+      ref: slack-notifier
+      title: "BUY/SELL Alert — Slack"
+      config:
+        channel: "#narrativeos-signals"
+        message_template: |
+          {% if signal.direction == "BUY" or signal.direction == "SELL" %}
+          🚀 *TRADE SIGNAL: {{signal.direction}} {{signal.ticker}}*
+          Confidence: {{signal.confidence}}
+          Risk Score: {{signal.risk_score}}
+          Narrative: {{signal.narrative_summary}}
+          Signal ID: `{{signal.signal_id}}`
+          {% else %}
+          📊 *Signal: {{signal.direction}} {{signal.ticker}}*
+          Confidence: {{signal.confidence}}
+          ID: `{{signal.signal_id}}`
+          {% endif %}
+      input_map:
+        signal: "$['finalize-signal'].finalized_signal"
+
+    - id: notify-critical
+      type: component
+      ref: pagerduty-notifier
+      title: "PagerDuty — High Confidence Alert"
+      config:
+        severity: critical
+        condition:
+          expression: >
+            $['finalize-signal'].finalized_signal.confidence >= 0.8 &&
+            ($['finalize-signal'].finalized_signal.direction == "BUY" || $['finalize-signal'].finalized_signal.direction == "SELL")
+        summary_template: |
+          High-confidence {{signal.direction}} signal for {{signal.ticker}}
+          Confidence: {{signal.confidence}} | Risk: {{signal.risk_score}}
+        source: narrativeos-execution-canvas
+      input_map:
+        signal: "$['finalize-signal'].finalized_signal"
+
+    - id: pipeline-metrics
+      type: component
+      ref: prometheus-metrics
+      title: "Emit Pipeline Metrics"
+      config:
+        counters:
+          - name: narrativeos_signals_total
+            labels:
+              ticker: "$['finalize-signal'].finalized_signal.ticker"
+              direction: "$['finalize-signal'].finalized_signal.direction"
+          - name: narrativeos_signals_by_risk
+            labels:
+              risk_tier: >
+                $['finalize-signal'].finalized_signal.risk_score < 0.3 ? "low" :
+                $['finalize-signal'].finalized_signal.risk_score < 0.6 ? "medium" : "high"
+        gauges:
+          - name: narrativeos_signal_confidence
+            value: "$['finalize-signal'].finalized_signal.confidence"
+            labels:
+              ticker: "$['finalize-signal'].finalized_signal.ticker"
+
+  edges:
+    - from: trigger
+      to: receive-signal
+    - from: receive-signal
+      to: risk-gate
+    - from: risk-gate
+      to: log-rejected
+      condition: reject
+    - from: risk-gate
+      to: human-approval
+      condition: execute
+    - from: risk-gate
+      to: human-approval
+      condition: review
+    - from: human-approval
+      to: check-approval
+    - from: check-approval
+      to: log-human-rejected
+      condition: rejected
+    - from: check-approval
+      to: strategy-execution
+      condition: approved
+    - from: strategy-execution
+      to: finalize-signal
+    - from: finalize-signal
+      to: store-executed-signal
+    - from: finalize-signal
+      to: notify-buy-sell
+    - from: finalize-signal
+      to: notify-critical
+    - from: finalize-signal
+      to: pipeline-metrics

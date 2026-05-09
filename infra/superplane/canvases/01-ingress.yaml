@@ -1,0 +1,174 @@
+# =============================================================================
+# NarrativeOS — Ingress Canvas
+# Purpose: Receive Apify webhook events, normalize, store in dataset
+# Trigger: Webhook (Apify RUN.SUCCEEDED)
+# Output: Normalized NarrativeEvent JSON in dataset
+# =============================================================================
+apiVersion: superplane.io/v1
+kind: Canvas
+metadata:
+  name: narrativeos-ingress
+  title: "NarrativeOS — Data Ingress Pipeline"
+  description: |
+    Receives raw scraped data from Apify Actors (Reddit, News, SEC),
+    normalizes into NarrativeEvent schema, and stores for downstream
+    analysis by Zynd agents.
+  tags: [ingest, apify, webhook, normalize]
+spec:
+  trigger:
+    webhook:
+      path: /api/v1/webhooks/apify-event
+      method: POST
+      auth: bearer-token
+      secret_env: NARRATIVEOS_APIFY_WEBHOOK_SECRET
+
+  nodes:
+    - id: webhook-receiver
+      type: webhook
+      title: "Apify Webhook Receiver"
+      config:
+        path: /api/v1/webhooks/apify-event
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            source:
+              type: string
+              enum: [reddit, news, sec_filing, twitter, rss]
+            title:
+              type: string
+            body:
+              type: string
+            url:
+              type: string
+            published_at:
+              type: string
+              format: date-time
+            ticker_mentions:
+              type: array
+              items:
+                type: string
+      output_map:
+        raw_event: "$.body"
+
+    - id: deduplicate
+      type: expression
+      title: "Deduplicate by Event ID"
+      config:
+        expression: |
+          $['webhook-receiver'].raw_event
+        cache_key: "$.id"
+        dedup_window_hours: 24
+      input_map:
+        raw_event: "$['webhook-receiver'].raw_event"
+      output_map:
+        deduped_event: "$.result"
+
+    - id: validate-schema
+      type: condition
+      title: "Validate NarrativeEvent Schema"
+      config:
+        conditions:
+          - label: valid
+            expression: |
+              $['deduplicate'].deduped_event.id != null &&
+              $['deduplicate'].deduped_event.source != null &&
+              $['deduplicate'].deduped_event.title != null &&
+              $['deduplicate'].deduped_event.ticker_mentions != null
+          - label: invalid
+            expression: |
+              $['deduplicate'].deduped_event.id == null ||
+              $['deduplicate'].deduped_event.source == null
+      input_map:
+        event: "$['deduplicate'].deduped_event"
+      output_map:
+        valid_event: "$['deduplicate'].deduped_event"
+
+    - id: log-invalid
+      type: noop
+      title: "Log Invalid Event"
+      config:
+        log_level: warn
+        message: "Invalid NarrativeEvent rejected — missing required fields"
+      input_map:
+        event: "$['deduplicate'].deduped_event"
+
+    - id: enrich-timestamps
+      type: expression
+      title: "Normalize Timestamps"
+      config:
+        expression: |
+          Object.assign({}, $['validate-schema'].valid_event, {
+            collected_at: new Date().toISOString(),
+            received_at: new Date().toISOString()
+          })
+      input_map:
+        event: "$['validate-schema'].valid_event"
+      output_map:
+        enriched_event: "$.result"
+
+    - id: store-dataset
+      type: dataset
+      title: "Store in NarrativeEvent Dataset"
+      config:
+        dataset_name: "narrative_events"
+        partition_by: source
+        retention_days: 90
+      input_map:
+        event: "$['enrich-timestamps'].enriched_event"
+
+    - id: route-to-analysis
+      type: http-request
+      title: "Forward to Analysis Canvas"
+      config:
+        url: "{{env.NARRATIVEOS_ZYND_ANALYZE_URL}}"
+        method: POST
+        headers:
+          Content-Type: application/json
+          X-NarrativeOS-Source: ingress-canvas
+        body:
+          events: ["$['enrich-timestamps'].enriched_event"]
+          trigger: webhook
+        retry:
+          max_attempts: 3
+          backoff: exponential
+          initial_delay_ms: 1000
+        timeout_ms: 30000
+      input_map:
+        event: "$['enrich-timestamps'].enriched_event"
+      output_map:
+        analysis_response: "$.body"
+
+    - id: notify-ingest-complete
+      type: component
+      ref: slack-notifier
+      title: "Notify Ingest Complete"
+      config:
+        channel: "#narrativeos-pipelines"
+        message_template: |
+          ✅ *NarrativeOS Ingest Complete*
+          Source: `{{event.source}}`
+          Title: {{event.title}}
+          Tickers: {{event.ticker_mentions}}
+          ID: `{{event.id}}`
+      input_map:
+        event: "$['enrich-timestamps'].enriched_event"
+
+  edges:
+    - from: webhook-receiver
+      to: deduplicate
+    - from: deduplicate
+      to: validate-schema
+    - from: validate-schema
+      to: log-invalid
+      condition: invalid
+    - from: validate-schema
+      to: enrich-timestamps
+      condition: valid
+    - from: enrich-timestamps
+      to: store-dataset
+    - from: enrich-timestamps
+      to: route-to-analysis
+    - from: route-to-analysis
+      to: notify-ingest-complete

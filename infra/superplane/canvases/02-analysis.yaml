@@ -1,0 +1,263 @@
+# =============================================================================
+# NarrativeOS — Analysis Canvas
+# Purpose: Feed NarrativeEvents to Zynd agent mesh, collect AnalysisSignals
+# Trigger: Webhook from Ingress Canvas OR scheduled (market-open)
+# Output: AnalysisSignal with confidence-weighted trading signal
+# =============================================================================
+apiVersion: superplane.io/v1
+kind: Canvas
+metadata:
+  name: narrativeos-analysis
+  title: "NarrativeOS — Agent Analysis Pipeline"
+  description: |
+    Receives NarrativeEvents from the Ingress canvas, routes them to
+    the Zynd agent mesh (Narrative → Sentiment → Debate → Risk),
+    collects AnalysisSignals, and forwards to the Execution canvas.
+  tags: [analysis, zynd, agents, reasoning]
+spec:
+  trigger:
+    webhook:
+      path: /api/v1/webhooks/trigger-analysis
+      method: POST
+    schedule:
+      cron: "30 9 * * 1-5"  # 9:30 AM ET weekdays (market open)
+      timezone: America/New_York
+      description: "Pre-market analysis run"
+
+  nodes:
+    - id: batch-events
+      type: expression
+      title: "Batch Incoming Events"
+      config:
+        expression: |
+          $['trigger'].events.length > 0
+            ? { events: $['trigger'].events, batch_size: $['trigger'].events.length }
+            : { events: [], batch_size: 0 }
+      input_map:
+        trigger: "$"
+      output_map:
+        batch: "$.result"
+
+    - id: check-batch-empty
+      type: condition
+      title: "Check for Events"
+      config:
+        conditions:
+          - label: has_events
+            expression: "$['batch-events'].batch.batch_size > 0"
+          - label: empty
+            expression: "$['batch-events'].batch.batch_size == 0"
+      input_map:
+        batch: "$['batch-events'].batch"
+
+    - id: noop-empty
+      type: noop
+      title: "No Events — Skip"
+      config:
+        log_level: info
+        message: "Scheduled run — no new events to analyze"
+
+    - id: narrative-agent
+      type: http-request
+      title: "Narrative Intelligence Agent"
+      config:
+        url: "{{env.NARRATIVEOS_ZYND_NARRATIVE_URL}}"
+        method: POST
+        headers:
+          Content-Type: application/json
+        body:
+          events: "$['batch-events'].batch.events"
+          task: narrative_analysis
+        timeout_ms: 60000
+      input_map:
+        events: "$['batch-events'].batch.events"
+      output_map:
+        narrative_output: "$.body"
+
+    - id: sentiment-agent
+      type: http-request
+      title: "Sentiment Reasoning Agent"
+      config:
+        url: "{{env.NARRATIVEOS_ZYND_SENTIMENT_URL}}"
+        method: POST
+        headers:
+          Content-Type: application/json
+        body:
+          events: "$['batch-events'].batch.events"
+          narrative_context: "$['narrative-agent'].narrative_output"
+          task: sentiment_analysis
+        timeout_ms: 60000
+      input_map:
+        events: "$['batch-events'].batch.events"
+        narrative_context: "$['narrative-agent'].narrative_output"
+      output_map:
+        sentiment_output: "$.body"
+
+    - id: debate-system
+      type: http-request
+      title: "Debate Agent System"
+      config:
+        url: "{{env.NARRATIVEOS_ZYND_DEBATE_URL}}"
+        method: POST
+        headers:
+          Content-Type: application/json
+        body:
+          narrative: "$['narrative-agent'].narrative_output"
+          sentiment: "$['sentiment-agent'].sentiment_output"
+          config:
+            debate_rounds: 3
+            agents: [bull, bear, neutral, arbiter]
+        timeout_ms: 120000
+      input_map:
+        narrative: "$['narrative-agent'].narrative_output"
+        sentiment: "$['sentiment-agent'].sentiment_output"
+      output_map:
+        debate_output: "$.body"
+
+    - id: risk-assessment
+      type: http-request
+      title: "Risk Intelligence Agent"
+      config:
+        url: "{{env.NARRATIVEOS_ZYND_RISK_URL}}"
+        method: POST
+        headers:
+          Content-Type: application/json
+        body:
+          debate_result: "$['debate-system'].debate_output"
+          narrative: "$['narrative-agent'].narrative_output"
+          sentiment: "$['sentiment-agent'].sentiment_output"
+        timeout_ms: 30000
+      input_map:
+        debate: "$['debate-system'].debate_output"
+        narrative: "$['narrative-agent'].narrative_output"
+        sentiment: "$['sentiment-agent'].sentiment_output"
+      output_map:
+        risk_output: "$.body"
+
+    - id: strategy-formulation
+      type: http-request
+      title: "Strategy Agent"
+      config:
+        url: "{{env.NARRATIVEOS_ZYND_STRATEGY_URL}}"
+        method: POST
+        headers:
+          Content-Type: application/json
+        body:
+          risk_assessment: "$['risk-assessment'].risk_output"
+          debate: "$['debate-system'].debate_output"
+          config:
+            signal_types: [BUY, SELL, HOLD, WATCHLIST]
+        timeout_ms: 30000
+      input_map:
+        risk: "$['risk-assessment'].risk_output"
+        debate: "$['debate-system'].debate_output"
+      output_map:
+        strategy_output: "$.body"
+
+    - id: build-analysis-signal
+      type: expression
+      title: "Build AnalysisSignal Payload"
+      config:
+        expression: |
+          {
+            signal_id: "sig_" + new Date().toISOString().slice(0,10).replace(/-/g,'') + "_" + Math.random().toString(36).slice(2,8),
+            ticker: $['strategy-formulation'].strategy_output.ticker,
+            direction: $['strategy-formulation'].strategy_output.direction,
+            confidence: $['strategy-formulation'].strategy_output.confidence,
+            narrative_summary: $['narrative-agent'].narrative_output.summary,
+            sentiment_polarity: $['sentiment-agent'].sentiment_output.polarity,
+            emotional_intensity: $['sentiment-agent'].sentiment_output.intensity,
+            debate_summary: {
+              bull_case: $['debate-system'].debate_output.bull_case,
+              bear_case: $['debate-system'].debate_output.bear_case,
+              arbiter_ruling: $['debate-system'].debate_output.arbiter_ruling,
+              debate_rounds: $['debate-system'].debate_output.debate_rounds
+            },
+            risk_score: $['risk-assessment'].risk_output.risk_score,
+            risk_factors: $['risk-assessment'].risk_output.risk_factors,
+            reasoning_trace: $['strategy-formulation'].strategy_output.reasoning_trace,
+            supporting_events: ($['batch-events'].batch.events || []).map(function(e) { return e.id; }),
+            generated_at: new Date().toISOString(),
+            agent_version: "narrativeos-v0.1.0"
+          }
+      input_map:
+        strategy: "$['strategy-formulation'].strategy_output"
+        narrative: "$['narrative-agent'].narrative_output"
+        sentiment: "$['sentiment-agent'].sentiment_output"
+        debate: "$['debate-system'].debate_output"
+        risk: "$['risk-assessment'].risk_output"
+        events: "$['batch-events'].batch.events"
+      output_map:
+        analysis_signal: "$.result"
+
+    - id: route-to-execution
+      type: http-request
+      title: "Forward Signal to Execution Canvas"
+      config:
+        url: "http://localhost:3000/api/v1/webhooks/signal"
+        method: POST
+        headers:
+          Content-Type: application/json
+          X-NarrativeOS-Source: analysis-canvas
+        body: "$['build-analysis-signal'].analysis_signal"
+        retry:
+          max_attempts: 3
+          backoff: exponential
+        timeout_ms: 15000
+      input_map:
+        signal: "$['build-analysis-signal'].analysis_signal"
+      output_map:
+        execution_response: "$.body"
+
+    - id: store-signal
+      type: dataset
+      title: "Store AnalysisSignal"
+      config:
+        dataset_name: "analysis_signals"
+        partition_by: ticker
+        retention_days: 365
+      input_map:
+        signal: "$['build-analysis-signal'].analysis_signal"
+
+    - id: notify-analysis-complete
+      type: component
+      ref: slack-notifier
+      title: "Notify Analysis Complete"
+      config:
+        channel: "#narrativeos-pipelines"
+        message_template: |
+          🧠 *NarrativeOS Analysis Complete*
+          Signal: `{{signal.direction}}` {{signal.ticker}}
+          Confidence: {{signal.confidence}}
+          Risk Score: {{signal.risk_score}}
+          ID: `{{signal.signal_id}}`
+      input_map:
+        signal: "$['build-analysis-signal'].analysis_signal"
+
+  edges:
+    - from: trigger
+      to: batch-events
+    - from: batch-events
+      to: check-batch-empty
+    - from: check-batch-empty
+      to: noop-empty
+      condition: empty
+    - from: check-batch-empty
+      to: narrative-agent
+      condition: has_events
+    - from: narrative-agent
+      to: sentiment-agent
+    - from: sentiment-agent
+      to: debate-system
+    - from: debate-system
+      to: risk-assessment
+    - from: risk-assessment
+      to: strategy-formulation
+    - from: strategy-formulation
+      to: build-analysis-signal
+    - from: build-analysis-signal
+      to: route-to-execution
+    - from: build-analysis-signal
+      to: store-signal
+    - from: route-to-execution
+      to: notify-analysis-complete

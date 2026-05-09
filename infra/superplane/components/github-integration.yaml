@@ -1,0 +1,80 @@
+apiVersion: superplane.io/v1
+kind: Component
+metadata:
+  name: github-integration
+  title: "GitHub CI/CD Integration"
+  description: "Auto-build and deploy on push-to-main via GitHub Actions integration"
+  tags: [github, cicd, deploy, automation]
+spec:
+  type: github
+  config:
+    token_env: NARRATIVEOS_GITHUB_TOKEN
+    repo: "{{env.NARRATIVEOS_GITHUB_REPO}}"
+    default_branch: main
+
+  workflows:
+    - name: deploy-superplane
+      title: "Deploy Superplane Stack"
+      trigger:
+        events: [push]
+        branches: [main]
+        paths: ["infra/**", "data/**", "docker-compose.yml"]
+      jobs:
+        lint:
+          runner: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v4
+            - name: Lint YAML
+              run: |
+                for f in infra/superplane/canvases/*.yaml; do
+                  python -c "import yaml; yaml.safe_load(open('$f'))"
+                done
+            - name: Lint Python
+              uses: chartboost/ruff-action@v1
+              with:
+                src: "./data"
+
+        build-dashboard:
+          runner: ubuntu-latest
+          needs: [lint]
+          steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: "20"
+            - name: Install & Build
+              working-directory: infra/dashboard
+              run: |
+                npm ci
+                npm run build
+
+        deploy:
+          runner: ubuntu-latest
+          needs: [build-dashboard]
+          steps:
+            - uses: actions/checkout@v4
+            - name: Deploy via SSH
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                host: ${{ secrets.DEPLOY_HOST }}
+                username: ${{ secrets.DEPLOY_USER }}
+                key: ${{ secrets.DEPLOY_SSH_KEY }}
+                script: |
+                  cd /opt/narrativeos
+                  git pull origin main
+                  docker compose -f infra/deploy/docker-compose.yml pull
+                  docker compose -f infra/deploy/docker-compose.yml up -d --remove-orphans
+                  docker system prune -f
+
+            - name: Notify Slack
+              uses: slackapi/slack-github-action@v1.26.0
+              with:
+                payload: |
+                  {"channel":"#narrativeos-pipelines","text":" Deploy triggered by GitHub Component Node — `${{ github.sha }}`"}
+              env:
+                SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  webhook:
+    path: /api/v1/webhooks/github-event
+    method: POST
+    secret_env: NARRATIVEOS_GITHUB_WEBHOOK_SECRET

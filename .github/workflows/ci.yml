@@ -1,0 +1,86 @@
+name: NarrativeOS CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install data pipeline deps
+        working-directory: data
+        run: pip install -r requirements.txt
+
+      - name: Run data pipeline tests
+        working-directory: .
+        run: python -m data.pipelines.test_pipeline
+
+      - name: Install agent deps
+        working-directory: agents
+        run: pip install -r requirements.txt
+
+      - name: Run agent tests
+        working-directory: .
+        run: python -m pytest agents/tests/ -v
+
+      - name: Lint with ruff
+        uses: chartboost/ruff-action@v1
+        with:
+          src: "./agents"
+
+  validate-canvases:
+    name: Validate Superplane Canvases
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate YAML syntax
+        working-directory: infra/superplane/canvases
+        run: |
+          for f in *.yaml; do
+            echo "Validating $f..."
+            python -c "import yaml; yaml.safe_load(open('$f'))"
+          done
+
+  deploy-superplane:
+    name: Deploy Superplane
+    runs-on: ubuntu-latest
+    needs: [lint-and-test, validate-canvases]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            cd /opt/narrativeos
+            git pull origin main
+            docker compose -f infra/deploy/docker-compose.yml pull
+            docker compose -f infra/deploy/docker-compose.yml up -d --remove-orphans
+            docker system prune -f
+
+      - name: Notify Slack on Deploy
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          payload: |
+            {
+              "channel": "#narrativeos-pipelines",
+              "text": "\U0001f680 *NarrativeOS Deployed* — `${{ github.sha }}`\nBranch: `main`\nBy: ${{ github.actor }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

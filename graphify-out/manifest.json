@@ -1,10 +1,254 @@
 {
-  "/Users/yuvi/projects/NarrativeOS/TEAM_DIVISION.md": {
-    "mtime": 1778336141.8940358,
-    "hash": "f72bb73961246ea18809771079f6d8f1"
+  "C:\\Projects\\NarrativeOS\\agents\\schemas.py": {
+    "mtime": 1778344921.0098407,
+    "hash": "c181deaa746cd09a01e818d194f5b8a1"
   },
-  "/Users/yuvi/projects/NarrativeOS/AGENTS.md": {
-    "mtime": 1778336164.1431043,
-    "hash": "2ddb71969c015b6e51657472bb8e2417"
+  "C:\\Projects\\NarrativeOS\\agents\\__init__.py": {
+    "mtime": 1778344913.1651177,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\execution_api\\app.py": {
+    "mtime": 1778345676.7107267,
+    "hash": "96309b21248f6794b9fb2f561132f92e"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\execution_api\\__init__.py": {
+    "mtime": 1778345524.8318484,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\market_correlation\\app.py": {
+    "mtime": 1778344961.2831757,
+    "hash": "50b0643f4f62b34d9dc29b7f55c087b1"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\market_correlation\\__init__.py": {
+    "mtime": 1778344940.863178,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\risk_intelligence\\app.py": {
+    "mtime": 1778344984.509576,
+    "hash": "85f65896dab5e6394e7d15761b1a3372"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\risk_intelligence\\__init__.py": {
+    "mtime": 1778344962.4020717,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\strategy_agent\\app.py": {
+    "mtime": 1778345004.9198992,
+    "hash": "9cbaf06f57a729e774903e4f7af2b3ff"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\strategy_agent\\__init__.py": {
+    "mtime": 1778344985.5524662,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\tests\\conftest.py": {
+    "mtime": 1778345076.9256158,
+    "hash": "b725b5f9215929f64da0688dc26890d3"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\tests\\test_execution_api.py": {
+    "mtime": 1778345621.894032,
+    "hash": "3076d7e38c009eceb8191ea4365c742e"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\tests\\test_market_correlation.py": {
+    "mtime": 1778345089.0895758,
+    "hash": "1d30f0fc95b9ebca60f2610de6c11b30"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\tests\\test_risk_intelligence.py": {
+    "mtime": 1778345099.7185285,
+    "hash": "25b7fb0eaebe9c8c87031583bd058995"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\tests\\test_strategy_agent.py": {
+    "mtime": 1778345124.982462,
+    "hash": "b4e2ee253ec14d52f96a53cee02daca8"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\tests\\test_visualization_agent.py": {
+    "mtime": 1778345633.9267132,
+    "hash": "579d00bb4d349643c5fd5cc9dd95fa9e"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\tests\\__init__.py": {
+    "mtime": 1778345066.6081522,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\visualization_agent\\app.py": {
+    "mtime": 1778345655.2763095,
+    "hash": "681b58ed0bdd90b91edf0536d8429710"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\visualization_agent\\__init__.py": {
+    "mtime": 1778345542.3730145,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\config.py": {
+    "mtime": 1778339137.5359724,
+    "hash": "8b51dbe2272d746d626816bec9afb2da"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\actors\\news-scraper\\src\\main.py": {
+    "mtime": 1778339137.5253758,
+    "hash": "0210cb80e9337ee22b8b49c025f570e9"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\actors\\reddit-scraper\\src\\main.py": {
+    "mtime": 1778339137.5298977,
+    "hash": "cb18d0a277a4af80f7aa059dd2e3173f"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\actors\\sec-scraper\\src\\main.py": {
+    "mtime": 1778339137.5359724,
+    "hash": "fe22e7321d809f2e7e9cdbf6b69c79c1"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\pipelines\\entity_extractor.py": {
+    "mtime": 1778339137.5359724,
+    "hash": "33f4eebf8baf4f162b93e3a0866256cc"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\pipelines\\normalize.py": {
+    "mtime": 1778339137.5359724,
+    "hash": "80fe8ef68b42b788e296d086d5f9b549"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\pipelines\\test_pipeline.py": {
+    "mtime": 1778339137.5394828,
+    "hash": "b2bb3414a5c8c177fad68bd4b2884887"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\pipelines\\__init__.py": {
+    "mtime": 1778339137.5359724,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\stream\\event_bus.py": {
+    "mtime": 1778339137.541198,
+    "hash": "a8e94ee026857f2b82d48e13e9aa77c4"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\stream\\__init__.py": {
+    "mtime": 1778339137.541198,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\next-env.d.ts": {
+    "mtime": 1778344305.62232,
+    "hash": "ebe5556a66d4064621c11e79e028a1fe"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\next.config.js": {
+    "mtime": 1778340278.4906082,
+    "hash": "795075ecb0050f8ed8d2debdc30287a1"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\postcss.config.js": {
+    "mtime": 1778340287.8924108,
+    "hash": "8640f9b2e6475cc3f5b1ff4548925765"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\tailwind.config.js": {
+    "mtime": 1778340286.3440197,
+    "hash": "e0955ee75b006422c388d1461bd8be71"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\src\\components\\PipelineGraph.tsx": {
+    "mtime": 1778340347.3821735,
+    "hash": "9f406bbb0a520c99daa9d551cdc8a80c"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\src\\components\\SignalTable.tsx": {
+    "mtime": 1778340368.4290173,
+    "hash": "eb72e815c2cec71138b3af6c9968d665"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\src\\components\\StatusCard.tsx": {
+    "mtime": 1778340354.0909753,
+    "hash": "c379ea1f681abf663fad1dcb5198d617"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\src\\lib\\api.ts": {
+    "mtime": 1778340320.5979598,
+    "hash": "62ccd2431cd0cede6204be8e1b877fb2"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\src\\lib\\types.ts": {
+    "mtime": 1778340313.1021907,
+    "hash": "f952e365fe1aa8babbe446ffd1635c26"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\src\\pages\\index.tsx": {
+    "mtime": 1778340384.5170004,
+    "hash": "dac6f43eb219745ebc22ca2db59adcc6"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\src\\pages\\_app.tsx": {
+    "mtime": 1778340370.0360034,
+    "hash": "6b58f205af9b12ee81e57bb61a94eece"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\src\\pages\\api\\signals.ts": {
+    "mtime": 1778340402.3504055,
+    "hash": "55bab72989ed902cf7846ae5e8cde099"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\dashboard\\src\\pages\\api\\status.ts": {
+    "mtime": 1778340398.5224102,
+    "hash": "28050adefd6787bed4e5fe693f0a849e"
+  },
+  "C:\\Projects\\NarrativeOS\\AGENTS.md": {
+    "mtime": 1778339137.515224,
+    "hash": "4021c04faf2ff19aeed491675073aed0"
+  },
+  "C:\\Projects\\NarrativeOS\\API_CONTRACT.md": {
+    "mtime": 1778339137.5162244,
+    "hash": "b6cd009e4e07937e26367706dbdcb1d6"
+  },
+  "C:\\Projects\\NarrativeOS\\MEMBER_01_SENSORY.md": {
+    "mtime": 1778339137.5172231,
+    "hash": "2083fcc1520196b26551e4125844fcc8"
+  },
+  "C:\\Projects\\NarrativeOS\\MEMBER_02_COGNITIVE.md": {
+    "mtime": 1778339137.518223,
+    "hash": "97c42885f17f7161229b7093aeebb13d"
+  },
+  "C:\\Projects\\NarrativeOS\\MEMBER_03_PLATFORM.md": {
+    "mtime": 1778339137.518223,
+    "hash": "7fed51ad0710688f2346bc9dc885690c"
+  },
+  "C:\\Projects\\NarrativeOS\\TEAM_DIVISION.md": {
+    "mtime": 1778339137.519224,
+    "hash": "547bf2c7770f2b771f64e57e0088bd1d"
+  },
+  "C:\\Projects\\NarrativeOS\\agents\\requirements.txt": {
+    "mtime": 1778345134.2118573,
+    "hash": "a12c69ed43b58053984a0fda4daa53aa"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\README.md": {
+    "mtime": 1778339137.520224,
+    "hash": "9ad1b2e61b0baca1b7f56d70f4a91af6"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\requirements.txt": {
+    "mtime": 1778339137.5394828,
+    "hash": "be2b1b069d01e49dc0282108204d7f13"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\actors\\news-scraper\\requirements.txt": {
+    "mtime": 1778339137.5253758,
+    "hash": "af1a2fe462150dd2cf1e6d9a4f6a1b50"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\actors\\reddit-scraper\\requirements.txt": {
+    "mtime": 1778339137.5298977,
+    "hash": "efbb2ebda1b2a9329752cbc53d8f5e2a"
+  },
+  "C:\\Projects\\NarrativeOS\\data\\actors\\sec-scraper\\requirements.txt": {
+    "mtime": 1778339137.535448,
+    "hash": "168a29cb7d32ab4261b5c08a8c3d7c0c"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\deploy\\docker-compose.yml": {
+    "mtime": 1778349336.295976,
+    "hash": "5a520e5d856cac7ac43426d57c8ab0a2"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\superplane\\canvases\\01-ingress.yaml": {
+    "mtime": 1778340125.5634482,
+    "hash": "9a85adaaf5935652f0fe2cdb5a89595d"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\superplane\\canvases\\02-analysis.yaml": {
+    "mtime": 1778340160.1169484,
+    "hash": "e1d4d4cf990e8b6325ac5f1e9e6847ae"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\superplane\\canvases\\03-execution.yaml": {
+    "mtime": 1778340194.4683502,
+    "hash": "2d3243a73cd0b2bf2064bc2cdf5f84fa"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\superplane\\components\\github-integration.yaml": {
+    "mtime": 1778344201.2753527,
+    "hash": "a481812a48ef008e5889ea2bbcec0fb7"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\superplane\\components\\pagerduty-notifier.yaml": {
+    "mtime": 1778340217.1327977,
+    "hash": "e6fb9c555e2c4759869e342ed71d9f02"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\superplane\\components\\prometheus-metrics.yaml": {
+    "mtime": 1778340411.7784758,
+    "hash": "daa2eaafb3bea66f2e982eda590f0a64"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\superplane\\components\\slack-notifier.yaml": {
+    "mtime": 1778340210.5846767,
+    "hash": "478a876c8a4278c863cf68d12b390b38"
+  },
+  "C:\\Projects\\NarrativeOS\\infra\\superplane\\secrets\\rbac.yaml": {
+    "mtime": 1778340224.5310278,
+    "hash": "417f6c4c5dc9fe70116c24b76cd8440b"
   }
 }

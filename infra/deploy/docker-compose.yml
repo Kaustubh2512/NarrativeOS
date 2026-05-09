@@ -1,0 +1,163 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: narrativeos
+      POSTGRES_USER: narrativeos
+      POSTGRES_PASSWORD: ${NARRATIVEOS_DB_PASSWORD:-changeme}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U narrativeos"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  superplane:
+    image: ghcr.io/superplanehq/superplane:v0.19.0
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DB_USERNAME: narrativeos
+      DB_PASSWORD: ${NARRATIVEOS_DB_PASSWORD:-changeme}
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_NAME: narrativeos
+      APPLICATION_NAME: NarrativeOS
+      POSTGRES_DB_SSL: "false"
+      SUPERPLANE_SECRET_KEY: ${NARRATIVEOS_SUPERPLANE_SECRET_KEY}
+      SUPERPLANE_ENCRYPTION_KEY: ${NARRATIVEOS_ENCRYPTION_KEY}
+      SUPERPLANE_EXTERNAL_URL: ${NARRATIVEOS_SUPERPLANE_EXTERNAL_URL:-http://localhost:3000}
+      SUPERPLANE_ALLOWED_ORIGINS: ${NARRATIVEOS_ALLOWED_ORIGINS:-http://localhost:3000}
+      SUPERPLANE_LOG_LEVEL: ${NARRATIVEOS_LOG_LEVEL:-info}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./superplane/canvases:/etc/superplane/canvases:ro
+      - ./superplane/components:/etc/superplane/components:ro
+      - ./superplane/secrets:/etc/superplane/secrets:ro
+
+  dashboard:
+    build:
+      context: ../dashboard
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    environment:
+      NEXT_PUBLIC_SUPERPLANE_URL: ${NEXT_PUBLIC_SUPERPLANE_URL:-http://superplane:3000}
+      NEXT_PUBLIC_API_URL: ${NARRATIVEOS_API_URL:-http://visualization-agent:8001}
+    depends_on:
+      - superplane
+      - visualization-agent
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:5173"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  market-correlation-agent:
+    build:
+      context: ../..
+      dockerfile: agents/Dockerfile
+      args:
+        AGENT_MODULE: agents.market_correlation.app
+        AGENT_PORT: 8002
+    restart: unless-stopped
+    ports:
+      - "8002:8002"
+    environment:
+      AGENT_PORT: 8002
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8002/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  risk-agent:
+    build:
+      context: ../..
+      dockerfile: agents/Dockerfile
+      args:
+        AGENT_MODULE: agents.risk_intelligence.app
+        AGENT_PORT: 8003
+    restart: unless-stopped
+    ports:
+      - "8003:8003"
+    environment:
+      AGENT_PORT: 8003
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8003/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  strategy-agent:
+    build:
+      context: ../..
+      dockerfile: agents/Dockerfile
+      args:
+        AGENT_MODULE: agents.strategy_agent.app
+        AGENT_PORT: 8004
+    restart: unless-stopped
+    ports:
+      - "8004:8004"
+    environment:
+      AGENT_PORT: 8004
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8004/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  execution-api:
+    build:
+      context: ../..
+      dockerfile: agents/Dockerfile
+      args:
+        AGENT_MODULE: agents.execution_api.app
+        AGENT_PORT: 8005
+    restart: unless-stopped
+    ports:
+      - "8005:8005"
+    environment:
+      AGENT_PORT: 8005
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8005/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  visualization-agent:
+    build:
+      context: ../..
+      dockerfile: agents/Dockerfile
+      args:
+        AGENT_MODULE: agents.visualization_agent.app
+        AGENT_PORT: 8001
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    environment:
+      AGENT_PORT: 8001
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8001/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  pgdata:

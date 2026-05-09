@@ -1,0 +1,42 @@
+# =============================================================================
+# NarrativeOS — Slack Notifier Component
+# Used by: Ingress, Analysis, and Execution canvases
+# =============================================================================
+apiVersion: superplane.io/v1
+kind: Component
+metadata:
+  name: slack-notifier
+  title: "Slack Notifier"
+  description: "Sends pipeline event notifications to Slack channels"
+  tags: [notification, slack, alerting]
+spec:
+  type: slack
+  config:
+    webhook_url_env: NARRATIVEOS_SLACK_WEBHOOK_URL
+    default_channel: "#narrativeos-pipelines"
+    icon_emoji: ":narrativeos:"
+    username: "NarrativeOS Bot"
+
+  channels:
+    - name: "#narrativeos-pipelines"
+      description: "Pipeline status and completion notifications"
+      events: [ingest_complete, analysis_complete, execution_complete]
+
+    - name: "#narrativeos-signals"
+      description: "BUY/SELL/HOLD/WATCHLIST signal alerts"
+      events: [signal_generated]
+
+    - name: "#narrativeos-alerts"
+      description: "Critical failures and incidents"
+      events: [pipeline_failure, critical_error]
+
+  message_templates:
+    success:
+      color: "#36a64f"
+      emoji: "✅"
+    warning:
+      color: "#ffcc00"
+      emoji: "⚠️"
+    critical:
+      color: "#ff0000"
+      emoji: "🚨"
