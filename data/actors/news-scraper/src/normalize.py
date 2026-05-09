@@ -40,12 +40,9 @@ def build_event_id(source: str, url: str) -> str:
 
 def normalize_article(article: dict[str, Any]) -> dict[str, Any]:
     text = f"{article.get('title', '')} {article.get('body', '')} {article.get('summary', '')}"
-    from urllib.parse import urlparse
-    domain = urlparse(article.get("url", "")).netloc.lower().replace("www.", "").replace("feeds.", "")
-    source_name = domain.split(".")[0] if domain else "news"
     return {
         "id": build_event_id("news", article.get("url", article.get("link", ""))),
-        "source": article.get("source_name", source_name),
+        "source": "news",
         "source_actor": "narrativeos-news-scraper",
         "title": article.get("title", ""),
         "body": article.get("body", article.get("summary", "")),
