@@ -3,12 +3,11 @@ from __future__ import annotations
 import logging
 from contextlib import asynccontextmanager
 
-import httpx
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from agents.graph.workflow import run_analysis
-from agents.models import AnalysisSignal, NarrativeEvent, NarrativeEventBatch
+from agents.models import AnalysisSignal, NarrativeEventBatch
 
 logger = logging.getLogger("narrativeos.webhooks")
 
