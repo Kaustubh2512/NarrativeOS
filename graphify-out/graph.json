@@ -1,0 +1,1738 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "TEAM_DIVISION.md",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L1",
+      "id": "team_division_md",
+      "community": 1,
+      "norm_label": "team_division.md"
+    },
+    {
+      "label": "NarrativeOS Team Work Division",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L1",
+      "id": "narrativeos_team_division_narrativeos_team_work_division",
+      "community": 1,
+      "norm_label": "narrativeos team work division"
+    },
+    {
+      "label": "\ud83c\udfd7\ufe0f Team Responsibilities (3 Members)",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L7",
+      "id": "narrativeos_team_division_team_responsibilities_3_members",
+      "community": 1,
+      "norm_label": "\ud83c\udfd7\ufe0f team responsibilities (3 members)"
+    },
+    {
+      "label": "\ud83d\udc64 Member 1: The Sensory Lead",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L9",
+      "id": "narrativeos_team_division_member_1_the_sensory_lead",
+      "community": 1,
+      "norm_label": "\ud83d\udc64 member 1: the sensory lead"
+    },
+    {
+      "label": "\ud83d\udc64 Member 2: The Cognitive Lead",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L18",
+      "id": "narrativeos_team_division_member_2_the_cognitive_lead",
+      "community": 1,
+      "norm_label": "\ud83d\udc64 member 2: the cognitive lead"
+    },
+    {
+      "label": "\ud83d\udc64 Member 3: The Platform Lead",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L27",
+      "id": "narrativeos_team_division_member_3_the_platform_lead",
+      "community": 1,
+      "norm_label": "\ud83d\udc64 member 3: the platform lead"
+    },
+    {
+      "label": "\ud83e\udd16 Shared Accelerator: GitHub Copilot",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L38",
+      "id": "narrativeos_team_division_shared_accelerator_github_copilot",
+      "community": 1,
+      "norm_label": "\ud83e\udd16 shared accelerator: github copilot"
+    },
+    {
+      "label": "\ud83e\udd16 AI-Accelerated Development",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L47",
+      "id": "narrativeos_team_division_ai_accelerated_development",
+      "community": 1,
+      "norm_label": "\ud83e\udd16 ai-accelerated development"
+    },
+    {
+      "label": "\ud83d\udcc2 Project Structure Proposal",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L57",
+      "id": "narrativeos_team_division_project_structure_proposal",
+      "community": 1,
+      "norm_label": "\ud83d\udcc2 project structure proposal"
+    },
+    {
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "id": "agents_md",
+      "community": 0,
+      "norm_label": "agents.md"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "id": "narrativeos_agents_graphify",
+      "community": 0,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "Team Roles & Tool Core",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L11",
+      "id": "narrativeos_agents_team_roles_tool_core",
+      "community": 0,
+      "norm_label": "team roles & tool core"
+    },
+    {
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L33",
+      "id": "narrativeos_agents_agents_md",
+      "community": 0,
+      "norm_label": "agents.md"
+    },
+    {
+      "label": "NarrativeOS",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L35",
+      "id": "narrativeos_agents_narrativeos",
+      "community": 0,
+      "norm_label": "narrativeos"
+    },
+    {
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L41",
+      "id": "narrativeos_agents_overview",
+      "community": 0,
+      "norm_label": "overview"
+    },
+    {
+      "label": "Core Objectives",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L76",
+      "id": "narrativeos_agents_core_objectives",
+      "community": 0,
+      "norm_label": "core objectives"
+    },
+    {
+      "label": "High-Level System Architecture",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L91",
+      "id": "narrativeos_agents_high_level_system_architecture",
+      "community": 0,
+      "norm_label": "high-level system architecture"
+    },
+    {
+      "label": "code:text (Apify Actors)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L93",
+      "id": "narrativeos_agents_codeblock_1",
+      "community": 0,
+      "norm_label": "code:text (apify actors)"
+    },
+    {
+      "label": "Sponsor Technology Integration",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L111",
+      "id": "narrativeos_agents_sponsor_technology_integration",
+      "community": 9,
+      "norm_label": "sponsor technology integration"
+    },
+    {
+      "label": "Zynd AI",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L113",
+      "id": "narrativeos_agents_zynd_ai",
+      "community": 9,
+      "norm_label": "zynd ai"
+    },
+    {
+      "label": "Apify",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L135",
+      "id": "narrativeos_agents_apify",
+      "community": 9,
+      "norm_label": "apify"
+    },
+    {
+      "label": "Superplane",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L160",
+      "id": "narrativeos_agents_superplane",
+      "community": 9,
+      "norm_label": "superplane"
+    },
+    {
+      "label": "GitHub Copilot",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L178",
+      "id": "narrativeos_agents_github_copilot",
+      "community": 9,
+      "norm_label": "github copilot"
+    },
+    {
+      "label": "Agent Mesh Architecture",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L190",
+      "id": "narrativeos_agents_agent_mesh_architecture",
+      "community": 0,
+      "norm_label": "agent mesh architecture"
+    },
+    {
+      "label": "Agent Registry Layer",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L211",
+      "id": "narrativeos_agents_agent_registry_layer",
+      "community": 0,
+      "norm_label": "agent registry layer"
+    },
+    {
+      "label": "Agent Topology",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L227",
+      "id": "narrativeos_agents_agent_topology",
+      "community": 2,
+      "norm_label": "agent topology"
+    },
+    {
+      "label": "1. Data Acquisition Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L229",
+      "id": "narrativeos_agents_1_data_acquisition_agent",
+      "community": 10,
+      "norm_label": "1. data acquisition agent"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L231",
+      "id": "narrativeos_agents_responsibility",
+      "community": 10,
+      "norm_label": "responsibility"
+    },
+    {
+      "label": "Sources",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L235",
+      "id": "narrativeos_agents_sources",
+      "community": 10,
+      "norm_label": "sources"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L245",
+      "id": "narrativeos_agents_infrastructure",
+      "community": 10,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "Outputs",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L252",
+      "id": "narrativeos_agents_outputs",
+      "community": 10,
+      "norm_label": "outputs"
+    },
+    {
+      "label": "2. Narrative Intelligence Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L266",
+      "id": "narrativeos_agents_2_narrative_intelligence_agent",
+      "community": 6,
+      "norm_label": "2. narrative intelligence agent"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L268",
+      "id": "narrativeos_agents_responsibility_268",
+      "community": 6,
+      "norm_label": "responsibility"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L272",
+      "id": "narrativeos_agents_tasks",
+      "community": 6,
+      "norm_label": "tasks"
+    },
+    {
+      "label": "Outputs",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L281",
+      "id": "narrativeos_agents_outputs_281",
+      "community": 6,
+      "norm_label": "outputs"
+    },
+    {
+      "label": "3. Sentiment Reasoning Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L293",
+      "id": "narrativeos_agents_3_sentiment_reasoning_agent",
+      "community": 3,
+      "norm_label": "3. sentiment reasoning agent"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L295",
+      "id": "narrativeos_agents_responsibility_295",
+      "community": 3,
+      "norm_label": "responsibility"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L299",
+      "id": "narrativeos_agents_tasks_299",
+      "community": 3,
+      "norm_label": "tasks"
+    },
+    {
+      "label": "Outputs",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L307",
+      "id": "narrativeos_agents_outputs_307",
+      "community": 3,
+      "norm_label": "outputs"
+    },
+    {
+      "label": "4. Market Correlation Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L318",
+      "id": "narrativeos_agents_4_market_correlation_agent",
+      "community": 7,
+      "norm_label": "4. market correlation agent"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L320",
+      "id": "narrativeos_agents_responsibility_320",
+      "community": 7,
+      "norm_label": "responsibility"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L324",
+      "id": "narrativeos_agents_tasks_324",
+      "community": 7,
+      "norm_label": "tasks"
+    },
+    {
+      "label": "Example",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L332",
+      "id": "narrativeos_agents_example",
+      "community": 7,
+      "norm_label": "example"
+    },
+    {
+      "label": "5. Debate Agent System",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L347",
+      "id": "narrativeos_agents_5_debate_agent_system",
+      "community": 2,
+      "norm_label": "5. debate agent system"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L349",
+      "id": "narrativeos_agents_responsibility_349",
+      "community": 2,
+      "norm_label": "responsibility"
+    },
+    {
+      "label": "Components",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L353",
+      "id": "narrativeos_agents_components",
+      "community": 11,
+      "norm_label": "components"
+    },
+    {
+      "label": "Bull Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L355",
+      "id": "narrativeos_agents_bull_agent",
+      "community": 11,
+      "norm_label": "bull agent"
+    },
+    {
+      "label": "Bear Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L359",
+      "id": "narrativeos_agents_bear_agent",
+      "community": 11,
+      "norm_label": "bear agent"
+    },
+    {
+      "label": "Neutral Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L363",
+      "id": "narrativeos_agents_neutral_agent",
+      "community": 11,
+      "norm_label": "neutral agent"
+    },
+    {
+      "label": "Arbiter Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L367",
+      "id": "narrativeos_agents_arbiter_agent",
+      "community": 11,
+      "norm_label": "arbiter agent"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L371",
+      "id": "narrativeos_agents_goal",
+      "community": 2,
+      "norm_label": "goal"
+    },
+    {
+      "label": "6. Risk Intelligence Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L377",
+      "id": "narrativeos_agents_6_risk_intelligence_agent",
+      "community": 4,
+      "norm_label": "6. risk intelligence agent"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L379",
+      "id": "narrativeos_agents_responsibility_379",
+      "community": 4,
+      "norm_label": "responsibility"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L383",
+      "id": "narrativeos_agents_tasks_383",
+      "community": 4,
+      "norm_label": "tasks"
+    },
+    {
+      "label": "Outputs",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L391",
+      "id": "narrativeos_agents_outputs_391",
+      "community": 4,
+      "norm_label": "outputs"
+    },
+    {
+      "label": "7. Strategy Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L397",
+      "id": "narrativeos_agents_7_strategy_agent",
+      "community": 5,
+      "norm_label": "7. strategy agent"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L399",
+      "id": "narrativeos_agents_responsibility_399",
+      "community": 5,
+      "norm_label": "responsibility"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L403",
+      "id": "narrativeos_agents_tasks_403",
+      "community": 5,
+      "norm_label": "tasks"
+    },
+    {
+      "label": "Outputs",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L411",
+      "id": "narrativeos_agents_outputs_411",
+      "community": 5,
+      "norm_label": "outputs"
+    },
+    {
+      "label": "8. Visualization Agent",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L427",
+      "id": "narrativeos_agents_8_visualization_agent",
+      "community": 2,
+      "norm_label": "8. visualization agent"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L429",
+      "id": "narrativeos_agents_responsibility_429",
+      "community": 2,
+      "norm_label": "responsibility"
+    },
+    {
+      "label": "Features",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L433",
+      "id": "narrativeos_agents_features",
+      "community": 2,
+      "norm_label": "features"
+    },
+    {
+      "label": "Frontend Stack",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L443",
+      "id": "narrativeos_agents_frontend_stack",
+      "community": 2,
+      "norm_label": "frontend stack"
+    },
+    {
+      "label": "Agent Communication Model",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L452",
+      "id": "narrativeos_agents_agent_communication_model",
+      "community": 0,
+      "norm_label": "agent communication model"
+    },
+    {
+      "label": "Workflow Orchestration",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L475",
+      "id": "narrativeos_agents_workflow_orchestration",
+      "community": 0,
+      "norm_label": "workflow orchestration"
+    },
+    {
+      "label": "TradingAgents Integration",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L496",
+      "id": "narrativeos_agents_tradingagents_integration",
+      "community": 0,
+      "norm_label": "tradingagents integration"
+    },
+    {
+      "label": "Tech Stack",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L517",
+      "id": "narrativeos_agents_tech_stack",
+      "community": 8,
+      "norm_label": "tech stack"
+    },
+    {
+      "label": "Backend",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L519",
+      "id": "narrativeos_agents_backend",
+      "community": 8,
+      "norm_label": "backend"
+    },
+    {
+      "label": "AI and Agent Infrastructure",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L525",
+      "id": "narrativeos_agents_ai_and_agent_infrastructure",
+      "community": 8,
+      "norm_label": "ai and agent infrastructure"
+    },
+    {
+      "label": "Workflow Infrastructure",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L531",
+      "id": "narrativeos_agents_workflow_infrastructure",
+      "community": 8,
+      "norm_label": "workflow infrastructure"
+    },
+    {
+      "label": "Internet Intelligence Layer",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L535",
+      "id": "narrativeos_agents_internet_intelligence_layer",
+      "community": 8,
+      "norm_label": "internet intelligence layer"
+    },
+    {
+      "label": "Frontend",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L543",
+      "id": "narrativeos_agents_frontend",
+      "community": 8,
+      "norm_label": "frontend"
+    },
+    {
+      "label": "Long-Term Vision",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L553",
+      "id": "narrativeos_agents_long_term_vision",
+      "community": 0,
+      "norm_label": "long-term vision"
+    },
+    {
+      "label": "\ud83c\udfd7\ufe0f Core Pillars",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L7",
+      "community": 1,
+      "norm_label": "\ud83c\udfd7\ufe0f core pillars",
+      "id": "narrativeos_team_division_core_pillars"
+    },
+    {
+      "label": "1. Data & Automation Lead (Member A)",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L9",
+      "community": 1,
+      "norm_label": "1. data & automation lead (member a)",
+      "id": "narrativeos_team_division_1_data_automation_lead_member_a"
+    },
+    {
+      "label": "2. Agent Systems & Logic Architect (Member B)",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L19",
+      "community": 1,
+      "norm_label": "2. agent systems & logic architect (member b)",
+      "id": "narrativeos_team_division_2_agent_systems_logic_architect_member_b"
+    },
+    {
+      "label": "3. Infrastructure & Platform Lead (Member C)",
+      "file_type": "document",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L29",
+      "community": 1,
+      "norm_label": "3. infrastructure & platform lead (member c)",
+      "id": "narrativeos_team_division_3_infrastructure_platform_lead_member_c"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L247",
+      "community": 6,
+      "norm_label": "responsibility",
+      "id": "narrativeos_agents_responsibility_247"
+    },
+    {
+      "label": "Outputs",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L260",
+      "community": 6,
+      "norm_label": "outputs",
+      "id": "narrativeos_agents_outputs_260"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L274",
+      "community": 3,
+      "norm_label": "responsibility",
+      "id": "narrativeos_agents_responsibility_274"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L278",
+      "community": 3,
+      "norm_label": "tasks",
+      "id": "narrativeos_agents_tasks_278"
+    },
+    {
+      "label": "Outputs",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L286",
+      "community": 3,
+      "norm_label": "outputs",
+      "id": "narrativeos_agents_outputs_286"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L299",
+      "community": 7,
+      "norm_label": "responsibility",
+      "id": "narrativeos_agents_responsibility_299"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L303",
+      "community": 7,
+      "norm_label": "tasks",
+      "id": "narrativeos_agents_tasks_303"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L328",
+      "community": 2,
+      "norm_label": "responsibility",
+      "id": "narrativeos_agents_responsibility_328"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L358",
+      "community": 4,
+      "norm_label": "responsibility",
+      "id": "narrativeos_agents_responsibility_358"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L362",
+      "community": 4,
+      "norm_label": "tasks",
+      "id": "narrativeos_agents_tasks_362"
+    },
+    {
+      "label": "Outputs",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L370",
+      "community": 4,
+      "norm_label": "outputs",
+      "id": "narrativeos_agents_outputs_370"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L378",
+      "community": 5,
+      "norm_label": "responsibility",
+      "id": "narrativeos_agents_responsibility_378"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L382",
+      "community": 5,
+      "norm_label": "tasks",
+      "id": "narrativeos_agents_tasks_382"
+    },
+    {
+      "label": "Outputs",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L390",
+      "community": 5,
+      "norm_label": "outputs",
+      "id": "narrativeos_agents_outputs_390"
+    },
+    {
+      "label": "Responsibility",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L408",
+      "community": 2,
+      "norm_label": "responsibility",
+      "id": "narrativeos_agents_responsibility_408"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "team_division_md",
+      "target": "narrativeos_team_division_narrativeos_team_work_division"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "narrativeos_team_division_narrativeos_team_work_division",
+      "target": "narrativeos_team_division_team_responsibilities_3_members",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "narrativeos_team_division_narrativeos_team_work_division",
+      "target": "narrativeos_team_division_shared_accelerator_github_copilot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_team_division_narrativeos_team_work_division",
+      "target": "narrativeos_team_division_ai_accelerated_development"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_team_division_narrativeos_team_work_division",
+      "target": "narrativeos_team_division_project_structure_proposal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_team_division_narrativeos_team_work_division",
+      "target": "narrativeos_team_division_core_pillars"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "narrativeos_team_division_team_responsibilities_3_members",
+      "target": "narrativeos_team_division_member_1_the_sensory_lead",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "narrativeos_team_division_team_responsibilities_3_members",
+      "target": "narrativeos_team_division_member_2_the_cognitive_lead",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "narrativeos_team_division_team_responsibilities_3_members",
+      "target": "narrativeos_team_division_member_3_the_platform_lead",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_team_roles_tool_core",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_agents_md"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_narrativeos"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_core_objectives"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_high_level_system_architecture"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_sponsor_technology_integration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L169",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_agent_mesh_architecture"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L190",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_agent_registry_layer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L206",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_agent_topology"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L431",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_agent_communication_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L454",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_workflow_orchestration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L475",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_tradingagents_integration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L496",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_tech_stack"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L532",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "narrativeos_agents_long_term_vision"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_high_level_system_architecture",
+      "target": "narrativeos_agents_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_sponsor_technology_integration",
+      "target": "narrativeos_agents_zynd_ai"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_sponsor_technology_integration",
+      "target": "narrativeos_agents_apify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_sponsor_technology_integration",
+      "target": "narrativeos_agents_superplane"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L157",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_sponsor_technology_integration",
+      "target": "narrativeos_agents_github_copilot"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L208",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_agent_topology",
+      "target": "narrativeos_agents_1_data_acquisition_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L245",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_agent_topology",
+      "target": "narrativeos_agents_2_narrative_intelligence_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L272",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_agent_topology",
+      "target": "narrativeos_agents_3_sentiment_reasoning_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L297",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_agent_topology",
+      "target": "narrativeos_agents_4_market_correlation_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L326",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_agent_topology",
+      "target": "narrativeos_agents_5_debate_agent_system"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L356",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_agent_topology",
+      "target": "narrativeos_agents_6_risk_intelligence_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L376",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_agent_topology",
+      "target": "narrativeos_agents_7_strategy_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L406",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_agent_topology",
+      "target": "narrativeos_agents_8_visualization_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L210",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_1_data_acquisition_agent",
+      "target": "narrativeos_agents_responsibility"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L214",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_1_data_acquisition_agent",
+      "target": "narrativeos_agents_sources"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L224",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_1_data_acquisition_agent",
+      "target": "narrativeos_agents_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L231",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_1_data_acquisition_agent",
+      "target": "narrativeos_agents_outputs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L268",
+      "weight": 1.0,
+      "source": "narrativeos_agents_2_narrative_intelligence_agent",
+      "target": "narrativeos_agents_responsibility_268",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L251",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_2_narrative_intelligence_agent",
+      "target": "narrativeos_agents_tasks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L281",
+      "weight": 1.0,
+      "source": "narrativeos_agents_2_narrative_intelligence_agent",
+      "target": "narrativeos_agents_outputs_281",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L247",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_2_narrative_intelligence_agent",
+      "target": "narrativeos_agents_responsibility_247"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L260",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_2_narrative_intelligence_agent",
+      "target": "narrativeos_agents_outputs_260"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L295",
+      "weight": 1.0,
+      "source": "narrativeos_agents_3_sentiment_reasoning_agent",
+      "target": "narrativeos_agents_responsibility_295",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L299",
+      "weight": 1.0,
+      "source": "narrativeos_agents_3_sentiment_reasoning_agent",
+      "target": "narrativeos_agents_tasks_299",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L307",
+      "weight": 1.0,
+      "source": "narrativeos_agents_3_sentiment_reasoning_agent",
+      "target": "narrativeos_agents_outputs_307",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L274",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_3_sentiment_reasoning_agent",
+      "target": "narrativeos_agents_responsibility_274"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L278",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_3_sentiment_reasoning_agent",
+      "target": "narrativeos_agents_tasks_278"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L286",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_3_sentiment_reasoning_agent",
+      "target": "narrativeos_agents_outputs_286"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L320",
+      "weight": 1.0,
+      "source": "narrativeos_agents_4_market_correlation_agent",
+      "target": "narrativeos_agents_responsibility_320",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L324",
+      "weight": 1.0,
+      "source": "narrativeos_agents_4_market_correlation_agent",
+      "target": "narrativeos_agents_tasks_324",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L311",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_4_market_correlation_agent",
+      "target": "narrativeos_agents_example"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L299",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_4_market_correlation_agent",
+      "target": "narrativeos_agents_responsibility_299"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L303",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_4_market_correlation_agent",
+      "target": "narrativeos_agents_tasks_303"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L349",
+      "weight": 1.0,
+      "source": "narrativeos_agents_5_debate_agent_system",
+      "target": "narrativeos_agents_responsibility_349",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L332",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_5_debate_agent_system",
+      "target": "narrativeos_agents_components"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L350",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_5_debate_agent_system",
+      "target": "narrativeos_agents_goal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L328",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_5_debate_agent_system",
+      "target": "narrativeos_agents_responsibility_328"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L334",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_components",
+      "target": "narrativeos_agents_bull_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L338",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_components",
+      "target": "narrativeos_agents_bear_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L342",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_components",
+      "target": "narrativeos_agents_neutral_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L346",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_components",
+      "target": "narrativeos_agents_arbiter_agent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L379",
+      "weight": 1.0,
+      "source": "narrativeos_agents_6_risk_intelligence_agent",
+      "target": "narrativeos_agents_responsibility_379",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L383",
+      "weight": 1.0,
+      "source": "narrativeos_agents_6_risk_intelligence_agent",
+      "target": "narrativeos_agents_tasks_383",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L391",
+      "weight": 1.0,
+      "source": "narrativeos_agents_6_risk_intelligence_agent",
+      "target": "narrativeos_agents_outputs_391",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L358",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_6_risk_intelligence_agent",
+      "target": "narrativeos_agents_responsibility_358"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L362",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_6_risk_intelligence_agent",
+      "target": "narrativeos_agents_tasks_362"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L370",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_6_risk_intelligence_agent",
+      "target": "narrativeos_agents_outputs_370"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L399",
+      "weight": 1.0,
+      "source": "narrativeos_agents_7_strategy_agent",
+      "target": "narrativeos_agents_responsibility_399",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L403",
+      "weight": 1.0,
+      "source": "narrativeos_agents_7_strategy_agent",
+      "target": "narrativeos_agents_tasks_403",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L411",
+      "weight": 1.0,
+      "source": "narrativeos_agents_7_strategy_agent",
+      "target": "narrativeos_agents_outputs_411",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L378",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_7_strategy_agent",
+      "target": "narrativeos_agents_responsibility_378"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L382",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_7_strategy_agent",
+      "target": "narrativeos_agents_tasks_382"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L390",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_7_strategy_agent",
+      "target": "narrativeos_agents_outputs_390"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L429",
+      "weight": 1.0,
+      "source": "narrativeos_agents_8_visualization_agent",
+      "target": "narrativeos_agents_responsibility_429",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L412",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_8_visualization_agent",
+      "target": "narrativeos_agents_features"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L422",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_8_visualization_agent",
+      "target": "narrativeos_agents_frontend_stack"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L408",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_8_visualization_agent",
+      "target": "narrativeos_agents_responsibility_408"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L498",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_tech_stack",
+      "target": "narrativeos_agents_backend"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L504",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_tech_stack",
+      "target": "narrativeos_agents_ai_and_agent_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L510",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_tech_stack",
+      "target": "narrativeos_agents_workflow_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L514",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_tech_stack",
+      "target": "narrativeos_agents_internet_intelligence_layer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L522",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_agents_tech_stack",
+      "target": "narrativeos_agents_frontend"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_team_division_core_pillars",
+      "target": "narrativeos_team_division_1_data_automation_lead_member_a"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_team_division_core_pillars",
+      "target": "narrativeos_team_division_2_agent_systems_logic_architect_member_b"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TEAM_DIVISION.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "narrativeos_team_division_core_pillars",
+      "target": "narrativeos_team_division_3_infrastructure_platform_lead_member_c"
+    }
+  ],
+  "hyperedges": []
+}
