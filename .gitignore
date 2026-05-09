@@ -37,3 +37,7 @@ env/
 # OS files
 .DS_Store
 Thumbs.db
+.venv/
+
+# Graphify cache (auto-generated)
+graphify-out/cache/

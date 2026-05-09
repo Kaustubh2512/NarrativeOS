@@ -1,0 +1,30 @@
+{
+  "title": "SEC Filing Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tickers": {
+      "title": "Ticker Symbols",
+      "type": "array",
+      "description": "Ticker symbols to fetch filings for",
+      "prefill": ["NVDA", "AMD", "AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA"],
+      "editor": "stringList"
+    },
+    "form_types": {
+      "title": "Form Types",
+      "type": "array",
+      "description": "SEC form types to fetch",
+      "prefill": ["10-K", "10-Q", "8-K"],
+      "editor": "stringList"
+    },
+    "max_filings": {
+      "title": "Max Filings per Ticker",
+      "type": "integer",
+      "description": "Maximum filings to fetch per ticker",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 20
+    }
+  },
+  "required": []
+}

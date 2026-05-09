@@ -1,0 +1,5 @@
+apify
+feedparser
+httpx
+beautifulsoup4
+lxml

@@ -1,0 +1,44 @@
+{
+  "title": "Reddit Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "subreddits": {
+      "title": "Subreddits",
+      "type": "array",
+      "description": "Subreddits to scrape",
+      "prefill": ["wallstreetbets", "investing", "stocks"],
+      "editor": "stringList"
+    },
+    "max_posts": {
+      "title": "Max Posts per Subreddit",
+      "type": "integer",
+      "description": "Maximum posts to collect per subreddit",
+      "default": 25,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "sort": {
+      "title": "Sort Order",
+      "type": "string",
+      "description": "Reddit sort order",
+      "enum": ["hot", "new", "top", "rising"],
+      "default": "new"
+    },
+    "time_filter": {
+      "title": "Time Filter",
+      "type": "string",
+      "description": "Time range for top posts",
+      "enum": ["hour", "day", "week", "month", "year", "all"],
+      "default": "day"
+    },
+    "mode": {
+      "title": "Scraping Mode",
+      "type": "string",
+      "description": "Use Reddit API (PRAW) or web scraping (Playwright)",
+      "enum": ["api", "playwright"],
+      "default": "playwright"
+    }
+  },
+  "required": []
+}

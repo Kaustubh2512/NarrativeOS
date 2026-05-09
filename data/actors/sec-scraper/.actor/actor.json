@@ -1,0 +1,23 @@
+{
+  "actorSpecification": 1,
+  "name": "narrativeos-sec-scraper",
+  "version": "0.1",
+  "buildTag": "latest",
+  "title": "NarrativeOS SEC Filing Scraper",
+  "description": "Fetches SEC EDGAR filings (10-K, 10-Q, 8-K) for tracked tickers.",
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "events": {
+          "title": "NarrativeEvents",
+          "transformation": {
+            "fields": ["id", "source", "title", "ticker_mentions", "filing_date"]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "title": "News Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "rss_sources": {
+      "title": "RSS Feed URLs",
+      "type": "array",
+      "description": "RSS feed URLs to scrape",
+      "prefill": [
+        "https://feeds.content.dowjones.io/public/rss/markets",
+        "https://finance.yahoo.com/news/rssindex"
+      ],
+      "editor": "stringList"
+    },
+    "web_sources": {
+      "title": "Web Source URLs",
+      "type": "array",
+      "description": "Direct URLs to scrape with Playwright",
+      "prefill": [
+        "https://www.investing.com/news/stock-market-news",
+        "https://www.reuters.com/business/"
+      ],
+      "editor": "stringList"
+    },
+    "max_articles": {
+      "title": "Max Articles",
+      "type": "integer",
+      "description": "Maximum articles to collect",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 200
+    }
+  },
+  "required": []
+}
