@@ -1,6 +1,3 @@
 apify
-playwright
+feedparser
 httpx
-beautifulsoup4
-praw
-lxml

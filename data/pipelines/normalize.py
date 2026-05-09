@@ -39,7 +39,7 @@ def normalize_article(article: dict[str, Any]) -> dict[str, Any]:
     text = f"{article.get('title', '')} {article.get('body', '')} {article.get('summary', '')}"
     return {
         "id": build_event_id("news", article.get("url", article.get("link", ""))),
-        "source": article.get("source_name", "news"),
+        "source": "news",
         "source_actor": "narrativeos-news-scraper",
         "title": article.get("title", ""),
         "body": article.get("body", article.get("summary", "")),

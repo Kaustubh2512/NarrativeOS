@@ -32,13 +32,7 @@
       "enum": ["hour", "day", "week", "month", "year", "all"],
       "default": "day"
     },
-    "mode": {
-      "title": "Scraping Mode",
-      "type": "string",
-      "description": "Use Reddit API (PRAW) or web scraping (Playwright)",
-      "enum": ["api", "playwright"],
-      "default": "playwright"
-    }
+
   },
   "required": []
 }
