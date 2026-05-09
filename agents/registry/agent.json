@@ -1,0 +1,86 @@
+{
+  "namespace": "narrativeos.cognitive",
+  "version": "0.1.0",
+  "description": "NarrativeOS Cognitive Layer — Multi-agent reasoning mesh for financial narrative intelligence",
+  "agents": [
+    {
+      "name": "narrative-intelligence",
+      "fqan": "narrativeos.cognitive.narrative-intelligence",
+      "version": "0.1.0",
+      "description": "Detects emerging financial narratives, clusters topics, and tracks narrative momentum.",
+      "capabilities": ["topic_clustering", "narrative_segmentation", "entity_extraction", "momentum_tracking"],
+      "endpoints": {
+        "analyze": "/api/v1/agents/narrative-intelligence/analyze",
+        "health": "/api/v1/agents/narrative-intelligence/health"
+      }
+    },
+    {
+      "name": "sentiment-reasoning",
+      "fqan": "narrativeos.cognitive.sentiment-reasoning",
+      "version": "0.1.0",
+      "description": "Analyzes emotional direction, crowd psychology, and sentiment polarity from financial narratives.",
+      "capabilities": ["polarity_scoring", "emotional_intensity", "uncertainty_analysis", "crowd_sentiment"],
+      "endpoints": {
+        "analyze": "/api/v1/agents/sentiment-reasoning/analyze",
+        "health": "/api/v1/agents/sentiment-reasoning/health"
+      }
+    },
+    {
+      "name": "debate-bull",
+      "fqan": "narrativeos.cognitive.debate-bull",
+      "version": "0.1.0",
+      "description": "Argues the optimistic market case with fundamental and technical evidence.",
+      "capabilities": ["bull_case_construction", "fundamental_analysis", "technical_analysis"],
+      "endpoints": {
+        "debate": "/api/v1/agents/debate/bull",
+        "health": "/api/v1/agents/debate/bull/health"
+      }
+    },
+    {
+      "name": "debate-bear",
+      "fqan": "narrativeos.cognitive.debate-bear",
+      "version": "0.1.0",
+      "description": "Argues the pessimistic market case with risk-focused and contrarian evidence.",
+      "capabilities": ["bear_case_construction", "risk_analysis", "contrarian_signals"],
+      "endpoints": {
+        "debate": "/api/v1/agents/debate/bear",
+        "health": "/api/v1/agents/debate/bear/health"
+      }
+    },
+    {
+      "name": "debate-arbiter",
+      "fqan": "narrativeos.cognitive.debate-arbiter",
+      "version": "0.1.0",
+      "description": "Evaluates bull and bear arguments, identifies logical strengths, and delivers a final ruling.",
+      "capabilities": ["argument_evaluation", "consensus_building", "confidence_weighting"],
+      "endpoints": {
+        "arbitrate": "/api/v1/agents/debate/arbitrate",
+        "health": "/api/v1/agents/debate/arbiter/health"
+      }
+    },
+    {
+      "name": "risk-intelligence",
+      "fqan": "narrativeos.cognitive.risk-intelligence",
+      "version": "0.1.0",
+      "description": "Evaluates systemic uncertainty, misinformation risk, and signal reliability.",
+      "capabilities": ["anomaly_detection", "misinformation_analysis", "confidence_degradation", "volatility_forecasting"],
+      "endpoints": {
+        "assess": "/api/v1/agents/risk/assess",
+        "health": "/api/v1/agents/risk/health"
+      }
+    },
+    {
+      "name": "strategy",
+      "fqan": "narrativeos.cognitive.strategy",
+      "version": "0.1.0",
+      "description": "Generates final trading signals from synthesized multi-agent reasoning.",
+      "capabilities": ["signal_generation", "position_sizing", "confidence_weighted_ranking"],
+      "endpoints": {
+        "generate": "/api/v1/agents/strategy/generate",
+        "health": "/api/v1/agents/strategy/health"
+      }
+    }
+  ],
+  "heartbeat_interval_seconds": 30,
+  "liveness_endpoint": "/health"
+}
