@@ -62,6 +62,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Deploy via SSH
+        if: ${{ secrets.DEPLOY_HOST != '' }}
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.DEPLOY_HOST }}
@@ -75,6 +76,7 @@ jobs:
             docker system prune -f
 
       - name: Notify Slack on Deploy
+        if: ${{ secrets.SLACK_WEBHOOK_URL != '' }}
         uses: slackapi/slack-github-action@v1.26.0
         with:
           payload: |
