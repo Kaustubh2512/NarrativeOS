@@ -4,6 +4,681 @@
   "graph": {},
   "nodes": [
     {
+      "label": "models.py",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L1",
+      "id": "agents_models_py",
+      "community": 1,
+      "norm_label": "models.py"
+    },
+    {
+      "label": "Direction",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L11",
+      "id": "agents_models_direction",
+      "community": 1,
+      "norm_label": "direction"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "str",
+      "community": 1,
+      "norm_label": "str"
+    },
+    {
+      "label": "Enum",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "enum",
+      "community": 1,
+      "norm_label": "enum"
+    },
+    {
+      "label": "SourceType",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L18",
+      "id": "agents_models_sourcetype",
+      "community": 1,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "Entity",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L26",
+      "id": "agents_models_entity",
+      "community": 1,
+      "norm_label": "entity"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basemodel",
+      "community": 1,
+      "norm_label": "basemodel"
+    },
+    {
+      "label": "NarrativeEvent",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L32",
+      "id": "agents_models_narrativeevent",
+      "community": 1,
+      "norm_label": "narrativeevent"
+    },
+    {
+      "label": "NarrativeEventBatch",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L48",
+      "id": "agents_models_narrativeeventbatch",
+      "community": 1,
+      "norm_label": "narrativeeventbatch"
+    },
+    {
+      "label": "TopicCluster",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L53",
+      "id": "agents_models_topiccluster",
+      "community": 1,
+      "norm_label": "topiccluster"
+    },
+    {
+      "label": "SentimentVector",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L64",
+      "id": "agents_models_sentimentvector",
+      "community": 1,
+      "norm_label": "sentimentvector"
+    },
+    {
+      "label": "DebatePosition",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L72",
+      "id": "agents_models_debateposition",
+      "community": 1,
+      "norm_label": "debateposition"
+    },
+    {
+      "label": "DebateRound",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L79",
+      "id": "agents_models_debateround",
+      "community": 1,
+      "norm_label": "debateround"
+    },
+    {
+      "label": "DebateSummary",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L85",
+      "id": "agents_models_debatesummary",
+      "community": 1,
+      "norm_label": "debatesummary"
+    },
+    {
+      "label": "AnalysisSignal",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L92",
+      "id": "agents_models_analysissignal",
+      "community": 1,
+      "norm_label": "analysissignal"
+    },
+    {
+      "label": "AgentState",
+      "file_type": "code",
+      "source_file": "agents/models.py",
+      "source_location": "L109",
+      "id": "agents_models_agentstate",
+      "community": 1,
+      "norm_label": "agentstate"
+    },
+    {
+      "label": "sentiment.py",
+      "file_type": "code",
+      "source_file": "agents/sentiment.py",
+      "source_location": "L1",
+      "id": "agents_sentiment_py",
+      "community": 2,
+      "norm_label": "sentiment.py"
+    },
+    {
+      "label": "SentimentReasoningAgent",
+      "file_type": "code",
+      "source_file": "agents/sentiment.py",
+      "source_location": "L8",
+      "id": "agents_sentiment_sentimentreasoningagent",
+      "community": 2,
+      "norm_label": "sentimentreasoningagent"
+    },
+    {
+      "label": ".analyze()",
+      "file_type": "code",
+      "source_file": "agents/sentiment.py",
+      "source_location": "L32",
+      "id": "agents_sentiment_sentimentreasoningagent_analyze",
+      "community": 2,
+      "norm_label": ".analyze()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agents/__init__.py",
+      "source_location": "L1",
+      "id": "agents_init_py",
+      "community": 17,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "narrative_intelligence.py",
+      "file_type": "code",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L1",
+      "id": "agents_narrative_intelligence_py",
+      "community": 2,
+      "norm_label": "narrative_intelligence.py"
+    },
+    {
+      "label": "NarrativeIntelligenceAgent",
+      "file_type": "code",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L10",
+      "id": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "community": 2,
+      "norm_label": "narrativeintelligenceagent"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L11",
+      "id": "agents_narrative_intelligence_narrativeintelligenceagent_init",
+      "community": 2,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".analyze()",
+      "file_type": "code",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L14",
+      "id": "agents_narrative_intelligence_narrativeintelligenceagent_analyze",
+      "community": 2,
+      "norm_label": ".analyze()"
+    },
+    {
+      "label": "._cluster_by_ticker()",
+      "file_type": "code",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L20",
+      "id": "agents_narrative_intelligence_narrativeintelligenceagent_cluster_by_ticker",
+      "community": 2,
+      "norm_label": "._cluster_by_ticker()"
+    },
+    {
+      "label": "._extract_keywords()",
+      "file_type": "code",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L39",
+      "id": "agents_narrative_intelligence_narrativeintelligenceagent_extract_keywords",
+      "community": 2,
+      "norm_label": "._extract_keywords()"
+    },
+    {
+      "label": "._enrich_clusters()",
+      "file_type": "code",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L49",
+      "id": "agents_narrative_intelligence_narrativeintelligenceagent_enrich_clusters",
+      "community": 2,
+      "norm_label": "._enrich_clusters()"
+    },
+    {
+      "label": ".extract_entities()",
+      "file_type": "code",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L68",
+      "id": "agents_narrative_intelligence_narrativeintelligenceagent_extract_entities",
+      "community": 2,
+      "norm_label": ".extract_entities()"
+    },
+    {
+      "label": "__main__.py",
+      "file_type": "code",
+      "source_file": "agents/__main__.py",
+      "source_location": "L1",
+      "id": "agents_main_py",
+      "community": 18,
+      "norm_label": "__main__.py"
+    },
+    {
+      "label": "aggregator.py",
+      "file_type": "code",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L1",
+      "id": "agents_consensus_aggregator_py",
+      "community": 1,
+      "norm_label": "aggregator.py"
+    },
+    {
+      "label": "SignalAggregator",
+      "file_type": "code",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L13",
+      "id": "consensus_aggregator_signalaggregator",
+      "community": 1,
+      "norm_label": "signalaggregator"
+    },
+    {
+      "label": ".generate_signal()",
+      "file_type": "code",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L14",
+      "id": "consensus_aggregator_signalaggregator_generate_signal",
+      "community": 1,
+      "norm_label": ".generate_signal()"
+    },
+    {
+      "label": "._score_debate()",
+      "file_type": "code",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L56",
+      "id": "consensus_aggregator_signalaggregator_score_debate",
+      "community": 1,
+      "norm_label": "._score_debate()"
+    },
+    {
+      "label": "._determine_direction()",
+      "file_type": "code",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L65",
+      "id": "consensus_aggregator_signalaggregator_determine_direction",
+      "community": 1,
+      "norm_label": "._determine_direction()"
+    },
+    {
+      "label": "._assess_risk_factors()",
+      "file_type": "code",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L77",
+      "id": "consensus_aggregator_signalaggregator_assess_risk_factors",
+      "community": 1,
+      "norm_label": "._assess_risk_factors()"
+    },
+    {
+      "label": "._build_reasoning_trace()",
+      "file_type": "code",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L91",
+      "id": "consensus_aggregator_signalaggregator_build_reasoning_trace",
+      "community": 1,
+      "norm_label": "._build_reasoning_trace()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agents/consensus/__init__.py",
+      "source_location": "L1",
+      "id": "agents_consensus_init_py",
+      "community": 19,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agents/graph/__init__.py",
+      "source_location": "L1",
+      "id": "agents_graph_init_py",
+      "community": 20,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "workflow.py",
+      "file_type": "code",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L1",
+      "id": "agents_graph_workflow_py",
+      "community": 2,
+      "norm_label": "workflow.py"
+    },
+    {
+      "label": "narrative_intelligence_node()",
+      "file_type": "code",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L19",
+      "id": "graph_workflow_narrative_intelligence_node",
+      "community": 2,
+      "norm_label": "narrative_intelligence_node()"
+    },
+    {
+      "label": "sentiment_reasoning_node()",
+      "file_type": "code",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L25",
+      "id": "graph_workflow_sentiment_reasoning_node",
+      "community": 2,
+      "norm_label": "sentiment_reasoning_node()"
+    },
+    {
+      "label": "debate_node()",
+      "file_type": "code",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L31",
+      "id": "graph_workflow_debate_node",
+      "community": 1,
+      "norm_label": "debate_node()"
+    },
+    {
+      "label": "signal_generation_node()",
+      "file_type": "code",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L38",
+      "id": "graph_workflow_signal_generation_node",
+      "community": 1,
+      "norm_label": "signal_generation_node()"
+    },
+    {
+      "label": "should_debate()",
+      "file_type": "code",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L51",
+      "id": "graph_workflow_should_debate",
+      "community": 2,
+      "norm_label": "should_debate()"
+    },
+    {
+      "label": "create_workflow()",
+      "file_type": "code",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L57",
+      "id": "graph_workflow_create_workflow",
+      "community": 2,
+      "norm_label": "create_workflow()"
+    },
+    {
+      "label": "run_analysis()",
+      "file_type": "code",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L78",
+      "id": "graph_workflow_run_analysis",
+      "community": 2,
+      "norm_label": "run_analysis()"
+    },
+    {
+      "label": "_run_sequential()",
+      "file_type": "code",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L88",
+      "id": "graph_workflow_run_sequential",
+      "community": 2,
+      "norm_label": "_run_sequential()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agents/debate/__init__.py",
+      "source_location": "L1",
+      "id": "agents_debate_init_py",
+      "community": 21,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "engine.py",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L1",
+      "id": "agents_debate_engine_py",
+      "community": 1,
+      "norm_label": "engine.py"
+    },
+    {
+      "label": "BullAgent",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L13",
+      "id": "debate_engine_bullagent",
+      "community": 1,
+      "norm_label": "bullagent"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L14",
+      "id": "debate_engine_bullagent_init",
+      "community": 1,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".build_case()",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L17",
+      "id": "debate_engine_bullagent_build_case",
+      "community": 1,
+      "norm_label": ".build_case()"
+    },
+    {
+      "label": "BearAgent",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L55",
+      "id": "debate_engine_bearagent",
+      "community": 1,
+      "norm_label": "bearagent"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L56",
+      "id": "debate_engine_bearagent_init",
+      "community": 1,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".build_case()",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L59",
+      "id": "debate_engine_bearagent_build_case",
+      "community": 1,
+      "norm_label": ".build_case()"
+    },
+    {
+      "label": "ArbiterAgent",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L100",
+      "id": "debate_engine_arbiteragent",
+      "community": 1,
+      "norm_label": "arbiteragent"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L101",
+      "id": "debate_engine_arbiteragent_init",
+      "community": 1,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".arbitrate()",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L104",
+      "id": "debate_engine_arbiteragent_arbitrate",
+      "community": 1,
+      "norm_label": ".arbitrate()"
+    },
+    {
+      "label": "DebateEngine",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L144",
+      "id": "debate_engine_debateengine",
+      "community": 1,
+      "norm_label": "debateengine"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L145",
+      "id": "debate_engine_debateengine_init",
+      "community": 1,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".conduct_debate()",
+      "file_type": "code",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L151",
+      "id": "debate_engine_debateengine_conduct_debate",
+      "community": 1,
+      "norm_label": ".conduct_debate()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agents/registry/__init__.py",
+      "source_location": "L1",
+      "id": "agents_registry_init_py",
+      "community": 22,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "agent_cards.py",
+      "file_type": "code",
+      "source_file": "agents/registry/agent_cards.py",
+      "source_location": "L1",
+      "id": "agents_registry_agent_cards_py",
+      "community": 23,
+      "norm_label": "agent_cards.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agents/prompts/__init__.py",
+      "source_location": "L1",
+      "id": "agents_prompts_init_py",
+      "community": 24,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "templates.py",
+      "file_type": "code",
+      "source_file": "agents/prompts/templates.py",
+      "source_location": "L1",
+      "id": "agents_prompts_templates_py",
+      "community": 25,
+      "norm_label": "templates.py"
+    },
+    {
+      "label": "server.py",
+      "file_type": "code",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L1",
+      "id": "agents_webhooks_server_py",
+      "community": 2,
+      "norm_label": "server.py"
+    },
+    {
+      "label": "lifespan()",
+      "file_type": "code",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L17",
+      "id": "webhooks_server_lifespan",
+      "community": 2,
+      "norm_label": "lifespan()"
+    },
+    {
+      "label": "health()",
+      "file_type": "code",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L39",
+      "id": "webhooks_server_health",
+      "community": 2,
+      "norm_label": "health()"
+    },
+    {
+      "label": "webhook_analyze()",
+      "file_type": "code",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L44",
+      "id": "webhooks_server_webhook_analyze",
+      "community": 2,
+      "norm_label": "webhook_analyze()"
+    },
+    {
+      "label": "webhook_signal_out()",
+      "file_type": "code",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L60",
+      "id": "webhooks_server_webhook_signal_out",
+      "community": 2,
+      "norm_label": "webhook_signal_out()"
+    },
+    {
+      "label": "narrative_intelligence_analyze()",
+      "file_type": "code",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L73",
+      "id": "webhooks_server_narrative_intelligence_analyze",
+      "community": 2,
+      "norm_label": "narrative_intelligence_analyze()"
+    },
+    {
+      "label": "sentiment_reasoning_analyze()",
+      "file_type": "code",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L81",
+      "id": "webhooks_server_sentiment_reasoning_analyze",
+      "community": 2,
+      "norm_label": "sentiment_reasoning_analyze()"
+    },
+    {
+      "label": "strategy_generate()",
+      "file_type": "code",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L89",
+      "id": "webhooks_server_strategy_generate",
+      "community": 2,
+      "norm_label": "strategy_generate()"
+    },
+    {
+      "label": "agent_health()",
+      "file_type": "code",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L95",
+      "id": "webhooks_server_agent_health",
+      "community": 2,
+      "norm_label": "agent_health()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agents/webhooks/__init__.py",
+      "source_location": "L1",
+      "id": "agents_webhooks_init_py",
+      "community": 26,
+      "norm_label": "__init__.py"
+    },
+    {
       "label": "config.py",
       "file_type": "code",
       "source_file": "data/config.py",
@@ -36,7 +711,7 @@
       "source_file": "data/stream/__init__.py",
       "source_location": "L1",
       "id": "data_stream_init_py",
-      "community": 17,
+      "community": 27,
       "norm_label": "__init__.py"
     },
     {
@@ -45,7 +720,7 @@
       "source_file": "data/stream/event_bus.py",
       "source_location": "L1",
       "id": "data_stream_event_bus_py",
-      "community": 8,
+      "community": 10,
       "norm_label": "event_bus.py"
     },
     {
@@ -54,7 +729,7 @@
       "source_file": "data/stream/event_bus.py",
       "source_location": "L10",
       "id": "stream_event_bus_eventbus",
-      "community": 8,
+      "community": 10,
       "norm_label": "eventbus"
     },
     {
@@ -63,7 +738,7 @@
       "source_file": "data/stream/event_bus.py",
       "source_location": "L11",
       "id": "stream_event_bus_eventbus_init",
-      "community": 8,
+      "community": 10,
       "norm_label": ".__init__()"
     },
     {
@@ -72,7 +747,7 @@
       "source_file": "data/stream/event_bus.py",
       "source_location": "L16",
       "id": "stream_event_bus_eventbus_emit",
-      "community": 8,
+      "community": 10,
       "norm_label": ".emit()"
     },
     {
@@ -81,7 +756,7 @@
       "source_file": "data/stream/event_bus.py",
       "source_location": "L20",
       "id": "stream_event_bus_eventbus_flush",
-      "community": 8,
+      "community": 10,
       "norm_label": ".flush()"
     },
     {
@@ -90,7 +765,7 @@
       "source_file": "data/stream/event_bus.py",
       "source_location": "L36",
       "id": "stream_event_bus_eventbus_close",
-      "community": 8,
+      "community": 10,
       "norm_label": ".close()"
     },
     {
@@ -99,7 +774,7 @@
       "source_file": "data/pipelines/normalize.py",
       "source_location": "L1",
       "id": "data_pipelines_normalize_py",
-      "community": 2,
+      "community": 4,
       "norm_label": "normalize.py"
     },
     {
@@ -108,7 +783,7 @@
       "source_file": "data/pipelines/normalize.py",
       "source_location": "L8",
       "id": "pipelines_normalize_build_event_id",
-      "community": 2,
+      "community": 4,
       "norm_label": "build_event_id()"
     },
     {
@@ -117,7 +792,7 @@
       "source_file": "data/pipelines/normalize.py",
       "source_location": "L14",
       "id": "pipelines_normalize_normalize_reddit_post",
-      "community": 2,
+      "community": 4,
       "norm_label": "normalize_reddit_post()"
     },
     {
@@ -126,7 +801,7 @@
       "source_file": "data/pipelines/normalize.py",
       "source_location": "L38",
       "id": "pipelines_normalize_normalize_article",
-      "community": 2,
+      "community": 4,
       "norm_label": "normalize_article()"
     },
     {
@@ -135,7 +810,7 @@
       "source_file": "data/pipelines/normalize.py",
       "source_location": "L60",
       "id": "pipelines_normalize_normalize_sec_filing",
-      "community": 2,
+      "community": 4,
       "norm_label": "normalize_sec_filing()"
     },
     {
@@ -144,7 +819,7 @@
       "source_file": "data/pipelines/normalize.py",
       "source_location": "L83",
       "id": "pipelines_normalize_to_iso",
-      "community": 2,
+      "community": 4,
       "norm_label": "_to_iso()"
     },
     {
@@ -153,7 +828,7 @@
       "source_file": "data/pipelines/normalize.py",
       "source_location": "L93",
       "id": "pipelines_normalize_now_iso",
-      "community": 2,
+      "community": 4,
       "norm_label": "_now_iso()"
     },
     {
@@ -162,7 +837,7 @@
       "source_file": "data/pipelines/normalize.py",
       "source_location": "L97",
       "id": "pipelines_normalize_extract_domain",
-      "community": 2,
+      "community": 4,
       "norm_label": "_extract_domain()"
     },
     {
@@ -171,7 +846,7 @@
       "source_file": "data/pipelines/normalize.py",
       "source_location": "L105",
       "id": "pipelines_normalize_detect_post_type",
-      "community": 2,
+      "community": 4,
       "norm_label": "_detect_post_type()"
     },
     {
@@ -180,7 +855,7 @@
       "source_file": "data/pipelines/__init__.py",
       "source_location": "L1",
       "id": "data_pipelines_init_py",
-      "community": 18,
+      "community": 28,
       "norm_label": "__init__.py"
     },
     {
@@ -189,7 +864,7 @@
       "source_file": "data/pipelines/entity_extractor.py",
       "source_location": "L1",
       "id": "data_pipelines_entity_extractor_py",
-      "community": 2,
+      "community": 4,
       "norm_label": "entity_extractor.py"
     },
     {
@@ -198,7 +873,7 @@
       "source_file": "data/pipelines/entity_extractor.py",
       "source_location": "L37",
       "id": "pipelines_entity_extractor_extractedentity",
-      "community": 2,
+      "community": 4,
       "norm_label": "extractedentity"
     },
     {
@@ -207,7 +882,7 @@
       "source_file": "",
       "source_location": "",
       "id": "namedtuple",
-      "community": 2,
+      "community": 4,
       "norm_label": "namedtuple"
     },
     {
@@ -216,7 +891,7 @@
       "source_file": "data/pipelines/entity_extractor.py",
       "source_location": "L43",
       "id": "pipelines_entity_extractor_extract_tickers",
-      "community": 2,
+      "community": 4,
       "norm_label": "extract_tickers()"
     },
     {
@@ -225,7 +900,7 @@
       "source_file": "data/pipelines/entity_extractor.py",
       "source_location": "L56",
       "id": "pipelines_entity_extractor_extract_entities",
-      "community": 2,
+      "community": 4,
       "norm_label": "extract_entities()"
     },
     {
@@ -234,7 +909,7 @@
       "source_file": "data/pipelines/pipeline.py",
       "source_location": "L1",
       "id": "data_pipelines_pipeline_py",
-      "community": 8,
+      "community": 10,
       "norm_label": "pipeline.py"
     },
     {
@@ -243,7 +918,7 @@
       "source_file": "data/pipelines/pipeline.py",
       "source_location": "L23",
       "id": "pipelines_pipeline_enrich_event",
-      "community": 8,
+      "community": 10,
       "norm_label": "enrich_event()"
     },
     {
@@ -252,7 +927,7 @@
       "source_file": "data/pipelines/pipeline.py",
       "source_location": "L32",
       "id": "pipelines_pipeline_run_pipeline",
-      "community": 8,
+      "community": 10,
       "norm_label": "run_pipeline()"
     },
     {
@@ -261,7 +936,7 @@
       "source_file": "data/pipelines/pipeline.py",
       "source_location": "L65",
       "id": "pipelines_pipeline_main",
-      "community": 8,
+      "community": 10,
       "norm_label": "main()"
     },
     {
@@ -270,7 +945,7 @@
       "source_file": "data/pipelines/test_pipeline.py",
       "source_location": "L1",
       "id": "data_pipelines_test_pipeline_py",
-      "community": 2,
+      "community": 4,
       "norm_label": "test_pipeline.py"
     },
     {
@@ -279,7 +954,7 @@
       "source_file": "data/pipelines/test_pipeline.py",
       "source_location": "L15",
       "id": "pipelines_test_pipeline_test_ticker_extraction",
-      "community": 2,
+      "community": 4,
       "norm_label": "test_ticker_extraction()"
     },
     {
@@ -288,7 +963,7 @@
       "source_file": "data/pipelines/test_pipeline.py",
       "source_location": "L26",
       "id": "pipelines_test_pipeline_test_entity_extraction",
-      "community": 2,
+      "community": 4,
       "norm_label": "test_entity_extraction()"
     },
     {
@@ -297,7 +972,7 @@
       "source_file": "data/pipelines/test_pipeline.py",
       "source_location": "L34",
       "id": "pipelines_test_pipeline_test_reddit_normalization",
-      "community": 2,
+      "community": 4,
       "norm_label": "test_reddit_normalization()"
     },
     {
@@ -306,7 +981,7 @@
       "source_file": "data/pipelines/test_pipeline.py",
       "source_location": "L58",
       "id": "pipelines_test_pipeline_test_article_normalization",
-      "community": 2,
+      "community": 4,
       "norm_label": "test_article_normalization()"
     },
     {
@@ -315,7 +990,7 @@
       "source_file": "data/pipelines/test_pipeline.py",
       "source_location": "L77",
       "id": "pipelines_test_pipeline_test_sec_normalization",
-      "community": 2,
+      "community": 4,
       "norm_label": "test_sec_normalization()"
     },
     {
@@ -324,7 +999,7 @@
       "source_file": "data/pipelines/test_pipeline.py",
       "source_location": "L1",
       "id": "pipelines_test_pipeline_rationale_1",
-      "community": 2,
+      "community": 4,
       "norm_label": "quick test for the data pipeline \u2014 entity extraction + normalization. run: pytho"
     },
     {
@@ -333,7 +1008,7 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L1",
       "id": "data_actors_reddit_scraper_src_normalize_py",
-      "community": 5,
+      "community": 7,
       "norm_label": "normalize.py"
     },
     {
@@ -342,7 +1017,7 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L21",
       "id": "src_normalize_extract_tickers",
-      "community": 5,
+      "community": 7,
       "norm_label": "extract_tickers()"
     },
     {
@@ -351,7 +1026,7 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L29",
       "id": "src_normalize_extract_entities",
-      "community": 5,
+      "community": 7,
       "norm_label": "extract_entities()"
     },
     {
@@ -360,7 +1035,7 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L29",
       "id": "src_normalize_build_event_id",
-      "community": 5,
+      "community": 7,
       "norm_label": "build_event_id()"
     },
     {
@@ -369,7 +1044,7 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L41",
       "id": "src_normalize_normalize_reddit_post",
-      "community": 5,
+      "community": 7,
       "norm_label": "normalize_reddit_post()"
     },
     {
@@ -378,7 +1053,7 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L57",
       "id": "src_normalize_to_iso",
-      "community": 5,
+      "community": 7,
       "norm_label": "_to_iso()"
     },
     {
@@ -387,7 +1062,7 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L65",
       "id": "src_normalize_now_iso",
-      "community": 5,
+      "community": 7,
       "norm_label": "_now_iso()"
     },
     {
@@ -396,7 +1071,7 @@
       "source_file": "data/actors/reddit-scraper/src/main.py",
       "source_location": "L1",
       "id": "data_actors_reddit_scraper_src_main_py",
-      "community": 6,
+      "community": 8,
       "norm_label": "main.py"
     },
     {
@@ -405,7 +1080,7 @@
       "source_file": "data/actors/sec-scraper/src/main.py",
       "source_location": "L42",
       "id": "src_main_main",
-      "community": 6,
+      "community": 8,
       "norm_label": "main()"
     },
     {
@@ -414,7 +1089,7 @@
       "source_file": "data/actors/news-scraper/src/main.py",
       "source_location": "L79",
       "id": "src_main_clean_html",
-      "community": 6,
+      "community": 8,
       "norm_label": "_clean_html()"
     },
     {
@@ -423,7 +1098,7 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L1",
       "id": "data_actors_news_scraper_src_normalize_py",
-      "community": 5,
+      "community": 7,
       "norm_label": "normalize.py"
     },
     {
@@ -432,16 +1107,16 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L41",
       "id": "src_normalize_normalize_article",
-      "community": 5,
+      "community": 7,
       "norm_label": "normalize_article()"
     },
     {
       "label": "_extract_domain()",
       "file_type": "code",
       "source_file": "data/actors/news-scraper/src/normalize.py",
-      "source_location": "L66",
+      "source_location": "L63",
       "id": "src_normalize_extract_domain",
-      "community": 5,
+      "community": 7,
       "norm_label": "_extract_domain()"
     },
     {
@@ -450,7 +1125,7 @@
       "source_file": "data/actors/news-scraper/src/main.py",
       "source_location": "L1",
       "id": "data_actors_news_scraper_src_main_py",
-      "community": 6,
+      "community": 8,
       "norm_label": "main.py"
     },
     {
@@ -459,7 +1134,7 @@
       "source_file": "data/actors/news-scraper/src/main.py",
       "source_location": "L85",
       "id": "src_main_get_author",
-      "community": 6,
+      "community": 8,
       "norm_label": "_get_author()"
     },
     {
@@ -468,7 +1143,7 @@
       "source_file": "data/actors/news-scraper/src/main.py",
       "source_location": "L95",
       "id": "src_main_source_name_from_url",
-      "community": 6,
+      "community": 8,
       "norm_label": "_source_name_from_url()"
     },
     {
@@ -477,7 +1152,7 @@
       "source_file": "data/actors/news-scraper/src/main.py",
       "source_location": "L102",
       "id": "src_main_resolve_url",
-      "community": 6,
+      "community": 8,
       "norm_label": "_resolve_url()"
     },
     {
@@ -486,7 +1161,7 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L1",
       "id": "data_actors_sec_scraper_src_normalize_py",
-      "community": 5,
+      "community": 7,
       "norm_label": "normalize.py"
     },
     {
@@ -495,7 +1170,7 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L34",
       "id": "src_normalize_normalize_sec_filing",
-      "community": 5,
+      "community": 7,
       "norm_label": "normalize_sec_filing()"
     },
     {
@@ -504,7 +1179,7 @@
       "source_file": "data/actors/sec-scraper/src/main.py",
       "source_location": "L1",
       "id": "data_actors_sec_scraper_src_main_py",
-      "community": 6,
+      "community": 8,
       "norm_label": "main.py"
     },
     {
@@ -513,7 +1188,7 @@
       "source_file": "data/actors/sec-scraper/src/main.py",
       "source_location": "L116",
       "id": "src_main_get_company_name",
-      "community": 6,
+      "community": 8,
       "norm_label": "_get_company_name()"
     },
     {
@@ -522,7 +1197,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L1",
       "id": "member_02_cognitive_md",
-      "community": 7,
+      "community": 9,
       "norm_label": "member_02_cognitive.md"
     },
     {
@@ -531,7 +1206,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L1",
       "id": "narrativeos_member_02_cognitive_member_2_the_cognitive_lead_zynd",
-      "community": 7,
+      "community": 9,
       "norm_label": "member 2: the cognitive lead (zynd)"
     },
     {
@@ -540,7 +1215,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L5",
       "id": "narrativeos_member_02_cognitive_domain",
-      "community": 7,
+      "community": 9,
       "norm_label": "domain"
     },
     {
@@ -549,7 +1224,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L7",
       "id": "narrativeos_member_02_cognitive_codeblock_1",
-      "community": 7,
+      "community": 9,
       "norm_label": "code:block1 (/agents/)"
     },
     {
@@ -558,7 +1233,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L17",
       "id": "narrativeos_member_02_cognitive_core_tool_zynd_ai_full_feature_map",
-      "community": 7,
+      "community": 9,
       "norm_label": "core tool: zynd ai \u2014 full feature map"
     },
     {
@@ -567,7 +1242,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L35",
       "id": "narrativeos_member_02_cognitive_sprint_1_tasks",
-      "community": 7,
+      "community": 9,
       "norm_label": "sprint 1 tasks"
     },
     {
@@ -576,7 +1251,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L47",
       "id": "narrativeos_member_02_cognitive_deliverables",
-      "community": 7,
+      "community": 9,
       "norm_label": "deliverables"
     },
     {
@@ -585,7 +1260,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L55",
       "id": "narrativeos_member_02_cognitive_api_contract_input",
-      "community": 7,
+      "community": 9,
       "norm_label": "api contract (input)"
     },
     {
@@ -594,7 +1269,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L59",
       "id": "narrativeos_member_02_cognitive_api_contract_output",
-      "community": 7,
+      "community": 9,
       "norm_label": "api contract (output)"
     },
     {
@@ -603,7 +1278,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L63",
       "id": "narrativeos_member_02_cognitive_dependencies",
-      "community": 7,
+      "community": 9,
       "norm_label": "dependencies"
     },
     {
@@ -612,7 +1287,7 @@
       "source_file": "MEMBER_02_COGNITIVE.md",
       "source_location": "L69",
       "id": "narrativeos_member_02_cognitive_github_copilot_usage",
-      "community": 7,
+      "community": 9,
       "norm_label": "github copilot usage"
     },
     {
@@ -621,7 +1296,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L1",
       "id": "member_01_sensory_md",
-      "community": 9,
+      "community": 11,
       "norm_label": "member_01_sensory.md"
     },
     {
@@ -630,7 +1305,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L1",
       "id": "narrativeos_member_01_sensory_member_1_the_sensory_lead_apify",
-      "community": 9,
+      "community": 11,
       "norm_label": "member 1: the sensory lead (apify)"
     },
     {
@@ -639,7 +1314,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L5",
       "id": "narrativeos_member_01_sensory_domain",
-      "community": 9,
+      "community": 11,
       "norm_label": "domain"
     },
     {
@@ -648,7 +1323,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L7",
       "id": "narrativeos_member_01_sensory_codeblock_1",
-      "community": 9,
+      "community": 11,
       "norm_label": "code:block1 (/data/)"
     },
     {
@@ -657,7 +1332,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L15",
       "id": "narrativeos_member_01_sensory_core_tool_apify_full_feature_map",
-      "community": 9,
+      "community": 11,
       "norm_label": "core tool: apify \u2014 full feature map"
     },
     {
@@ -666,7 +1341,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L31",
       "id": "narrativeos_member_01_sensory_sprint_1_tasks",
-      "community": 9,
+      "community": 11,
       "norm_label": "sprint 1 tasks"
     },
     {
@@ -675,7 +1350,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L43",
       "id": "narrativeos_member_01_sensory_deliverables",
-      "community": 9,
+      "community": 11,
       "norm_label": "deliverables"
     },
     {
@@ -684,7 +1359,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L50",
       "id": "narrativeos_member_01_sensory_api_contract_output",
-      "community": 9,
+      "community": 11,
       "norm_label": "api contract (output)"
     },
     {
@@ -693,7 +1368,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L54",
       "id": "narrativeos_member_01_sensory_dependencies",
-      "community": 9,
+      "community": 11,
       "norm_label": "dependencies"
     },
     {
@@ -702,7 +1377,7 @@
       "source_file": "MEMBER_01_SENSORY.md",
       "source_location": "L59",
       "id": "narrativeos_member_01_sensory_github_copilot_usage",
-      "community": 9,
+      "community": 11,
       "norm_label": "github copilot usage"
     },
     {
@@ -711,7 +1386,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L1",
       "id": "api_contract_md",
-      "community": 3,
+      "community": 5,
       "norm_label": "api_contract.md"
     },
     {
@@ -720,7 +1395,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L1",
       "id": "narrativeos_api_contract_api_contract_narrativeos_event_schemas",
-      "community": 3,
+      "community": 5,
       "norm_label": "api contract \u2014 narrativeos event schemas"
     },
     {
@@ -729,7 +1404,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L7",
       "id": "narrativeos_api_contract_narrativeevent_member_1_member_2",
-      "community": 3,
+      "community": 5,
       "norm_label": "narrativeevent (member 1 \u2192 member 2)"
     },
     {
@@ -738,7 +1413,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L11",
       "id": "narrativeos_api_contract_codeblock_1",
-      "community": 3,
+      "community": 5,
       "norm_label": "code:json ({)"
     },
     {
@@ -747,7 +1422,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L37",
       "id": "narrativeos_api_contract_fields",
-      "community": 3,
+      "community": 5,
       "norm_label": "fields"
     },
     {
@@ -756,7 +1431,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L55",
       "id": "narrativeos_api_contract_delivery",
-      "community": 3,
+      "community": 5,
       "norm_label": "delivery"
     },
     {
@@ -765,7 +1440,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L62",
       "id": "narrativeos_api_contract_analysissignal_member_2_member_3",
-      "community": 3,
+      "community": 5,
       "norm_label": "analysissignal (member 2 \u2192 member 3)"
     },
     {
@@ -774,7 +1449,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L66",
       "id": "narrativeos_api_contract_codeblock_2",
-      "community": 3,
+      "community": 5,
       "norm_label": "code:json ({)"
     },
     {
@@ -783,7 +1458,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L100",
       "id": "narrativeos_api_contract_fields_100",
-      "community": 3,
+      "community": 5,
       "norm_label": "fields"
     },
     {
@@ -792,7 +1467,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L121",
       "id": "narrativeos_api_contract_webhook_endpoints_contract_between_members",
-      "community": 3,
+      "community": 5,
       "norm_label": "webhook endpoints (contract between members)"
     },
     {
@@ -801,7 +1476,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L123",
       "id": "narrativeos_api_contract_member_1_member_3_apify_superplane",
-      "community": 3,
+      "community": 5,
       "norm_label": "member 1 \u2192 member 3 (apify \u2192 superplane)"
     },
     {
@@ -810,7 +1485,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L125",
       "id": "narrativeos_api_contract_codeblock_3",
-      "community": 3,
+      "community": 5,
       "norm_label": "code:block3 (post /api/v1/webhooks/apify-event)"
     },
     {
@@ -819,7 +1494,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L131",
       "id": "narrativeos_api_contract_member_3_member_2_superplane_zynd",
-      "community": 3,
+      "community": 5,
       "norm_label": "member 3 \u2192 member 2 (superplane \u2192 zynd)"
     },
     {
@@ -828,7 +1503,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L133",
       "id": "narrativeos_api_contract_codeblock_4",
-      "community": 3,
+      "community": 5,
       "norm_label": "code:block4 (post <zynd-agent-url>/webhook/analyze)"
     },
     {
@@ -837,7 +1512,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L139",
       "id": "narrativeos_api_contract_member_2_member_3_zynd_superplane",
-      "community": 3,
+      "community": 5,
       "norm_label": "member 2 \u2192 member 3 (zynd \u2192 superplane)"
     },
     {
@@ -846,7 +1521,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L141",
       "id": "narrativeos_api_contract_codeblock_5",
-      "community": 3,
+      "community": 5,
       "norm_label": "code:block5 (post /api/v1/webhooks/signal)"
     },
     {
@@ -855,7 +1530,7 @@
       "source_file": "API_CONTRACT.md",
       "source_location": "L149",
       "id": "narrativeos_api_contract_versioning",
-      "community": 3,
+      "community": 5,
       "norm_label": "versioning"
     },
     {
@@ -864,7 +1539,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L1",
       "id": "member_03_platform_md",
-      "community": 10,
+      "community": 12,
       "norm_label": "member_03_platform.md"
     },
     {
@@ -873,7 +1548,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L1",
       "id": "narrativeos_member_03_platform_member_3_the_platform_lead_superplane",
-      "community": 10,
+      "community": 12,
       "norm_label": "member 3: the platform lead (superplane)"
     },
     {
@@ -882,7 +1557,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L5",
       "id": "narrativeos_member_03_platform_domain",
-      "community": 10,
+      "community": 12,
       "norm_label": "domain"
     },
     {
@@ -891,7 +1566,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L7",
       "id": "narrativeos_member_03_platform_codeblock_1",
-      "community": 10,
+      "community": 12,
       "norm_label": "code:block1 (/infra/)"
     },
     {
@@ -900,7 +1575,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L18",
       "id": "narrativeos_member_03_platform_core_tool_superplane_full_feature_map",
-      "community": 10,
+      "community": 12,
       "norm_label": "core tool: superplane \u2014 full feature map"
     },
     {
@@ -909,7 +1584,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L37",
       "id": "narrativeos_member_03_platform_sprint_1_tasks",
-      "community": 10,
+      "community": 12,
       "norm_label": "sprint 1 tasks"
     },
     {
@@ -918,7 +1593,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L53",
       "id": "narrativeos_member_03_platform_deliverables",
-      "community": 10,
+      "community": 12,
       "norm_label": "deliverables"
     },
     {
@@ -927,7 +1602,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L62",
       "id": "narrativeos_member_03_platform_api_contract_consumed",
-      "community": 10,
+      "community": 12,
       "norm_label": "api contract (consumed)"
     },
     {
@@ -936,7 +1611,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L66",
       "id": "narrativeos_member_03_platform_dependencies",
-      "community": 10,
+      "community": 12,
       "norm_label": "dependencies"
     },
     {
@@ -945,7 +1620,7 @@
       "source_file": "MEMBER_03_PLATFORM.md",
       "source_location": "L72",
       "id": "narrativeos_member_03_platform_github_copilot_usage",
-      "community": 10,
+      "community": 12,
       "norm_label": "github copilot usage"
     },
     {
@@ -954,7 +1629,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L1",
       "id": "team_division_md",
-      "community": 4,
+      "community": 6,
       "norm_label": "team_division.md"
     },
     {
@@ -963,7 +1638,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L1",
       "id": "narrativeos_team_division_narrativeos_team_work_division",
-      "community": 4,
+      "community": 6,
       "norm_label": "narrativeos team work division"
     },
     {
@@ -972,7 +1647,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L7",
       "id": "narrativeos_team_division_team_responsibilities_3_members",
-      "community": 4,
+      "community": 6,
       "norm_label": "\ud83c\udfd7\ufe0f team responsibilities (3 members)"
     },
     {
@@ -981,7 +1656,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L9",
       "id": "narrativeos_team_division_member_1_the_sensory_lead",
-      "community": 4,
+      "community": 6,
       "norm_label": "\ud83d\udc64 member 1: the sensory lead"
     },
     {
@@ -990,7 +1665,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L18",
       "id": "narrativeos_team_division_member_2_the_cognitive_lead",
-      "community": 4,
+      "community": 6,
       "norm_label": "\ud83d\udc64 member 2: the cognitive lead"
     },
     {
@@ -999,7 +1674,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L27",
       "id": "narrativeos_team_division_member_3_the_platform_lead",
-      "community": 4,
+      "community": 6,
       "norm_label": "\ud83d\udc64 member 3: the platform lead"
     },
     {
@@ -1008,7 +1683,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L38",
       "id": "narrativeos_team_division_shared_accelerator_github_copilot",
-      "community": 4,
+      "community": 6,
       "norm_label": "\ud83e\udd16 shared accelerator: github copilot"
     },
     {
@@ -1017,7 +1692,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L47",
       "id": "narrativeos_team_division_ai_accelerated_development",
-      "community": 4,
+      "community": 6,
       "norm_label": "\ud83e\udd16 ai-accelerated development"
     },
     {
@@ -1026,7 +1701,7 @@
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L57",
       "id": "narrativeos_team_division_project_structure_proposal",
-      "community": 4,
+      "community": 6,
       "norm_label": "\ud83d\udcc2 project structure proposal"
     },
     {
@@ -1035,7 +1710,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L1",
       "id": "agents_md",
-      "community": 1,
+      "community": 3,
       "norm_label": "agents.md"
     },
     {
@@ -1044,7 +1719,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L1",
       "id": "narrativeos_agents_graphify",
-      "community": 1,
+      "community": 3,
       "norm_label": "graphify"
     },
     {
@@ -1053,7 +1728,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L11",
       "id": "narrativeos_agents_team_roles_tool_core",
-      "community": 1,
+      "community": 3,
       "norm_label": "team roles & tool core"
     },
     {
@@ -1062,7 +1737,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L33",
       "id": "narrativeos_agents_agents_md",
-      "community": 1,
+      "community": 3,
       "norm_label": "agents.md"
     },
     {
@@ -1071,7 +1746,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L35",
       "id": "narrativeos_agents_narrativeos",
-      "community": 1,
+      "community": 3,
       "norm_label": "narrativeos"
     },
     {
@@ -1080,7 +1755,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L41",
       "id": "narrativeos_agents_overview",
-      "community": 1,
+      "community": 3,
       "norm_label": "overview"
     },
     {
@@ -1089,7 +1764,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L76",
       "id": "narrativeos_agents_core_objectives",
-      "community": 1,
+      "community": 3,
       "norm_label": "core objectives"
     },
     {
@@ -1098,7 +1773,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L91",
       "id": "narrativeos_agents_high_level_system_architecture",
-      "community": 1,
+      "community": 3,
       "norm_label": "high-level system architecture"
     },
     {
@@ -1107,7 +1782,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L93",
       "id": "narrativeos_agents_codeblock_1",
-      "community": 1,
+      "community": 3,
       "norm_label": "code:text (apify actors)"
     },
     {
@@ -1116,7 +1791,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L111",
       "id": "narrativeos_agents_sponsor_technology_integration",
-      "community": 1,
+      "community": 3,
       "norm_label": "sponsor technology integration"
     },
     {
@@ -1125,7 +1800,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L113",
       "id": "narrativeos_agents_zynd_ai",
-      "community": 1,
+      "community": 3,
       "norm_label": "zynd ai"
     },
     {
@@ -1134,7 +1809,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L135",
       "id": "narrativeos_agents_apify",
-      "community": 1,
+      "community": 3,
       "norm_label": "apify"
     },
     {
@@ -1143,7 +1818,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L160",
       "id": "narrativeos_agents_superplane",
-      "community": 1,
+      "community": 3,
       "norm_label": "superplane"
     },
     {
@@ -1152,7 +1827,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L178",
       "id": "narrativeos_agents_github_copilot",
-      "community": 1,
+      "community": 3,
       "norm_label": "github copilot"
     },
     {
@@ -1161,7 +1836,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L190",
       "id": "narrativeos_agents_agent_mesh_architecture",
-      "community": 1,
+      "community": 3,
       "norm_label": "agent mesh architecture"
     },
     {
@@ -1170,7 +1845,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L211",
       "id": "narrativeos_agents_agent_registry_layer",
-      "community": 1,
+      "community": 3,
       "norm_label": "agent registry layer"
     },
     {
@@ -1233,7 +1908,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L266",
       "id": "narrativeos_agents_2_narrative_intelligence_agent",
-      "community": 13,
+      "community": 15,
       "norm_label": "2. narrative intelligence agent"
     },
     {
@@ -1242,7 +1917,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L268",
       "id": "narrativeos_agents_responsibility_268",
-      "community": 13,
+      "community": 15,
       "norm_label": "responsibility"
     },
     {
@@ -1251,7 +1926,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L272",
       "id": "narrativeos_agents_tasks",
-      "community": 13,
+      "community": 15,
       "norm_label": "tasks"
     },
     {
@@ -1260,7 +1935,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L281",
       "id": "narrativeos_agents_outputs_281",
-      "community": 13,
+      "community": 15,
       "norm_label": "outputs"
     },
     {
@@ -1305,7 +1980,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L318",
       "id": "narrativeos_agents_4_market_correlation_agent",
-      "community": 14,
+      "community": 0,
       "norm_label": "4. market correlation agent"
     },
     {
@@ -1314,7 +1989,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L320",
       "id": "narrativeos_agents_responsibility_320",
-      "community": 14,
+      "community": 0,
       "norm_label": "responsibility"
     },
     {
@@ -1323,7 +1998,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L324",
       "id": "narrativeos_agents_tasks_324",
-      "community": 14,
+      "community": 0,
       "norm_label": "tasks"
     },
     {
@@ -1332,7 +2007,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L332",
       "id": "narrativeos_agents_example",
-      "community": 14,
+      "community": 0,
       "norm_label": "example"
     },
     {
@@ -1413,7 +2088,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L377",
       "id": "narrativeos_agents_6_risk_intelligence_agent",
-      "community": 0,
+      "community": 14,
       "norm_label": "6. risk intelligence agent"
     },
     {
@@ -1422,7 +2097,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L379",
       "id": "narrativeos_agents_responsibility_379",
-      "community": 0,
+      "community": 14,
       "norm_label": "responsibility"
     },
     {
@@ -1431,7 +2106,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L383",
       "id": "narrativeos_agents_tasks_383",
-      "community": 0,
+      "community": 14,
       "norm_label": "tasks"
     },
     {
@@ -1440,7 +2115,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L391",
       "id": "narrativeos_agents_outputs_391",
-      "community": 0,
+      "community": 14,
       "norm_label": "outputs"
     },
     {
@@ -1449,7 +2124,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L397",
       "id": "narrativeos_agents_7_strategy_agent",
-      "community": 12,
+      "community": 0,
       "norm_label": "7. strategy agent"
     },
     {
@@ -1458,7 +2133,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L399",
       "id": "narrativeos_agents_responsibility_399",
-      "community": 12,
+      "community": 0,
       "norm_label": "responsibility"
     },
     {
@@ -1467,7 +2142,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L403",
       "id": "narrativeos_agents_tasks_403",
-      "community": 12,
+      "community": 0,
       "norm_label": "tasks"
     },
     {
@@ -1476,7 +2151,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L411",
       "id": "narrativeos_agents_outputs_411",
-      "community": 12,
+      "community": 0,
       "norm_label": "outputs"
     },
     {
@@ -1485,7 +2160,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L427",
       "id": "narrativeos_agents_8_visualization_agent",
-      "community": 15,
+      "community": 0,
       "norm_label": "8. visualization agent"
     },
     {
@@ -1494,7 +2169,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L429",
       "id": "narrativeos_agents_responsibility_429",
-      "community": 15,
+      "community": 0,
       "norm_label": "responsibility"
     },
     {
@@ -1503,7 +2178,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L433",
       "id": "narrativeos_agents_features",
-      "community": 15,
+      "community": 0,
       "norm_label": "features"
     },
     {
@@ -1512,7 +2187,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L443",
       "id": "narrativeos_agents_frontend_stack",
-      "community": 15,
+      "community": 0,
       "norm_label": "frontend stack"
     },
     {
@@ -1521,7 +2196,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L452",
       "id": "narrativeos_agents_agent_communication_model",
-      "community": 1,
+      "community": 3,
       "norm_label": "agent communication model"
     },
     {
@@ -1530,7 +2205,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L475",
       "id": "narrativeos_agents_workflow_orchestration",
-      "community": 1,
+      "community": 3,
       "norm_label": "workflow orchestration"
     },
     {
@@ -1539,7 +2214,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L496",
       "id": "narrativeos_agents_tradingagents_integration",
-      "community": 1,
+      "community": 3,
       "norm_label": "tradingagents integration"
     },
     {
@@ -1548,7 +2223,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L517",
       "id": "narrativeos_agents_tech_stack",
-      "community": 1,
+      "community": 3,
       "norm_label": "tech stack"
     },
     {
@@ -1557,7 +2232,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L519",
       "id": "narrativeos_agents_backend",
-      "community": 1,
+      "community": 3,
       "norm_label": "backend"
     },
     {
@@ -1566,7 +2241,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L525",
       "id": "narrativeos_agents_ai_and_agent_infrastructure",
-      "community": 1,
+      "community": 3,
       "norm_label": "ai and agent infrastructure"
     },
     {
@@ -1575,7 +2250,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L531",
       "id": "narrativeos_agents_workflow_infrastructure",
-      "community": 1,
+      "community": 3,
       "norm_label": "workflow infrastructure"
     },
     {
@@ -1584,7 +2259,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L535",
       "id": "narrativeos_agents_internet_intelligence_layer",
-      "community": 1,
+      "community": 3,
       "norm_label": "internet intelligence layer"
     },
     {
@@ -1593,7 +2268,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L543",
       "id": "narrativeos_agents_frontend",
-      "community": 1,
+      "community": 3,
       "norm_label": "frontend"
     },
     {
@@ -1602,7 +2277,7 @@
       "source_file": "AGENTS.md",
       "source_location": "L553",
       "id": "narrativeos_agents_long_term_vision",
-      "community": 1,
+      "community": 3,
       "norm_label": "long-term vision"
     },
     {
@@ -1611,7 +2286,7 @@
       "source_file": "data/README.md",
       "source_location": "L1",
       "id": "data_readme_md",
-      "community": 11,
+      "community": 13,
       "norm_label": "readme.md"
     },
     {
@@ -1620,7 +2295,7 @@
       "source_file": "data/README.md",
       "source_location": "L1",
       "id": "data_readme_narrativeos_data_pipeline_local_test_runner",
-      "community": 11,
+      "community": 13,
       "norm_label": "narrativeos data pipeline \u2014 local test runner"
     },
     {
@@ -1629,7 +2304,7 @@
       "source_file": "data/README.md",
       "source_location": "L5",
       "id": "data_readme_codeblock_1",
-      "community": 11,
+      "community": 13,
       "norm_label": "code:bash (# setup)"
     },
     {
@@ -1638,7 +2313,7 @@
       "source_file": "data/README.md",
       "source_location": "L34",
       "id": "data_readme_deploy_to_apify_cloud",
-      "community": 11,
+      "community": 13,
       "norm_label": "deploy to apify cloud"
     },
     {
@@ -1647,7 +2322,7 @@
       "source_file": "data/README.md",
       "source_location": "L36",
       "id": "data_readme_codeblock_2",
-      "community": 11,
+      "community": 13,
       "norm_label": "code:bash (# install apify cli)"
     },
     {
@@ -1656,7 +2331,7 @@
       "source_file": "data/README.md",
       "source_location": "L56",
       "id": "data_readme_set_up_schedules_via_apify_console",
-      "community": 11,
+      "community": 13,
       "norm_label": "set up schedules via apify console"
     },
     {
@@ -1665,7 +2340,7 @@
       "source_file": "data/README.md",
       "source_location": "L66",
       "id": "data_readme_webhook_setup",
-      "community": 11,
+      "community": 13,
       "norm_label": "webhook setup"
     },
     {
@@ -1674,7 +2349,7 @@
       "source_file": "data/README.md",
       "source_location": "L72",
       "id": "data_readme_testing_the_pipeline",
-      "community": 11,
+      "community": 13,
       "norm_label": "testing the pipeline"
     },
     {
@@ -1683,7 +2358,7 @@
       "source_file": "data/README.md",
       "source_location": "L74",
       "id": "data_readme_codeblock_3",
-      "community": 11,
+      "community": 13,
       "norm_label": "code:bash (source .venv/bin/activate)"
     },
     {
@@ -1691,7 +2366,7 @@
       "file_type": "code",
       "source_file": "data/actors/reddit-scraper/src/main.py",
       "source_location": "L34",
-      "community": 6,
+      "community": 8,
       "norm_label": "_has_praw_credentials()",
       "id": "src_main_has_praw_credentials"
     },
@@ -1700,7 +2375,7 @@
       "file_type": "code",
       "source_file": "data/actors/reddit-scraper/src/main.py",
       "source_location": "L39",
-      "community": 6,
+      "community": 8,
       "norm_label": "_scrape_via_praw()",
       "id": "src_main_scrape_via_praw"
     },
@@ -1709,7 +2384,7 @@
       "file_type": "code",
       "source_file": "data/actors/reddit-scraper/src/main.py",
       "source_location": "L71",
-      "community": 6,
+      "community": 8,
       "norm_label": "_scrape_via_playwright()",
       "id": "src_main_scrape_via_playwright"
     },
@@ -1718,7 +2393,7 @@
       "file_type": "document",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L7",
-      "community": 4,
+      "community": 6,
       "norm_label": "\ud83c\udfd7\ufe0f core pillars",
       "id": "narrativeos_team_division_core_pillars"
     },
@@ -1727,7 +2402,7 @@
       "file_type": "document",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L9",
-      "community": 4,
+      "community": 6,
       "norm_label": "1. data & automation lead (member a)",
       "id": "narrativeos_team_division_1_data_automation_lead_member_a"
     },
@@ -1736,7 +2411,7 @@
       "file_type": "document",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L19",
-      "community": 4,
+      "community": 6,
       "norm_label": "2. agent systems & logic architect (member b)",
       "id": "narrativeos_team_division_2_agent_systems_logic_architect_member_b"
     },
@@ -1745,7 +2420,7 @@
       "file_type": "document",
       "source_file": "TEAM_DIVISION.md",
       "source_location": "L29",
-      "community": 4,
+      "community": 6,
       "norm_label": "3. infrastructure & platform lead (member c)",
       "id": "narrativeos_team_division_3_infrastructure_platform_lead_member_c"
     },
@@ -1754,7 +2429,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L247",
-      "community": 13,
+      "community": 15,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_247"
     },
@@ -1763,7 +2438,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L260",
-      "community": 13,
+      "community": 15,
       "norm_label": "outputs",
       "id": "narrativeos_agents_outputs_260"
     },
@@ -1799,7 +2474,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L299",
-      "community": 14,
+      "community": 0,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_299"
     },
@@ -1808,7 +2483,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L303",
-      "community": 14,
+      "community": 0,
       "norm_label": "tasks",
       "id": "narrativeos_agents_tasks_303"
     },
@@ -1826,7 +2501,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L358",
-      "community": 0,
+      "community": 14,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_358"
     },
@@ -1835,7 +2510,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L362",
-      "community": 0,
+      "community": 14,
       "norm_label": "tasks",
       "id": "narrativeos_agents_tasks_362"
     },
@@ -1844,7 +2519,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L370",
-      "community": 0,
+      "community": 14,
       "norm_label": "outputs",
       "id": "narrativeos_agents_outputs_370"
     },
@@ -1853,7 +2528,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L378",
-      "community": 12,
+      "community": 0,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_378"
     },
@@ -1862,7 +2537,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L382",
-      "community": 12,
+      "community": 0,
       "norm_label": "tasks",
       "id": "narrativeos_agents_tasks_382"
     },
@@ -1871,7 +2546,7 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L390",
-      "community": 12,
+      "community": 0,
       "norm_label": "outputs",
       "id": "narrativeos_agents_outputs_390"
     },
@@ -1880,12 +2555,1470 @@
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L408",
-      "community": 15,
+      "community": 0,
       "norm_label": "responsibility",
       "id": "narrativeos_agents_responsibility_408"
     }
   ],
   "links": [
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "enum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_direction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_entity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_narrativeevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_narrativeeventbatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_topiccluster",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_sentimentvector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_debateposition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_debateround",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_debatesummary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_analysissignal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "agents_models_py",
+      "target": "agents_models_agentstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "agents_models_direction",
+      "target": "str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "agents_models_direction",
+      "target": "enum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "agents_models_direction",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "agents_models_sourcetype",
+      "target": "str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "data/actors/reddit-scraper/src/normalize.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "src_normalize_to_iso",
+      "target": "str"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "agents_models_sourcetype",
+      "target": "enum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "agents_models_entity",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "target": "agents_models_entity",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "agents_models_narrativeevent",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "agents_models_narrativeeventbatch",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "agents_models_topiccluster",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "agents_models_sentimentvector",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "agents_models_debateposition",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "agents_models_debateround",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "agents_models_debatesummary",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "agents_models_analysissignal",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/models.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "agents_models_agentstate",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/sentiment.py",
+      "source_location": "L5",
+      "weight": 0.8,
+      "source": "agents_sentiment_sentimentreasoningagent",
+      "target": "agents_models_narrativeevent",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "target": "agents_models_narrativeevent",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "agents_models_narrativeevent",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bullagent",
+      "target": "agents_models_narrativeevent",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bearagent",
+      "target": "agents_models_narrativeevent",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_arbiteragent",
+      "target": "agents_models_narrativeevent",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_debateengine",
+      "target": "agents_models_narrativeevent",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "target": "agents_models_topiccluster",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "agents_models_topiccluster",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bullagent",
+      "target": "agents_models_topiccluster",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bearagent",
+      "target": "agents_models_topiccluster",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_arbiteragent",
+      "target": "agents_models_topiccluster",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_debateengine",
+      "target": "agents_models_topiccluster",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent_cluster_by_ticker",
+      "target": "agents_models_topiccluster"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/sentiment.py",
+      "source_location": "L5",
+      "weight": 0.8,
+      "source": "agents_sentiment_sentimentreasoningagent",
+      "target": "agents_models_sentimentvector",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "agents_models_sentimentvector",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bullagent",
+      "target": "agents_models_sentimentvector",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bearagent",
+      "target": "agents_models_sentimentvector",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_arbiteragent",
+      "target": "agents_models_sentimentvector",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_debateengine",
+      "target": "agents_models_sentimentvector",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/sentiment.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "agents_sentiment_sentimentreasoningagent_analyze",
+      "target": "agents_models_sentimentvector"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "graph_workflow_debate_node",
+      "target": "agents_models_sentimentvector"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "graph_workflow_signal_generation_node",
+      "target": "agents_models_sentimentvector"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bullagent",
+      "target": "agents_models_debateposition",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bearagent",
+      "target": "agents_models_debateposition",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_arbiteragent",
+      "target": "agents_models_debateposition",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_debateengine",
+      "target": "agents_models_debateposition",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "debate_engine_bullagent_build_case",
+      "target": "agents_models_debateposition"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "debate_engine_bearagent_build_case",
+      "target": "agents_models_debateposition"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bullagent",
+      "target": "agents_models_debateround",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bearagent",
+      "target": "agents_models_debateround",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_arbiteragent",
+      "target": "agents_models_debateround",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_debateengine",
+      "target": "agents_models_debateround",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "debate_engine_debateengine_conduct_debate",
+      "target": "agents_models_debateround"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "agents_models_debatesummary",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bullagent",
+      "target": "agents_models_debatesummary",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_bearagent",
+      "target": "agents_models_debatesummary",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_arbiteragent",
+      "target": "agents_models_debatesummary",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "debate_engine_debateengine",
+      "target": "agents_models_debatesummary",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "debate_engine_arbiteragent_arbitrate",
+      "target": "agents_models_debatesummary"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "agents_models_analysissignal",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator_generate_signal",
+      "target": "agents_models_analysissignal"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "graph_workflow_run_analysis",
+      "target": "agents_models_agentstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/sentiment.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "agents_sentiment_py",
+      "target": "agents_sentiment_sentimentreasoningagent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/sentiment.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "agents_sentiment_sentimentreasoningagent",
+      "target": "agents_sentiment_sentimentreasoningagent_analyze",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "graph_workflow_sentiment_reasoning_node",
+      "target": "agents_sentiment_sentimentreasoningagent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "graph_workflow_run_sequential",
+      "target": "agents_sentiment_sentimentreasoningagent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "webhooks_server_sentiment_reasoning_analyze",
+      "target": "agents_sentiment_sentimentreasoningagent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_py",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent_analyze",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent_cluster_by_ticker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent_extract_keywords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent_enrich_clusters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent_extract_entities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "graph_workflow_narrative_intelligence_node",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "graph_workflow_run_sequential",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "webhooks_server_narrative_intelligence_analyze",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent_analyze",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent_cluster_by_ticker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent_analyze",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent_enrich_clusters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/narrative_intelligence.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "agents_narrative_intelligence_narrativeintelligenceagent_cluster_by_ticker",
+      "target": "agents_narrative_intelligence_narrativeintelligenceagent_extract_keywords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "agents_consensus_aggregator_py",
+      "target": "consensus_aggregator_signalaggregator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "consensus_aggregator_signalaggregator_generate_signal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "consensus_aggregator_signalaggregator_score_debate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "consensus_aggregator_signalaggregator_determine_direction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "consensus_aggregator_signalaggregator_assess_risk_factors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator",
+      "target": "consensus_aggregator_signalaggregator_build_reasoning_trace",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "graph_workflow_signal_generation_node",
+      "target": "consensus_aggregator_signalaggregator"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "graph_workflow_run_sequential",
+      "target": "consensus_aggregator_signalaggregator"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator_generate_signal",
+      "target": "consensus_aggregator_signalaggregator_score_debate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator_generate_signal",
+      "target": "consensus_aggregator_signalaggregator_determine_direction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator_generate_signal",
+      "target": "consensus_aggregator_signalaggregator_assess_risk_factors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/consensus/aggregator.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "consensus_aggregator_signalaggregator_generate_signal",
+      "target": "consensus_aggregator_signalaggregator_build_reasoning_trace",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "agents_graph_workflow_py",
+      "target": "graph_workflow_narrative_intelligence_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "agents_graph_workflow_py",
+      "target": "graph_workflow_sentiment_reasoning_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "agents_graph_workflow_py",
+      "target": "graph_workflow_debate_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "agents_graph_workflow_py",
+      "target": "graph_workflow_signal_generation_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "agents_graph_workflow_py",
+      "target": "graph_workflow_should_debate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "agents_graph_workflow_py",
+      "target": "graph_workflow_create_workflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "agents_graph_workflow_py",
+      "target": "graph_workflow_run_analysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "agents_graph_workflow_py",
+      "target": "graph_workflow_run_sequential",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "graph_workflow_debate_node",
+      "target": "debate_engine_debateengine"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "graph_workflow_run_analysis",
+      "target": "graph_workflow_create_workflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "graph_workflow_run_analysis",
+      "target": "graph_workflow_run_sequential",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "webhooks_server_webhook_analyze",
+      "target": "graph_workflow_run_analysis"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "webhooks_server_strategy_generate",
+      "target": "graph_workflow_run_analysis"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "agents/graph/workflow.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "graph_workflow_run_sequential",
+      "target": "debate_engine_debateengine"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "agents_debate_engine_py",
+      "target": "debate_engine_bullagent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "agents_debate_engine_py",
+      "target": "debate_engine_bearagent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "agents_debate_engine_py",
+      "target": "debate_engine_arbiteragent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "agents_debate_engine_py",
+      "target": "debate_engine_debateengine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "debate_engine_bullagent",
+      "target": "debate_engine_bullagent_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "debate_engine_bullagent",
+      "target": "debate_engine_bullagent_build_case",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "debate_engine_debateengine_init",
+      "target": "debate_engine_bullagent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "debate_engine_bearagent",
+      "target": "debate_engine_bearagent_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "debate_engine_bearagent",
+      "target": "debate_engine_bearagent_build_case",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "source": "debate_engine_debateengine_init",
+      "target": "debate_engine_bearagent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "debate_engine_debateengine_conduct_debate",
+      "target": "debate_engine_bearagent_build_case",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "debate_engine_arbiteragent",
+      "target": "debate_engine_arbiteragent_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "debate_engine_arbiteragent",
+      "target": "debate_engine_arbiteragent_arbitrate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "debate_engine_debateengine_init",
+      "target": "debate_engine_arbiteragent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L170",
+      "weight": 1.0,
+      "source": "debate_engine_debateengine_conduct_debate",
+      "target": "debate_engine_arbiteragent_arbitrate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L145",
+      "weight": 1.0,
+      "source": "debate_engine_debateengine",
+      "target": "debate_engine_debateengine_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/debate/engine.py",
+      "source_location": "L151",
+      "weight": 1.0,
+      "source": "debate_engine_debateengine",
+      "target": "debate_engine_debateengine_conduct_debate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "agents_webhooks_server_py",
+      "target": "webhooks_server_lifespan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "agents_webhooks_server_py",
+      "target": "webhooks_server_health",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "agents_webhooks_server_py",
+      "target": "webhooks_server_webhook_analyze",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "agents_webhooks_server_py",
+      "target": "webhooks_server_webhook_signal_out",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "agents_webhooks_server_py",
+      "target": "webhooks_server_narrative_intelligence_analyze",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "agents_webhooks_server_py",
+      "target": "webhooks_server_sentiment_reasoning_analyze",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "agents_webhooks_server_py",
+      "target": "webhooks_server_strategy_generate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/webhooks/server.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "agents_webhooks_server_py",
+      "target": "webhooks_server_agent_health",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -2390,9 +4523,9 @@
       "source_file": "data/pipelines/pipeline.py",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_pipelines_pipeline_py",
-      "target": "pipelines_pipeline_enrich_event",
-      "confidence_score": 1.0
+      "target": "pipelines_pipeline_enrich_event"
     },
     {
       "relation": "contains",
@@ -2400,9 +4533,9 @@
       "source_file": "data/pipelines/pipeline.py",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_pipelines_pipeline_py",
-      "target": "pipelines_pipeline_run_pipeline",
-      "confidence_score": 1.0
+      "target": "pipelines_pipeline_run_pipeline"
     },
     {
       "relation": "contains",
@@ -2410,9 +4543,9 @@
       "source_file": "data/pipelines/pipeline.py",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_pipelines_pipeline_py",
-      "target": "pipelines_pipeline_main",
-      "confidence_score": 1.0
+      "target": "pipelines_pipeline_main"
     },
     {
       "relation": "calls",
@@ -2421,9 +4554,9 @@
       "source_file": "data/pipelines/pipeline.py",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pipelines_pipeline_run_pipeline",
-      "target": "pipelines_pipeline_enrich_event",
-      "confidence_score": 1.0
+      "target": "pipelines_pipeline_enrich_event"
     },
     {
       "relation": "calls",
@@ -2432,9 +4565,9 @@
       "source_file": "data/pipelines/pipeline.py",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pipelines_pipeline_main",
-      "target": "pipelines_pipeline_run_pipeline",
-      "confidence_score": 1.0
+      "target": "pipelines_pipeline_run_pipeline"
     },
     {
       "relation": "contains",
@@ -2502,9 +4635,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_reddit_scraper_src_normalize_py",
-      "target": "src_normalize_extract_tickers",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_tickers"
     },
     {
       "relation": "contains",
@@ -2512,9 +4645,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_reddit_scraper_src_normalize_py",
-      "target": "src_normalize_extract_entities",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_entities"
     },
     {
       "relation": "contains",
@@ -2522,9 +4655,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_reddit_scraper_src_normalize_py",
-      "target": "src_normalize_build_event_id",
-      "confidence_score": 1.0
+      "target": "src_normalize_build_event_id"
     },
     {
       "relation": "contains",
@@ -2532,9 +4665,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_reddit_scraper_src_normalize_py",
-      "target": "src_normalize_normalize_reddit_post",
-      "confidence_score": 1.0
+      "target": "src_normalize_normalize_reddit_post"
     },
     {
       "relation": "contains",
@@ -2542,9 +4675,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_reddit_scraper_src_normalize_py",
-      "target": "src_normalize_to_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_to_iso"
     },
     {
       "relation": "contains",
@@ -2552,9 +4685,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_reddit_scraper_src_normalize_py",
-      "target": "src_normalize_now_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_now_iso"
     },
     {
       "relation": "calls",
@@ -2563,9 +4696,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_extract_entities",
-      "target": "src_normalize_extract_tickers",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_tickers"
     },
     {
       "relation": "calls",
@@ -2574,9 +4707,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_reddit_post",
-      "target": "src_normalize_extract_tickers",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_tickers"
     },
     {
       "relation": "contains",
@@ -2584,9 +4717,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_news_scraper_src_normalize_py",
-      "target": "src_normalize_extract_tickers",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_tickers"
     },
     {
       "relation": "calls",
@@ -2595,9 +4728,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_article",
-      "target": "src_normalize_extract_tickers",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_tickers"
     },
     {
       "relation": "contains",
@@ -2605,9 +4738,9 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_sec_scraper_src_normalize_py",
-      "target": "src_normalize_extract_tickers",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_tickers"
     },
     {
       "relation": "calls",
@@ -2616,9 +4749,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_reddit_post",
-      "target": "src_normalize_extract_entities",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_entities"
     },
     {
       "relation": "contains",
@@ -2626,9 +4759,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_news_scraper_src_normalize_py",
-      "target": "src_normalize_extract_entities",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_entities"
     },
     {
       "relation": "calls",
@@ -2637,9 +4770,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_article",
-      "target": "src_normalize_extract_entities",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_entities"
     },
     {
       "relation": "calls",
@@ -2648,9 +4781,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_reddit_post",
-      "target": "src_normalize_build_event_id",
-      "confidence_score": 1.0
+      "target": "src_normalize_build_event_id"
     },
     {
       "relation": "contains",
@@ -2658,9 +4791,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_news_scraper_src_normalize_py",
-      "target": "src_normalize_build_event_id",
-      "confidence_score": 1.0
+      "target": "src_normalize_build_event_id"
     },
     {
       "relation": "calls",
@@ -2669,9 +4802,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_article",
-      "target": "src_normalize_build_event_id",
-      "confidence_score": 1.0
+      "target": "src_normalize_build_event_id"
     },
     {
       "relation": "contains",
@@ -2679,9 +4812,9 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_sec_scraper_src_normalize_py",
-      "target": "src_normalize_build_event_id",
-      "confidence_score": 1.0
+      "target": "src_normalize_build_event_id"
     },
     {
       "relation": "calls",
@@ -2690,9 +4823,9 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_sec_filing",
-      "target": "src_normalize_build_event_id",
-      "confidence_score": 1.0
+      "target": "src_normalize_build_event_id"
     },
     {
       "relation": "calls",
@@ -2701,9 +4834,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_reddit_post",
-      "target": "src_normalize_to_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_to_iso"
     },
     {
       "relation": "calls",
@@ -2712,9 +4845,9 @@
       "source_file": "data/actors/reddit-scraper/src/normalize.py",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_reddit_post",
-      "target": "src_normalize_now_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_now_iso"
     },
     {
       "relation": "calls",
@@ -2723,9 +4856,9 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_to_iso",
-      "target": "src_normalize_now_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_now_iso"
     },
     {
       "relation": "contains",
@@ -2733,9 +4866,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_news_scraper_src_normalize_py",
-      "target": "src_normalize_to_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_to_iso"
     },
     {
       "relation": "calls",
@@ -2744,9 +4877,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_article",
-      "target": "src_normalize_to_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_to_iso"
     },
     {
       "relation": "contains",
@@ -2754,9 +4887,9 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_sec_scraper_src_normalize_py",
-      "target": "src_normalize_to_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_to_iso"
     },
     {
       "relation": "calls",
@@ -2765,9 +4898,9 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_sec_filing",
-      "target": "src_normalize_to_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_to_iso"
     },
     {
       "relation": "contains",
@@ -2775,9 +4908,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_news_scraper_src_normalize_py",
-      "target": "src_normalize_now_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_now_iso"
     },
     {
       "relation": "calls",
@@ -2786,9 +4919,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_article",
-      "target": "src_normalize_now_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_now_iso"
     },
     {
       "relation": "contains",
@@ -2796,9 +4929,9 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_sec_scraper_src_normalize_py",
-      "target": "src_normalize_now_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_now_iso"
     },
     {
       "relation": "calls",
@@ -2807,9 +4940,9 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_sec_filing",
-      "target": "src_normalize_now_iso",
-      "confidence_score": 1.0
+      "target": "src_normalize_now_iso"
     },
     {
       "relation": "contains",
@@ -2827,9 +4960,9 @@
       "source_file": "data/actors/reddit-scraper/src/main.py",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_reddit_scraper_src_main_py",
-      "target": "src_main_clean_html",
-      "confidence_score": 1.0
+      "target": "src_main_clean_html"
     },
     {
       "relation": "contains",
@@ -2985,9 +5118,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_news_scraper_src_normalize_py",
-      "target": "src_normalize_normalize_article",
-      "confidence_score": 1.0
+      "target": "src_normalize_normalize_article"
     },
     {
       "relation": "contains",
@@ -2995,9 +5128,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_news_scraper_src_normalize_py",
-      "target": "src_normalize_extract_domain",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_domain"
     },
     {
       "relation": "calls",
@@ -3006,9 +5139,9 @@
       "source_file": "data/actors/news-scraper/src/normalize.py",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_normalize_normalize_article",
-      "target": "src_normalize_extract_domain",
-      "confidence_score": 1.0
+      "target": "src_normalize_extract_domain"
     },
     {
       "relation": "contains",
@@ -3046,9 +5179,9 @@
       "source_file": "data/actors/sec-scraper/src/normalize.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_actors_sec_scraper_src_normalize_py",
-      "target": "src_normalize_normalize_sec_filing",
-      "confidence_score": 1.0
+      "target": "src_normalize_normalize_sec_filing"
     },
     {
       "relation": "contains",
@@ -4482,5 +6615,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b8964242c1cb5669c6303caac7e5d15b86e0c581"
+  "built_at_commit": "263cdfcf72900469cc3a004e406277a4867b8287"
 }

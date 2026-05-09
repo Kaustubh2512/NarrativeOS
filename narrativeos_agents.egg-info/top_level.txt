@@ -1,4 +1,0 @@
-agents
-data
-graphify-out
-infra
