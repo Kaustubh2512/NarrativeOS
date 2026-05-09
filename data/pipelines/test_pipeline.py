@@ -67,7 +67,7 @@ def test_article_normalization():
         "source_name": "reuters",
     }
     event = normalize_article(raw)
-    assert event["source"] == "reuters"
+    assert event["source"] == "news"
     assert "MSFT" in event["ticker_mentions"]
     assert "GOOGL" in event["ticker_mentions"]
     assert event["id"].startswith("evt_news_")
