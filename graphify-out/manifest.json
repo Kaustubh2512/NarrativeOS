@@ -23,21 +23,37 @@
     "mtime": 1778337966.8931525,
     "hash": "8eb7142859ff26bf8f31e622e918c2c3"
   },
+  "/Users/yuvi/projects/NarrativeOS/data/pipelines/pipeline.py": {
+    "mtime": 1778347490.653487,
+    "hash": "523a9fe0da7799861d5f767fb79e8932"
+  },
   "/Users/yuvi/projects/NarrativeOS/data/pipelines/test_pipeline.py": {
     "mtime": 1778338161.8549206,
     "hash": "723028b70edbddb3d0bd130423971c61"
   },
+  "/Users/yuvi/projects/NarrativeOS/data/actors/reddit-scraper/src/normalize.py": {
+    "mtime": 1778341210.3149233,
+    "hash": "3b6cb79227456794e37cdbe3ebebfabd"
+  },
   "/Users/yuvi/projects/NarrativeOS/data/actors/reddit-scraper/src/main.py": {
-    "mtime": 1778338040.263828,
-    "hash": "c03595f100968299ed47b85e232478df"
+    "mtime": 1778344575.8294759,
+    "hash": "d973948aaf550a15c1bedb6aa1d813d5"
+  },
+  "/Users/yuvi/projects/NarrativeOS/data/actors/news-scraper/src/normalize.py": {
+    "mtime": 1778345733.217156,
+    "hash": "8c8ba7903909d64d4c89cdc4b665cc28"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/news-scraper/src/main.py": {
-    "mtime": 1778338069.6942902,
-    "hash": "c7d74c52e12484373f9043753a57b42d"
+    "mtime": 1778341259.4435542,
+    "hash": "67d575db8b93faaa6b1d068adaa3ef34"
+  },
+  "/Users/yuvi/projects/NarrativeOS/data/actors/sec-scraper/src/normalize.py": {
+    "mtime": 1778341240.6232216,
+    "hash": "190f1eeae0ce3ce2405a41b854f261ab"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/sec-scraper/src/main.py": {
-    "mtime": 1778338100.5742188,
-    "hash": "444a48c53e4e90346392ef7d22a89c42"
+    "mtime": 1778345741.8052435,
+    "hash": "4761c2cb6a9bd15f8dfd3cc0d1ff6418"
   },
   "/Users/yuvi/projects/NarrativeOS/MEMBER_02_COGNITIVE.md": {
     "mtime": 1778337173.6844475,
@@ -72,8 +88,8 @@
     "hash": "de55f3153730a96af7def634794245bc"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/reddit-scraper/requirements.txt": {
-    "mtime": 1778338041.7045305,
-    "hash": "1d96445e2c734f552dbfc973e31918b4"
+    "mtime": 1778344577.047961,
+    "hash": "5ad28d8c038a3452a1c6089b6898628a"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/news-scraper/requirements.txt": {
     "mtime": 1778338071.199998,
