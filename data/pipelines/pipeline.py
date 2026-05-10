@@ -122,6 +122,17 @@ def run_pipeline() -> tuple[list[dict[str, Any]], Any]:
 
 def main() -> None:
     events, signal = run_pipeline()
+
+    if signal:
+        try:
+            from infra.superplane.client import push_signal, push_event
+            push_signal(signal.model_dump())
+            for e in events[:5]:
+                push_event(e)
+            print(f"  Pushed signal + {min(len(events), 5)} events to bridge")
+        except Exception:
+            pass
+
     print(f"\n{'='*60}")
     print(f"Pipeline complete: {len(events)} events emitted")
     print(f"{'='*60}")
