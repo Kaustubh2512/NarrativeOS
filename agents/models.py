@@ -24,10 +24,43 @@ class SourceType(str, Enum):
     FINANCE = "finance"
 
 
+class AssetType(str, Enum):
+    EQUITY = "equity"
+    CRYPTO = "crypto"
+    COMMODITY = "commodity"
+    ETF = "etf"
+    UNKNOWN = "unknown"
+
+
+ASSET_TYPE_MAP: dict[str, AssetType] = {
+    "NVDA": AssetType.EQUITY, "AMD": AssetType.EQUITY, "AAPL": AssetType.EQUITY,
+    "MSFT": AssetType.EQUITY, "GOOGL": AssetType.EQUITY, "GOOG": AssetType.EQUITY,
+    "AMZN": AssetType.EQUITY, "META": AssetType.EQUITY, "TSLA": AssetType.EQUITY,
+    "JPM": AssetType.EQUITY, "GS": AssetType.EQUITY,
+    "PLTR": AssetType.EQUITY, "AVGO": AssetType.EQUITY, "TSM": AssetType.EQUITY,
+    "ARM": AssetType.EQUITY, "NFLX": AssetType.EQUITY, "DIS": AssetType.EQUITY,
+    "BA": AssetType.EQUITY, "COIN": AssetType.EQUITY, "HOOD": AssetType.EQUITY,
+    "MSTR": AssetType.EQUITY,
+    "BTC": AssetType.CRYPTO, "ETH": AssetType.CRYPTO, "SOL": AssetType.CRYPTO,
+    "XRP": AssetType.CRYPTO, "DOGE": AssetType.CRYPTO, "ADA": AssetType.CRYPTO,
+    "DOT": AssetType.CRYPTO, "LINK": AssetType.CRYPTO, "AVAX": AssetType.CRYPTO,
+    "GOLD": AssetType.COMMODITY, "XAU": AssetType.COMMODITY,
+    "SILVER": AssetType.COMMODITY, "XAG": AssetType.COMMODITY,
+    "OIL": AssetType.COMMODITY, "WTI": AssetType.COMMODITY,
+    "BRENT": AssetType.COMMODITY, "NG": AssetType.COMMODITY,
+    "HG": AssetType.COMMODITY, "COPPER": AssetType.COMMODITY,
+    "PL": AssetType.COMMODITY, "PA": AssetType.COMMODITY,
+    "CORN": AssetType.COMMODITY, "WHEAT": AssetType.COMMODITY,
+    "SOY": AssetType.COMMODITY,
+    "SPY": AssetType.ETF, "QQQ": AssetType.ETF,
+}
+
+
 class Entity(BaseModel):
     name: str
     type: str
     ticker: str | None = None
+    asset_type: AssetType = AssetType.UNKNOWN
 
 
 class NarrativeEvent(BaseModel):
@@ -105,6 +138,7 @@ class AnalysisSignal(BaseModel):
     supporting_events: list[str] = []
     generated_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
     agent_version: str = "narrativeos-v0.1.0"
+    asset_type: AssetType = AssetType.UNKNOWN
 
 
 class AgentState(BaseModel):

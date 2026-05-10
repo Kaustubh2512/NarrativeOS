@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import json
 import logging
-import os
+import re
 
+from agents.llm import call_llm
 from agents.models import (
     DebatePosition,
     DebateRound,
@@ -10,12 +12,7 @@ from agents.models import (
     SentimentVector,
     TopicCluster,
 )
-
-try:
-    from openai import OpenAI
-    openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", ""))
-except ImportError:
-    openai_client = None
+from agents.tools import ResearchData, research_ticker_text
 
 logger = logging.getLogger(__name__)
 
@@ -30,90 +27,78 @@ class BullAgent:
         clusters: list[TopicCluster],
         sentiment: SentimentVector,
         round_number: int = 1,
+        research: ResearchData | None = None,
         counter_arguments: list[str] | None = None,
     ) -> DebatePosition:
         cluster = next((c for c in clusters if ticker in c.label), None)
-        momentum = cluster.momentum_score if cluster else 0.5
+        context_lines = []
+        if cluster:
+            context_lines.append(f"Narrative: {cluster.label}")
+            context_lines.append(f"Momentum: {cluster.momentum_score:.0%}")
+        context_lines.append(f"Sentiment Polarity: {sentiment.polarity:.2f}")
+        context_lines.append(f"News events: {len(clusters)} clusters")
 
-        if openai_client and os.environ.get("OPENAI_API_KEY"):
-            try:
-                cluster_info = f"Topic: {cluster.label}, Momentum: {cluster.momentum_score}" if cluster else "General Market"
-                prompt = f"You are a Bullish Financial Agent. Build a strong bull case for {ticker}. Context: {cluster_info}, Sentiment Polarity: {sentiment.polarity:.2f}. Round {round_number}."
-                if counter_arguments:
-                    prompt += f"\nRebut these bear arguments: {counter_arguments}"
+        if research:
+            if research.price:
+                p = research.price
+                direction = "up" if p.get("change_pct", 0) > 0 else "down"
+                context_lines.append(f"Price: ${p['price']} ({direction} {abs(p['change_pct']):.1f}%)")
+            if research.news:
+                context_lines.append("News headlines:")
+                for h in research.news[:3]:
+                    context_lines.append(f"  - {h}")
+            if research.sec_filings:
+                context_lines.append("Filings:")
+                for f in research.sec_filings[:1]:
+                    context_lines.append(f"  - {f}")
 
-                response = openai_client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=[
-                        {"role": "system", "content": "You are a professional financial debate agent arguing the bull case. Be concise and data-driven."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    temperature=0.7
-                )
-                argument = response.choices[0].message.content
-                confidence = min(1.0, (momentum * 0.4 + max(0, sentiment.polarity) * 0.3 + (1 - sentiment.uncertainty) * 0.3))
-                return DebatePosition(agent_role="bull", argument=argument, evidence=[f"Narrative momentum: {momentum:.0%}", "LLM Analysis"], confidence=round(confidence, 4))
-            except Exception as e:
-                logger.error(f"OpenAI call failed in BullAgent: {e}")
-
-        # Fallback to heuristics
-        argument_parts = [f"Bull Case for {ticker} (Round {round_number}):"]
-        if momentum > 0.6:
-            argument_parts.append(f"Strong narrative momentum detected at {momentum:.0%}, indicating growing market interest.")
-        elif momentum > 0.3:
-            argument_parts.append(f"Moderate narrative momentum at {momentum:.0%}, potential for acceleration.")
-        if sentiment.polarity > 0.2:
-            argument_parts.append(f"Positive sentiment polarity at {sentiment.polarity:.2f} supports bullish outlook.")
-        if sentiment.emotional_intensity < 0.7:
-            argument_parts.append("Emotional intensity is controlled, suggesting rational optimism rather than euphoria.")
+        rebut_text = ""
         if counter_arguments:
-            for arg in counter_arguments:
-                argument_parts.append(f"Addressing concern: {arg}")
-        confidence = min(1.0, (momentum * 0.4 + max(0, sentiment.polarity) * 0.3 + (1 - sentiment.uncertainty) * 0.3))
+            rebut_text = f"\nRebut these bear arguments:\n" + "\n".join(counter_arguments[:3])
+
+        prompt = (
+            f"You are a Bullish Financial Analyst. Build a bull case for {ticker}.\n\n"
+            + "\n".join(context_lines)
+            + f"\nRound {round_number}.\n{rebut_text}\n\n"
+            + "Provide:\n"
+            + "1. Key bullish arguments (specific, data-driven)\n"
+            + "2. Catalysts that could drive upside\n"
+            + "3. Acknowledge one key risk\n"
+            + "4. Confidence level (0-100%) end with CONFIDENCE: <number>"
+        )
+
+        result = call_llm(
+            system_prompt="You are a professional bull analyst. Be concise and data-driven. End with CONFIDENCE: <number>%",
+            user_prompt=prompt,
+            temperature=0.7,
+        )
+
+        if result:
+            confidence = self._parse_confidence(result)
+            return DebatePosition(
+                agent_role="bull",
+                argument=result,
+                evidence=["Bull case analysis"],
+                confidence=round(confidence, 4),
+            )
+
         return DebatePosition(
             agent_role="bull",
-            argument="\n".join(argument_parts),
-            evidence=[f"Narrative momentum: {momentum:.0%}", f"Sentiment polarity: {sentiment.polarity:.2f}"],
-            confidence=round(confidence, 4),
+            argument=f"Bull Case for {ticker}: LLM unavailable.",
+            evidence=[],
+            confidence=0.5,
         )
+
+    def _parse_confidence(self, text: str) -> float:
+        match = re.search(r"CONFIDENCE\s*:\s*(\d+)", text, re.IGNORECASE)
+        if match:
+            return min(1.0, int(match.group(1)) / 100.0)
+        return 0.6
 
 
 class BearAgent:
     def __init__(self):
         self.role = "bear"
-
-    NEGATIVE_KEYWORDS = {
-        "miss", "missed", "misses", "missing", "cut", "cuts", "cutting", "cut",
-        "decline", "declined", "declining", "drop", "dropped", "falling", "fell",
-        "slowdown", "slowing", "slow", "weak", "weaker", "weakness", "weakening",
-        "loss", "losses", "downgrade", "downgraded", "underperform",
-        "disappoint", "disappointing", "disappointment", "below", "lower",
-        "concern", "concerns", "worry", "worries", "pressure", "pressures",
-        "headwind", "headwinds", "challenge", "challenges", "challenging",
-        "soft", "softening", "soften", "subdued", "tepid", "lukewarm",
-        "prob", "probe", "investigation", "scrutiny", "regulatory",
-        "inflation", "uncertainty", "volatile", "volatility", "risk", "risks",
-        "antitrust", "fine", "fines", "penalty", "sanction", "sanctions",
-        "overhang", "dilution", "dilutive", "downside", "bleak",
-    }
-
-    def _scan_text_for_negatives(self, ticker: str, clusters: list[TopicCluster]) -> list[str]:
-        negatives = []
-        for c in clusters:
-            if ticker in c.label:
-                for kw in self.NEGATIVE_KEYWORDS:
-                    if kw in c.label.lower():
-                        negatives.append(f"Article mentions '{kw}'")
-        return negatives
-
-    def _compute_bear_confidence(self, sentiment: SentimentVector, momentum: float, text_negatives: list[str]) -> float:
-        base = 0.15
-        neg_boost = min(0.5, len(text_negatives) * 0.08)
-        polarity_boost = max(0, -sentiment.polarity) * 0.35
-        instability_boost = sentiment.instability_score * 0.25
-        unc_boost = sentiment.uncertainty * 0.15
-        momentum_penalty = min(0, (momentum - 0.5) * -0.1)
-        return min(1.0, base + neg_boost + polarity_boost + instability_boost + unc_boost + momentum_penalty)
 
     def build_case(
         self,
@@ -121,61 +106,69 @@ class BearAgent:
         clusters: list[TopicCluster],
         sentiment: SentimentVector,
         round_number: int = 1,
+        research: ResearchData | None = None,
         counter_arguments: list[str] | None = None,
     ) -> DebatePosition:
         cluster = next((c for c in clusters if ticker in c.label), None)
-        momentum = cluster.momentum_score if cluster else 0.5
-        text_negatives = self._scan_text_for_negatives(ticker, clusters)
+        context_lines = []
+        if cluster:
+            context_lines.append(f"Narrative: {cluster.label}")
+            context_lines.append(f"Momentum: {cluster.momentum_score:.0%}")
+        context_lines.append(f"Sentiment Polarity: {sentiment.polarity:.2f}")
+        context_lines.append(f"Uncertainty: {sentiment.uncertainty:.2f}")
 
-        if openai_client and os.environ.get("OPENAI_API_KEY"):
-            try:
-                cluster_info = f"Topic: {cluster.label}, Momentum: {cluster.momentum_score}" if cluster else "General Market"
-                neg_detail = " ".join(text_negatives[:5]) if text_negatives else "No explicit negatives found in text"
-                prompt = f"You are a Bearish Financial Agent. Build a strong bear case for {ticker}. Context: {cluster_info}, Sentiment Polarity: {sentiment.polarity:.2f}. Text signals: {neg_detail}. Round {round_number}."
-                if counter_arguments:
-                    prompt += f"\nRebut these bull arguments: {counter_arguments}"
+        if research:
+            if research.price:
+                p = research.price
+                direction = "up" if p.get("change_pct", 0) > 0 else "down"
+                context_lines.append(f"Price: ${p['price']} ({direction} {abs(p['change_pct']):.1f}%)")
+            if research.news:
+                context_lines.append("News headlines:")
+                for h in research.news[:3]:
+                    context_lines.append(f"  - {h}")
 
-                response = openai_client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=[
-                        {"role": "system", "content": "You are a professional financial debate agent arguing the bear case. Be concise and highlight risks. Be skeptical and critical."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    temperature=0.7
-                )
-                argument = response.choices[0].message.content
-                confidence = self._compute_bear_confidence(sentiment, momentum, text_negatives)
-                return DebatePosition(agent_role="bear", argument=argument, evidence=[f"Narrative instability: {sentiment.instability_score:.0%}", "LLM Analysis"], confidence=round(confidence, 4))
-            except Exception as e:
-                logger.error(f"OpenAI call failed in BearAgent: {e}")
-
-        # Fallback to heuristics
-        argument_parts = [f"Bear Case for {ticker} (Round {round_number}):"]
-        if text_negatives:
-            argument_parts.append(f"Bearish signals detected in coverage: {', '.join(text_negatives[:4])}.")
-        if sentiment.polarity < 0:
-            argument_parts.append(f"Negative sentiment polarity at {sentiment.polarity:.2f} confirms bearish bias.")
-        if sentiment.instability_score > 0.5:
-            argument_parts.append(f"High narrative instability at {sentiment.instability_score:.0%} — sentiment could reverse sharply.")
-        else:
-            argument_parts.append("Market conditions may be fragile despite apparent optimism.")
-        if sentiment.emotional_intensity > 0.6:
-            argument_parts.append(f"Elevated emotional intensity at {sentiment.emotional_intensity:.0%} suggests irrational exuberance that may correct.")
-        if sentiment.uncertainty > 0.4:
-            argument_parts.append(f"Uncertainty level at {sentiment.uncertainty:.0%} creates vulnerability to negative surprises.")
+        rebut_text = ""
         if counter_arguments:
-            for arg in counter_arguments:
-                argument_parts.append(f"Rebuttal to: {arg}")
-        if not text_negatives and sentiment.polarity >= 0 and sentiment.instability_score <= 0.5:
-            argument_parts.append("Valuation concerns may not be fully priced in despite positive sentiment.")
-        confidence = self._compute_bear_confidence(sentiment, momentum, text_negatives)
+            rebut_text = f"\nRebuttal: Counter these bull arguments:\n" + "\n".join(counter_arguments[:3])
+
+        prompt = (
+            f"You are a Bearish Financial Analyst. Build a STRONG bear case for {ticker}.\n\n"
+            + "\n".join(context_lines)
+            + f"\nRound {round_number}.\n{rebut_text}\n\n"
+            + "Focus on:\n"
+            + "1. Why the market is wrong / overvalued\n"
+            + "2. Specific risks, headwinds, competition\n"
+            + "3. Why this is a sell, not a hold\n"
+            + "4. Confidence level (0-100%) end with CONFIDENCE: <number>"
+        )
+
+        result = call_llm(
+            system_prompt="You are a bearish analyst who looks for reasons to sell. Be aggressive and skeptical. End with CONFIDENCE: <number>%",
+            user_prompt=prompt,
+            temperature=0.7,
+        )
+
+        if result:
+            confidence = self._parse_confidence(result)
+            return DebatePosition(
+                agent_role="bear",
+                argument=result,
+                evidence=["Bear case analysis"],
+                confidence=round(confidence, 4),
+            )
 
         return DebatePosition(
             agent_role="bear",
-            argument="\n".join(argument_parts),
-            evidence=[f"Narrative instability: {sentiment.instability_score:.0%}", f"Uncertainty: {sentiment.uncertainty:.0%}"],
-            confidence=round(confidence, 4),
+            argument=f"Bear Case for {ticker}: LLM unavailable.",
+            evidence=[],
+            confidence=0.3,
         )
+
+    def _parse_confidence(self, text: str) -> float:
+        match = re.search(r"CONFIDENCE\s*:\s*(\d+)", text, re.IGNORECASE)
+        if match:
+            return min(1.0, int(match.group(1)) / 100.0)
+        return 0.4
 
 
 class ArbiterAgent:
@@ -187,73 +180,89 @@ class ArbiterAgent:
         ticker: str,
         rounds: list[DebateRound],
         sentiment: SentimentVector,
-        events: list | None = None,
+        research: ResearchData | None = None,
     ) -> DebateSummary:
         last_round = rounds[-1] if rounds else None
         if not last_round:
-            return DebateSummary(bull_case="No debate conducted", bear_case="No debate conducted", arbiter_ruling="Insufficient data", debate_rounds=0)
+            return DebateSummary(bull_case="No debate", bear_case="No debate", arbiter_ruling="Insufficient data", debate_rounds=0)
 
         bull = last_round.bull_position
         bear = last_round.bear_position
 
-        bull_score = bull.confidence
-        bear_score = bear.confidence
+        price_context = ""
+        if research and research.price:
+            p = research.price
+            chg = p.get("change_pct", 0)
+            price_context = f"Price Trend: ${p['price']} ({chg:+.1f}%)\n"
 
-        if openai_client and os.environ.get("OPENAI_API_KEY"):
+        news_context = ""
+        if research and research.news:
+            news_context = "News:\n" + "\n".join(f"  - {h}" for h in research.news[:3]) + "\n"
+
+        prompt = (
+            f"CIO Decision for {ticker}.\n\n"
+            f"{price_context}"
+            f"Sentiment Polarity: {sentiment.polarity:.2f} (<0 = bearish, >0 = bullish)\n"
+            f"Risk Score: {sentiment.instability_score:.2f}\n"
+            f"{news_context}"
+            f"=== BULL CASE ===\n{bull.argument}\n\n"
+            f"=== BEAR CASE ===\n{bear.argument}\n\n"
+            f"Rules:\n"
+            f"- Strong polarity (> 0.6) + strong bull arguments → BULL\n"
+            f"- Strong negative polarity (< -0.4) + strong bear arguments → BEAR\n"
+            f"- Moderate polarity or mixed debate → HOLD\n"
+            f"- Trust the data: if sentiment is strongly positive AND bull case is solid, rule BULL\n"
+            f"- bull_confidence + bear_confidence should sum to ~100\n"
+            f"Return JSON:\n"
+            f"{{\n"
+            f'  "ruling": "bull" | "bear" | "hold",\n'
+            f'  "reasoning": "brief explanation",\n'
+            f'  "bull_confidence": 0-100,\n'
+            f'  "bear_confidence": 0-100\n'
+            f"}}"
+        )
+
+        result = call_llm(
+            system_prompt="You are a data-driven CIO. Rule BULL when sentiment > 0.6 and bull case is strong. Rule BEAR when sentiment < -0.4 and bear case is strong. Rule HOLD for mixed or moderate signals. Output valid JSON only.",
+            user_prompt=prompt,
+            temperature=0.2,
+            json_mode=True,
+        )
+
+        if result:
             try:
-                prompt = f"You are the Arbiter. Evaluate the debate for {ticker}.\nBull Case:\n{bull.argument}\n\nBear Case:\n{bear.argument}\n\nSentiment Polarity: {sentiment.polarity:.2f}\nProvide a concise ruling on which side prevails and why."
-                response = openai_client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=[
-                        {"role": "system", "content": "You are a professional financial debate arbiter. Synthesize the arguments and provide a clear, objective ruling. Be objective and balanced."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    temperature=0.4
-                )
-                ruling = response.choices[0].message.content
-                return DebateSummary(
-                    bull_case=bull.argument,
-                    bear_case=bear.argument,
-                    arbiter_ruling=ruling,
-                    debate_rounds=len(rounds),
-                )
-            except Exception as e:
-                logger.error(f"OpenAI call failed in ArbiterAgent: {e}")
+                data = json.loads(result)
+                if isinstance(data, list):
+                    data = data[0] if data else {}
+                ruling_text = data.get("ruling", "hold")
+                reasoning = data.get("reasoning", "")
+                bull_conf = data.get("bull_confidence", 50)
+                bear_conf = data.get("bear_confidence", 50)
 
-        spread = bull_score - bear_score
-        if spread > 0.15 and sentiment.polarity > 0.2:
-            ruling = "Bull case prevails — narrative momentum and sentiment support continued upside."
-            ruling_detail = f"Bull confidence {bull_score:.0%} vs Bear confidence {bear_score:.0%}. "
-            if sentiment.instability_score > 0.5:
-                ruling_detail += "However, elevated instability warrants monitoring for reversal signals."
-            elif sentiment.uncertainty > 0.4:
-                ruling_detail += "Moderate uncertainty suggests position sizing should be conservative."
-        elif spread < -0.15 and sentiment.polarity < -0.2:
-            ruling = "Bear case prevails — risk factors and instability outweigh optimistic positioning."
-            ruling_detail = f"Bear confidence {bear_score:.0%} vs Bull confidence {bull_score:.0%}. "
-        elif sentiment.polarity < -0.3:
-            ruling = "Slightly bearish lean — negative sentiment suggests caution despite debate scores."
-            ruling_detail = f"Bull {bull_score:.0%} vs Bear {bear_score:.0%} — bearish tilt from sentiment ({sentiment.polarity:.2f}). "
-        elif sentiment.polarity > 0.6:
-            ruling = "Slightly bullish lean — positive sentiment supports moderate conviction."
-            ruling_detail = f"Bull {bull_score:.0%} vs Bear {bear_score:.0%} — bullish tilt from sentiment. "
-        else:
-            ruling = "Balanced — both cases have merit. Awaiting additional catalysts for directional conviction."
-            ruling_detail = f"Bull {bull_score:.0%} vs Bear {bear_score:.0%} — sentiment neutral ({sentiment.polarity:.2f}). "
+                if ruling_text == "bull":
+                    ruling = f"Bull case prevails — {reasoning}"
+                elif ruling_text == "bear":
+                    ruling = f"Bear case prevails — {reasoning}"
+                else:
+                    ruling = f"HOLD — {reasoning}"
 
-        ruling += " " + ruling_detail
+                ruling += f" Bull confidence {bull_conf:.0f}% vs Bear confidence {bear_conf:.0f}%."
+                return DebateSummary(bull_case=bull.argument, bear_case=bear.argument, arbiter_ruling=ruling, debate_rounds=len(rounds))
+            except (json.JSONDecodeError, KeyError) as e:
+                logger.error("Failed to parse arbiter JSON: %s", e)
 
         return DebateSummary(
             bull_case=bull.argument,
             bear_case=bear.argument,
-            arbiter_ruling=ruling,
+            arbiter_ruling="HOLD — arbiter LLM unavailable.",
             debate_rounds=len(rounds),
         )
 
 
 class DebateEngine:
-    def __init__(self, rounds: int = 3):
+    def __init__(self, rounds: int = 1, use_tools: bool = True):
         self.rounds = rounds
+        self.use_tools = use_tools
         self.bull = BullAgent()
         self.bear = BearAgent()
         self.arbiter = ArbiterAgent()
@@ -264,18 +273,19 @@ class DebateEngine:
         clusters: list[TopicCluster],
         sentiment: SentimentVector,
     ) -> tuple[list[DebateRound], DebateSummary]:
+        research = research_ticker_text(ticker) if self.use_tools else None
+        research_data = None
+        if self.use_tools:
+            from agents.tools import research_ticker
+            research_data = research_ticker(ticker)
+
         debate_rounds: list[DebateRound] = []
-        bull_counter: list[str] = []
-        bear_counter: list[str] = []
 
         for r in range(1, self.rounds + 1):
-            bull_pos = self.bull.build_case(ticker, clusters, sentiment, r, bear_counter)
-            bear_pos = self.bear.build_case(ticker, clusters, sentiment, r, bull_counter)
+            bull_pos = self.bull.build_case(ticker, clusters, sentiment, r, research_data)
+            bear_pos = self.bear.build_case(ticker, clusters, sentiment, r, research_data)
 
             debate_rounds.append(DebateRound(round_number=r, bull_position=bull_pos, bear_position=bear_pos))
 
-            bull_counter = [f"Bear argued: {bear_pos.argument[:200]}"]
-            bear_counter = [f"Bull argued: {bull_pos.argument[:200]}"]
-
-        summary = self.arbiter.arbitrate(ticker, debate_rounds, sentiment)
+        summary = self.arbiter.arbitrate(ticker, debate_rounds, sentiment, research_data)
         return debate_rounds, summary

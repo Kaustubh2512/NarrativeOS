@@ -162,4 +162,115 @@ HISTORICAL_EVENTS = [
         "actual_change_pct": 4.2,
         "actual_direction": "BULLISH",
     },
+
+    # ── Crypto Events ─────────────────────────────────────────────────
+
+    {
+        "ticker": "BTC",
+        "date": "2024-01-10",
+        "title": "SEC Approves 11 Spot Bitcoin ETFs in Historic Decision for Crypto Markets",
+        "body": (
+            "The U.S. Securities and Exchange Commission has approved the first spot Bitcoin "
+            "exchange-traded funds in a landmark decision that opens crypto exposure to mainstream "
+            "investors. All 11 applications were approved, including BlackRock's iShares Bitcoin Trust, "
+            "Fidelity's Wise Origin Bitcoin Fund, and ARK 21Shares Bitcoin ETF. Bitcoin surged on "
+            "massive trading volumes as institutional investors gained direct exposure through "
+            "traditional brokerage accounts. SEC Chair Gary Gensler said the approval was not an "
+            "endorsement of Bitcoin but reflected court rulings that forced the agency's hand. "
+            "Analysts projected up to $100 billion in new demand over the following year."
+        ),
+        "lookahead_days": 5,
+        "actual_change_pct": 4.2,
+        "actual_direction": "BULLISH",
+    },
+    {
+        "ticker": "ETH",
+        "date": "2024-05-20",
+        "title": "Ethereum Surges on Sudden SEC Engagement Over Spot ETF Filings",
+        "body": (
+            "Ethereum prices surged dramatically as reports emerged that the SEC is suddenly engaging "
+            "with potential spot Ethereum ETF issuers after months of silence. The SEC requested "
+            "updates to 19b-4 filings from exchanges including Nasdaq and CBOE, signaling a potential "
+            "approval. ETH jumped from $3,100 to over $3,800 as traders rushed to position ahead of "
+            "what analysts called a 'regulatory pivot' on crypto. The political climate around "
+            "crypto regulation has shifted significantly, with bipartisan support growing for "
+            "clearer digital asset rules. Bloomberg analysts raised approval odds from 25% to 75%."
+        ),
+        "lookahead_days": 5,
+        "actual_change_pct": 5.8,
+        "actual_direction": "BULLISH",
+    },
+    {
+        "ticker": "SOL",
+        "date": "2024-02-06",
+        "title": "Solana Network Experiences Fifth Major Outage — Block Production Halts for 5 Hours",
+        "body": (
+            "The Solana blockchain suffered its fifth major outage in two years as a bug in the "
+            "runtime implementation caused validators to crash, halting block production for "
+            "approximately five hours. Validators coordinated a restart after implementing a "
+            "patch, but the recurring reliability issues reignited concerns about the network's "
+            "suitability for mission-critical DeFi applications. SOL price dropped following the "
+            "news, underperforming other major crypto assets. The Solana Foundation said it was "
+            "implementing additional testing procedures to prevent future incidents, though "
+            "critics argued the network's architecture remains inherently fragile."
+        ),
+        "lookahead_days": 5,
+        "actual_change_pct": -3.2,
+        "actual_direction": "BEARISH",
+    },
+
+    # ── Commodity Events ──────────────────────────────────────────────
+
+    {
+        "ticker": "OIL",
+        "date": "2023-10-07",
+        "title": "Crude Oil Spikes 5% as Hamas Attack on Israel Threatens Middle East Supply",
+        "body": (
+            "Crude oil prices surged more than 5% following a surprise attack by Hamas on Israel "
+            "that has raised fears of a broader Middle Eastern conflict. WTI crude jumped to $86 "
+            "per barrel as traders priced in the risk of supply disruptions from Iran, a key oil "
+            "producer and Hamas supporter. Analysts warned that a wider war could threaten the "
+            "Strait of Hormuz chokepoint through which approximately 20% of global oil passes "
+            "daily. The Biden administration said it would monitor energy markets closely and "
+            "stood ready to tap the Strategic Petroleum Reserve if needed to stabilize prices."
+        ),
+        "lookahead_days": 5,
+        "actual_change_pct": 4.1,
+        "actual_direction": "BULLISH",
+    },
+    {
+        "ticker": "GOLD",
+        "date": "2023-12-04",
+        "title": "Gold Hits All-Time High Above $2,100 as Markets Price in 2024 Rate Cuts",
+        "body": (
+            "Gold surged to an all-time high above $2,100 per ounce as traders increasingly bet "
+            "that the Federal Reserve will begin cutting interest rates in early 2024. The rally "
+            "accelerated after Fed Chair Jerome Powell's dovish comments signaled the central "
+            "bank's tightening cycle is likely over. A weakening US dollar and falling bond "
+            "yields provided additional tailwinds. Central banks continued their record gold-"
+            "buying spree led by China and Poland, providing structural demand support. "
+            "Analysts projected gold could reach $2,500 by year-end if rate cuts materialize."
+        ),
+        "lookahead_days": 5,
+        "actual_change_pct": 3.5,
+        "actual_direction": "BULLISH",
+    },
+    {
+        "ticker": "NG",
+        "date": "2024-01-12",
+        "title": "Natural Gas Plunges to 3-Year Low as Warm Winter Decimates Heating Demand",
+        "body": (
+            "Natural gas futures collapsed to their lowest level in three years as unseasonably "
+            "warm weather across the United States decimated heating demand. Storage levels "
+            "remained well above the five-year average, with production continuing at record "
+            "levels. The mild winter has crushed the typical seasonal price premium, leaving "
+            "producers facing negative margins on some operations. Analysts downgraded their "
+            "price forecasts, with some warning that sustained low prices could force production "
+            "cuts. The market is now pricing in the possibility of storage reaching capacity "
+            "before next winter's heating season begins."
+        ),
+        "lookahead_days": 5,
+        "actual_change_pct": -6.5,
+        "actual_direction": "BEARISH",
+    },
 ]

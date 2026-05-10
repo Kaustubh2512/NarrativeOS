@@ -68,8 +68,7 @@ services:
     ports:
       - "5173:5173"
     environment:
-      NEXT_PUBLIC_SUPERPLANE_URL: ${NEXT_PUBLIC_SUPERPLANE_URL:-http://superplane:3000}
-      NEXT_PUBLIC_API_URL: ${NARRATIVEOS_API_URL:-http://visualization-agent:8001}
+      NEXT_PUBLIC_BRIDGE_URL: ${NEXT_PUBLIC_BRIDGE_URL:-http://superplane-bridge:8765}
     depends_on:
       - superplane
       - superplane-bridge

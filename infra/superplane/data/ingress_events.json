@@ -1,0 +1,108 @@
+[
+  {
+    "id": "evt_news_6c88d345e826",
+    "source": "news",
+    "source_actor": "narrativeos-news-scraper",
+    "title": "Warren Buffett sends blunt message on mortgages, home financing",
+    "body": "",
+    "url": "https://finance.yahoo.com/markets/options/articles/warren-buffett-sends-blunt-message-140700722.html",
+    "author": "",
+    "published_at": "2026-05-10T09:37:52.582987+00:00",
+    "collected_at": "2026-05-10T09:37:52.582995+00:00",
+    "ticker_mentions": [],
+    "entities": [],
+    "sentiment_score": null,
+    "metadata": {
+      "source_domain": "finance.yahoo.com",
+      "word_count": 0
+    }
+  },
+  {
+    "id": "evt_news_46f5d21bb309",
+    "source": "news",
+    "source_actor": "narrativeos-news-scraper",
+    "title": "KeyBanc Reiterates Service Now\u2019s (NOW) Underweight Rating",
+    "body": "",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/keybanc-reiterates-now-now-underweight-145149352.html",
+    "author": "",
+    "published_at": "2026-05-10T09:37:52.583098+00:00",
+    "collected_at": "2026-05-10T09:37:52.583101+00:00",
+    "ticker_mentions": [],
+    "entities": [],
+    "sentiment_score": null,
+    "metadata": {
+      "source_domain": "finance.yahoo.com",
+      "word_count": 0
+    }
+  },
+  {
+    "id": "evt_news_6c68114e1a87",
+    "source": "news",
+    "source_actor": "narrativeos-news-scraper",
+    "title": "Microsoft Corp. (MSFT) to Invest in European Data Center Regions",
+    "body": "",
+    "url": "https://finance.yahoo.com/sectors/technology/articles/microsoft-corp-msft-invest-european-145058016.html",
+    "author": "",
+    "published_at": "2026-05-10T09:37:52.583131+00:00",
+    "collected_at": "2026-05-10T09:37:52.583134+00:00",
+    "ticker_mentions": [
+      "MSFT"
+    ],
+    "entities": [
+      {
+        "name": "Microsoft",
+        "type": "company",
+        "ticker": "MSFT"
+      }
+    ],
+    "sentiment_score": null,
+    "metadata": {
+      "source_domain": "finance.yahoo.com",
+      "word_count": 0
+    }
+  },
+  {
+    "id": "evt_news_c88581954c74",
+    "source": "news",
+    "source_actor": "narrativeos-news-scraper",
+    "title": "Palantir Technologies (PLTR) Price Target Raised to $225 by Citi",
+    "body": "",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-price-target-144939914.html",
+    "author": "",
+    "published_at": "2026-05-10T09:37:52.583161+00:00",
+    "collected_at": "2026-05-10T09:37:52.583165+00:00",
+    "ticker_mentions": [
+      "PLTR"
+    ],
+    "entities": [
+      {
+        "name": "Palantir Technologies",
+        "type": "company",
+        "ticker": "PLTR"
+      }
+    ],
+    "sentiment_score": null,
+    "metadata": {
+      "source_domain": "finance.yahoo.com",
+      "word_count": 0
+    }
+  },
+  {
+    "id": "evt_news_aa8cded2b058",
+    "source": "news",
+    "source_actor": "narrativeos-news-scraper",
+    "title": "CrowdStrike Holdings (CRWD) Expands Cybersecurity Coalition with Additional Partners",
+    "body": "",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-holdings-crwd-expands-cybersecurity-144940925.html",
+    "author": "",
+    "published_at": "2026-05-10T09:37:52.583191+00:00",
+    "collected_at": "2026-05-10T09:37:52.583194+00:00",
+    "ticker_mentions": [],
+    "entities": [],
+    "sentiment_score": null,
+    "metadata": {
+      "source_domain": "finance.yahoo.com",
+      "word_count": 0
+    }
+  }
+]

@@ -1,6 +1,12 @@
 from __future__ import annotations
 
+import json
+import logging
+
+from agents.llm import call_llm
 from agents.models import NarrativeEvent, SentimentVector
+
+logger = logging.getLogger(__name__)
 
 
 class SentimentReasoningAgent:
@@ -62,34 +68,80 @@ class SentimentReasoningAgent:
         if not events:
             return SentimentVector()
 
+        llm_result = self._llm_analyze(events)
+        if llm_result:
+            return llm_result
+
+        return self._keyword_analyze(events)
+
+    @staticmethod
+    def _parse_sentiment(data: Any) -> SentimentVector | None:
+        if isinstance(data, list):
+            data = data[0] if data else None
+        if not isinstance(data, dict):
+            return None
+        try:
+            return SentimentVector(
+                polarity=round(max(-1.0, min(1.0, data["polarity"])), 4),
+                confidence=round(max(0.0, min(1.0, data["confidence"])), 4),
+                emotional_intensity=round(max(0.0, min(1.0, data.get("emotional_intensity", 0.5))), 4),
+                uncertainty=round(max(0.0, min(1.0, data.get("uncertainty", 0.5))), 4),
+                instability_score=round(max(0.0, min(1.0, data.get("instability_score", 0.5))), 4),
+            )
+        except (KeyError, ValueError, TypeError):
+            return None
+
+    def _llm_analyze(self, events: list[NarrativeEvent]) -> SentimentVector | None:
+        combined = "\n".join(f"[{e.source.value}] {e.title}\n{e.body[:500]}" for e in events[:10])
+        prompt = (
+            f"Analyze the sentiment of these {len(events)} financial news events:\n\n{combined}\n\n"
+            f"Return JSON only:\n"
+            f"{{\n"
+            f'  "polarity": -1.0 to 1.0 (negative to positive),\n'
+            f'  "confidence": 0.0 to 1.0,\n'
+            f'  "emotional_intensity": 0.0 to 1.0,\n'
+            f'  "uncertainty": 0.0 to 1.0,\n'
+            f'  "instability_score": 0.0 to 1.0,\n'
+            f'  "reasoning": "brief explanation"\n'
+            f"}}"
+        )
+        result = call_llm(
+            system_prompt="You are a financial sentiment analysis expert. Analyze news events and return structured JSON sentiment scores.",
+            user_prompt=prompt,
+            temperature=0.2,
+            json_mode=True,
+        )
+        if result is None:
+            return None
+        try:
+            data = json.loads(result)
+            parsed = self._parse_sentiment(data)
+            if parsed:
+                return parsed
+        except (json.JSONDecodeError, KeyError, ValueError) as e:
+            logger.warning("LLM sentiment parse failed: %s", e)
+        return None
+
+    def _keyword_analyze(self, events: list[NarrativeEvent]) -> SentimentVector:
         combined = " ".join(f"{e.title} {e.body}" for e in events).lower()
         words = combined.split()
-
         pos_count = sum(1 for w in words if w in self.POSITIVE_WORDS)
         neg_count = sum(1 for w in words if w in self.NEGATIVE_WORDS)
         int_count = sum(1 for w in words if w in self.INTENSITY_WORDS)
         unc_count = sum(1 for w in words if w in self.UNCERTAINTY_WORDS)
         total = len(words)
-
         net = (pos_count - neg_count) / max(pos_count + neg_count, 1)
         polarity = max(-1.0, min(1.0, net))
-
         intensity = min(1.0, int_count / max(total * 0.05, 1))
         uncertainty = min(1.0, unc_count / max(total * 0.05, 1))
-
         instability = (intensity + uncertainty) / 2.0
-
         pre_scored = [e.sentiment_score for e in events if e.sentiment_score is not None]
         blended_polarity = (
-            (polarity + (sum(pre_scored) / len(pre_scored))) / 2.0
-            if pre_scored
-            else polarity
+            (polarity + (sum(pre_scored) / len(pre_scored))) / 2.0 if pre_scored else polarity
         )
-
         event_count_confidence = min(1.0, len(events) / 15.0)
         word_count_confidence = min(1.0, total / 500.0)
-        confidence = (event_count_confidence * 0.4 + word_count_confidence * 0.6 - uncertainty * 0.3)
-
+        confidence = event_count_confidence * 0.4 + word_count_confidence * 0.6 - uncertainty * 0.3
         return SentimentVector(
             polarity=round(max(-1.0, min(1.0, blended_polarity)), 4),
             confidence=round(max(0.0, min(1.0, confidence)), 4),

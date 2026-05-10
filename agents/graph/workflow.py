@@ -29,7 +29,7 @@ def sentiment_reasoning_node(state: AgentState) -> dict:
 
 def debate_node(state: AgentState) -> dict:
     ticker = state.ticker or (state.topic_clusters[0].label.split(": ")[0] if state.topic_clusters else "UNKNOWN")
-    engine = DebateEngine(rounds=3)
+    engine = DebateEngine(rounds=1, use_tools=False)
     history, summary = engine.conduct_debate(ticker, state.topic_clusters, state.sentiment or SentimentVector())
     return {"debate_history": history, "debate_summary": summary}
 
@@ -87,7 +87,7 @@ def run_analysis(events: list[NarrativeEvent], ticker: str | None = None) -> Ana
 def _run_sequential(events: list[NarrativeEvent], ticker: str | None = None) -> AnalysisSignal:
     narrative = NarrativeIntelligenceAgent()
     sentiment = SentimentReasoningAgent()
-    debate = DebateEngine(rounds=3)
+    debate = DebateEngine(rounds=1)
     aggregator = SignalAggregator()
 
     clusters = narrative.analyze(events)
