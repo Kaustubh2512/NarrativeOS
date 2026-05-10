@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: narrativeos-bridge
+    runtime: docker
+    repo: https://github.com/{{REPO}}
+    branch: main
+    sourceDir: infra/superplane
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: "8765"
+    healthCheckPath: /health

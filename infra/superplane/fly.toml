@@ -1,7 +1,5 @@
 app = "narrativeos-bridge"
 
-primary_region = "iad"
-
 [build]
   dockerfile = "Dockerfile"
 
