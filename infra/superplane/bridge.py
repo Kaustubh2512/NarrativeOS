@@ -49,6 +49,10 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+@app.get("/")
+async def root():
+    return {"service": "NarrativeOS Superplane Bridge", "status": "running", "docs": "/docs", "health": "/health"}
+
 @app.get("/health")
 async def health():
     return {"status": "ok", "service": "superplane-bridge", "version": "0.1.0"}
