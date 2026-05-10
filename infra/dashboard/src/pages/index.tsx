@@ -143,11 +143,7 @@ export default function Home() {
   useEffect(() => {
     async function load() {
       try {
-        const bridge = (process.env.NEXT_PUBLIC_BRIDGE_URL || "http://localhost:8765").replace(/\/+$/, "");
-        const [sr, st] = await Promise.all([
-          fetch(`${bridge}/api/v1/datasets/executed_signals/items?limit=20`),
-          fetch(`${bridge}/api/v1/status`),
-        ]);
+        const [sr, st] = await Promise.all([fetch("/api/signals"), fetch("/api/status")]);
         if (sr.ok) { const d = await sr.json(); if (d.length) setSignals(d); }
         if (st.ok) { const d = await st.json(); setStatus(d); }
       } catch { /* use mock data */ }
