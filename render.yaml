@@ -2,7 +2,7 @@ services:
   - type: web
     name: narrativeos-bridge
     runtime: docker
-    repo: https://github.com/{{REPO}}
+    repo: https://github.com/0xYuvi/NarrativeOS
     branch: main
     sourceDir: infra/superplane
     dockerfilePath: Dockerfile
