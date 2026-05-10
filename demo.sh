@@ -180,9 +180,9 @@ else
   # Extract signal info from output
   SIGNAL_TICKER=$(echo "$PIPELINE_OUTPUT" | grep "Final E2E Signal" | awk '{print $5}')
   SIGNAL_DIR=$(echo "$PIPELINE_OUTPUT" | grep "Final E2E Signal" | awk '{print $4}')
-  SIGNAL_CONF=$(echo "$PIPELINE_OUTPUT" | grep "Final E2E Signal" | awk '{print $6}')
+  SIGNAL_CONF=$(echo "$PIPELINE_OUTPUT" | grep "Final E2E Signal" | awk '{print $7}')
   SIGNAL_ARBITER=$(echo "$PIPELINE_OUTPUT" | grep "Arbiter:" | head -1 | sed 's/.*Arbiter: //')
-  EVENT_COUNT=$(echo "$PIPELINE_OUTPUT" | grep "Pipeline complete" | grep -oP '\d+(?= events emitted)')
+  EVENT_COUNT=$(echo "$PIPELINE_OUTPUT" | sed -n 's/.*Pipeline complete: \([0-9]*\) events emitted.*/\1/p')
 
   if [ -n "$EVENT_COUNT" ]; then
     echo ""
