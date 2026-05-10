@@ -8,7 +8,7 @@ export default async function handler(
 ) {
   try {
     const response = await fetch(`${BRIDGE_URL}/api/v1/status`, {
-      signal: AbortSignal.timeout(5000),
+      signal: AbortSignal.timeout(15000),
     });
     if (!response.ok) throw new Error(`Bridge status: ${response.status}`);
     const data = await response.json();

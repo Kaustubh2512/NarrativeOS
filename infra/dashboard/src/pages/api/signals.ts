@@ -9,7 +9,7 @@ export default async function handler(
   try {
     const response = await fetch(
       `${BRIDGE_URL}/api/v1/datasets/executed_signals/items?limit=20`,
-      { signal: AbortSignal.timeout(5000) }
+      { signal: AbortSignal.timeout(15000) }
     );
     if (!response.ok) throw new Error(`Bridge signals: ${response.status}`);
     const data = await response.json();
