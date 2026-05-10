@@ -1,4 +1,4 @@
-const BRIDGE_URL = process.env.NEXT_PUBLIC_BRIDGE_URL || "http://localhost:8765";
+const BRIDGE_URL = (process.env.NEXT_PUBLIC_BRIDGE_URL || "http://localhost:8765").replace(/\/+$/, "");
 
 export async function fetchPipelineStatus(): Promise<{
   ingress: { active: boolean; lastRun: string; events24h: number };

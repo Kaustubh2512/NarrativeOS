@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const bridgeUrl = process.env.NEXT_PUBLIC_BRIDGE_URL || "http://localhost:8765";
+  const bridgeUrl = (process.env.NEXT_PUBLIC_BRIDGE_URL || "http://localhost:8765").replace(/\/+$/, "");
   const errors: string[] = [];
   let bridgeStatus = null;
 

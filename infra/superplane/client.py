@@ -15,7 +15,7 @@ import httpx
 
 logger = logging.getLogger(__name__)
 
-SUPERPLANE_BRIDGE_URL = os.environ.get("SUPERPLANE_BRIDGE_URL", "http://localhost:8765")
+SUPERPLANE_BRIDGE_URL = (os.environ.get("SUPERPLANE_BRIDGE_URL", "http://localhost:8765") or "").rstrip("/")
 
 _TIMEOUT = httpx.Timeout(5.0)
 

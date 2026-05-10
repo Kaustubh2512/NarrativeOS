@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const BRIDGE_URL = process.env.NEXT_PUBLIC_BRIDGE_URL || "http://localhost:8765";
+const BRIDGE_URL = (process.env.NEXT_PUBLIC_BRIDGE_URL || "http://localhost:8765").replace(/\/+$/, "");
 
 export default async function handler(
   req: NextApiRequest,
