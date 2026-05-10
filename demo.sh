@@ -160,7 +160,88 @@ if [ "$FAST" = false ]; then
   read -p "  Press Enter to continue..."
 fi
 
-# ── Step 3: Run the Pipeline ───────────────────────────────
+# ── Step 3: Sponsor Technology Deep Dive ──────────────────
+step "Sponsor Technology Integration"
+
+echo -e "  ${GOLD}${BOLD}┌─ Apify — Internet Sensory Layer ─────────────────┐${NC}"
+echo -e "  ${GOLD}│${NC}                                                     ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}  3 on-demand Actors fired via ${CYAN}NarrativeOSDataClient${NC}:    ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}    ${DIM}rxTkx6ACrjUdlCgNO${NC}  — News RSS (Dow Jones, Yahoo)    ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}    ${DIM}Q3cP0eqIAlqH2YsrI${NC}  — SEC EDGAR (10-K, 10-Q, 8-K)   ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}    ${DIM}0XfiV1wgo6qLV1Xig${NC}  — Twitter (cashtag search)      ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}                                                     ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}  4 custom Actors deployed to Apify cloud:            ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}    ${DIM}data/actors/narrativeos-news-scraper${NC} (v0.1.4)     ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}    ${DIM}data/actors/narrativeos-sec-scraper${NC}              ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}    ${DIM}data/actors/narrativeos-twitter-scraper${NC} (v0.1.6)  ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}    ${DIM}data/actors/narrativeos-reddit-scraper${NC} (v0.1.19) ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}                                                     ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}  Pipeline: ${DIM}data/mcp/client.py${NC} fetches all 3 actors      ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}  in parallel (${DIM}ThreadPoolExecutor max_workers=3${NC}), falls  ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}  back to cached datasets on memory limit errors.     ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}                                                     ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}  Entity extraction: ${DIM}data/pipelines/entity_extractor.py${NC}   ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}  maps 47 tickers across equities/crypto/commodities. ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}                                                     ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}  Proxy: BUYPROXIES94952 group (5 datacenter IPs)     ${GOLD}│${NC}"
+echo -e "  ${GOLD}│${NC}  SDK: ${DIM}apify_client${NC} (ApifyClient), free tier 8192MB     ${GOLD}│${NC}"
+echo -e "  ${GOLD}└─────────────────────────────────────────────────────────┘${NC}"
+echo ""
+echo -e "  ${PURPLE}${BOLD}┌─ Zynd AI — Agent Registry & Mesh ───────────────┐${NC}"
+echo -e "  ${PURPLE}│${NC}                                                     ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}  Agent: ${CYAN}narrativeos-cognitive${NC} registered on Zynd       ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}  Tags: ${DIM}narrative, sentiment, debate, trading${NC}             ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}  Protocol: A2A (JSON-RPC message/send)              ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}                                                     ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}  Handler: ${DIM}agent.py${NC} — ${DIM}on_message(run_analysis_pipeline)${NC}   ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}    Inbound → fetch Apify data → LangGraph → push   ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}                                                     ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}  Config: ${DIM}agent.config.json${NC} (registry URL, port, tags)    ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}  Port: 5005 (env ${DIM}ZYND_SERVER_PORT${NC})                      ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}  Webhook: ${DIM}POST /a2a/v1${NC} with JSON-RPC body              ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}  Tunnel: ngrok (managed externally)                ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}│${NC}  SDK: ${DIM}zyndai${NC} v0.6.0 — AgentConfig, on_message()        ${PURPLE}│${NC}"
+echo -e "  ${PURPLE}└─────────────────────────────────────────────────────────┘${NC}"
+echo ""
+echo -e "  ${CYAN}${BOLD}┌─ Superplane — Workflow Orchestration ────────────┐${NC}"
+echo -e "  ${CYAN}│${NC}                                                     ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}  Bridge API: ${DIM}infra/superplane/bridge.py${NC} (FastAPI)        ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}  Deployed to Render.com: ${DIM}port 8765${NC}                       ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}                                                     ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}  9 endpoints:                                        ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}GET  /health${NC}                           health check   ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}GET  /api/v1/status${NC}                   pipeline stats  ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}GET  /api/v1/datasets/signals/items${NC}    latest signals  ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}POST /api/v1/datasets/signals/items${NC}    push signal     ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}GET  /api/v1/datasets/events/items${NC}     latest events   ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}POST /api/v1/datasets/events/items${NC}     push event      ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}                                                     ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}  3 Superplane workflow canvases:                     ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}01-ingress.yaml${NC}    Data ingestion → NarrativeEvent   ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}02-analysis.yaml${NC}   LangGraph → AnalysisSignal        ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}03-execution.yaml${NC}  Signal validation → Bridge push   ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}                                                     ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}  Push client: ${DIM}infra/superplane/client.py${NC}                  ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}push_signal()${NC} / ${DIM}push_event()${NC} with 5s timeout        ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    Env: ${DIM}SUPERPLANE_BRIDGE_URL${NC}                              ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}                                                     ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}  Dashboard proxies through Vercel serverless fns:    ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}/api/status${NC} → bridge   (15s timeout)                  ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}/api/signals${NC} → bridge  (15s timeout)                  ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}    ${DIM}/api/events${NC} → bridge   (15s timeout)                  ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}                                                     ${CYAN}│${NC}"
+echo -e "  ${CYAN}│${NC}  Deployment: ${DIM}render.yaml${NC} (Docker, free tier)              ${CYAN}│${NC}"
+echo -e "  ${CYAN}└─────────────────────────────────────────────────────────┘${NC}"
+echo ""
+echo -e "  These three tracks form the complete data flow:"
+echo -e "  ${GOLD}Apify${NC} collects → ${PURPLE}Zynd${NC} orchestrates agents → ${CYAN}Superplane${NC} delivers"
+echo ""
+
+if [ "$FAST" = false ]; then
+  read -p "  Press Enter to continue..."
+fi
+
+# ── Step 4: Run the Pipeline ───────────────────────────────
 step "Running the E2E Agent Pipeline"
 
 echo -e "  ${DIM}This executes the full LangGraph workflow:${NC}"
@@ -198,7 +279,7 @@ fi
 
 echo ""
 
-# ── Step 4: Verify Bridge Data ─────────────────────────────
+# ── Step 5: Verify Bridge Data ─────────────────────────────
 step "Bridge Data Flow (Render.com)"
 
 info "Checking bridge status..."
@@ -235,7 +316,7 @@ info "  GET /api/v1/datasets/ingress/items      → raw events"
 info "  POST /api/v1/datasets/.../items         → agent push endpoint"
 echo ""
 
-# ── Step 5: Dashboard ─────────────────────────────────────
+# ── Step 6: Dashboard ─────────────────────────────────────
 step "Live Dashboard (Vercel)"
 
 DASHBOARD_URL="https://narrative-os-theta.vercel.app"
@@ -258,7 +339,7 @@ info "Open in browser:"
 echo -e "  open $DASHBOARD_URL"
 echo ""
 
-# ── Step 6: Architecture Summary ──────────────────────────
+# ── Step 7: Architecture Summary ──────────────────────────
 step "System Architecture Summary"
 
 echo -e "  ${BOLD}Data Layer${NC}        Apify Actors → RSS feeds, SEC EDGAR, Google News"
@@ -275,7 +356,7 @@ echo -e "  ${GOLD}Entities tracked:${NC}  50+ tickers across equities/crypto/com
 echo -e "  ${GOLD}Asset type enum:${NC}   equity | crypto | commodity | etf"
 echo ""
 
-# ── Done ──────────────────────────────────────────────────
+# ── Step 8: Done ──────────────────────────────────────────
 step "Demo Complete"
 
 echo -e "  ${GOLD}${BOLD}  ╔══════════════════════════════════════════════╗${NC}"
