@@ -1,0 +1,5 @@
+apify
+httpx
+beautifulsoup4
+lxml
+playwright

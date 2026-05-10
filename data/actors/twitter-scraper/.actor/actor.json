@@ -1,0 +1,23 @@
+{
+  "actorSpecification": 1,
+  "name": "narrativeos-twitter-scraper",
+  "version": "0.1",
+  "buildTag": "latest",
+  "title": "NarrativeOS Twitter Scraper",
+  "description": "Scrapes Twitter/X via nitter.net for financial tweets mentioning tracked tickers.",
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "events": {
+          "title": "NarrativeEvents",
+          "transformation": {
+            "fields": ["id", "source", "title", "ticker_mentions", "published_at"]
+          }
+        }
+      }
+    }
+  }
+}

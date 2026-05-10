@@ -32,23 +32,32 @@ RSS_URL = "https://www.reddit.com/r/{subreddit}/{sort}/.rss"
 
 async def main() -> None:
     async with Actor:
-        Actor.log.info("NarrativeOS Reddit Scraper — starting (RSS mode)")
+        Actor.log.info("NarrativeOS Reddit Scraper — starting (proxy mode)")
 
         inp = await Actor.get_input() or {}
         subreddits: list[str] = inp.get("subreddits", ["wallstreetbets", "investing", "stocks"])
         max_posts: int = inp.get("max_posts", 25)
         sort: str = inp.get("sort", "new")
 
+        proxy = Actor.proxy_configuration
+        proxy_url = None
+        if proxy and proxy.is_enabled:
+            proxy_url = await proxy.get_url()
+            Actor.log.info("Using Apify proxy")
+
         posts: list[dict] = []
 
-        async with httpx.AsyncClient(timeout=30, follow_redirects=True) as client:
+        async with httpx.AsyncClient(
+            timeout=30, follow_redirects=True,
+            proxies=proxy_url or None,
+        ) as client:
             for sub_name in subreddits:
                 url = RSS_URL.format(subreddit=sub_name, sort=sort)
-                Actor.log.info("Fetching %s", url)
+                Actor.log.info("Fetching %s (via proxy)", url)
 
                 try:
                     resp = await client.get(url, headers={
-                        "User-Agent": "Mozilla/5.0 (compatible; NarrativeOS/1.0)",
+                        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
                         "Accept": "application/rss+xml, application/xml, text/xml",
                     })
                     resp.raise_for_status()

@@ -1,0 +1,30 @@
+{
+  "title": "Twitter Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tickers": {
+      "title": "Ticker Symbols",
+      "type": "array",
+      "description": "Tracked tickers to search tweets for",
+      "prefill": ["$NVDA", "$AMD", "$AAPL", "$MSFT", "$GOOGL", "$AMZN", "$META", "$TSLA"],
+      "editor": "stringList"
+    },
+    "max_tweets": {
+      "title": "Max Tweets",
+      "type": "integer",
+      "description": "Maximum tweets to collect per ticker",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "nitter_instance": {
+      "title": "Nitter Instance",
+      "type": "string",
+      "description": "Nitter instance URL to use",
+      "default": "https://nitter.net",
+      "editor": "textfield"
+    }
+  },
+  "required": []
+}
