@@ -82,6 +82,39 @@ class BearAgent:
     def __init__(self):
         self.role = "bear"
 
+    NEGATIVE_KEYWORDS = {
+        "miss", "missed", "misses", "missing", "cut", "cuts", "cutting", "cut",
+        "decline", "declined", "declining", "drop", "dropped", "falling", "fell",
+        "slowdown", "slowing", "slow", "weak", "weaker", "weakness", "weakening",
+        "loss", "losses", "downgrade", "downgraded", "underperform",
+        "disappoint", "disappointing", "disappointment", "below", "lower",
+        "concern", "concerns", "worry", "worries", "pressure", "pressures",
+        "headwind", "headwinds", "challenge", "challenges", "challenging",
+        "soft", "softening", "soften", "subdued", "tepid", "lukewarm",
+        "prob", "probe", "investigation", "scrutiny", "regulatory",
+        "inflation", "uncertainty", "volatile", "volatility", "risk", "risks",
+        "antitrust", "fine", "fines", "penalty", "sanction", "sanctions",
+        "overhang", "dilution", "dilutive", "downside", "bleak",
+    }
+
+    def _scan_text_for_negatives(self, ticker: str, clusters: list[TopicCluster]) -> list[str]:
+        negatives = []
+        for c in clusters:
+            if ticker in c.label:
+                for kw in self.NEGATIVE_KEYWORDS:
+                    if kw in c.label.lower():
+                        negatives.append(f"Article mentions '{kw}'")
+        return negatives
+
+    def _compute_bear_confidence(self, sentiment: SentimentVector, momentum: float, text_negatives: list[str]) -> float:
+        base = 0.15
+        neg_boost = min(0.5, len(text_negatives) * 0.08)
+        polarity_boost = max(0, -sentiment.polarity) * 0.35
+        instability_boost = sentiment.instability_score * 0.25
+        unc_boost = sentiment.uncertainty * 0.15
+        momentum_penalty = min(0, (momentum - 0.5) * -0.1)
+        return min(1.0, base + neg_boost + polarity_boost + instability_boost + unc_boost + momentum_penalty)
+
     def build_case(
         self,
         ticker: str,
@@ -92,44 +125,50 @@ class BearAgent:
     ) -> DebatePosition:
         cluster = next((c for c in clusters if ticker in c.label), None)
         momentum = cluster.momentum_score if cluster else 0.5
+        text_negatives = self._scan_text_for_negatives(ticker, clusters)
 
         if openai_client and os.environ.get("OPENAI_API_KEY"):
             try:
                 cluster_info = f"Topic: {cluster.label}, Momentum: {cluster.momentum_score}" if cluster else "General Market"
-                prompt = f"You are a Bearish Financial Agent. Build a strong bear case for {ticker}. Context: {cluster_info}, Sentiment Polarity: {sentiment.polarity:.2f}. Round {round_number}."
+                neg_detail = " ".join(text_negatives[:5]) if text_negatives else "No explicit negatives found in text"
+                prompt = f"You are a Bearish Financial Agent. Build a strong bear case for {ticker}. Context: {cluster_info}, Sentiment Polarity: {sentiment.polarity:.2f}. Text signals: {neg_detail}. Round {round_number}."
                 if counter_arguments:
                     prompt += f"\nRebut these bull arguments: {counter_arguments}"
 
                 response = openai_client.chat.completions.create(
                     model="gpt-4o-mini",
                     messages=[
-                        {"role": "system", "content": "You are a professional financial debate agent arguing the bear case. Be concise and highlight risks."},
+                        {"role": "system", "content": "You are a professional financial debate agent arguing the bear case. Be concise and highlight risks. Be skeptical and critical."},
                         {"role": "user", "content": prompt}
                     ],
                     temperature=0.7
                 )
                 argument = response.choices[0].message.content
-                confidence = min(1.0, (momentum * 0.2 + max(0, -sentiment.polarity) * 0.4 + sentiment.instability_score * 0.4))
+                confidence = self._compute_bear_confidence(sentiment, momentum, text_negatives)
                 return DebatePosition(agent_role="bear", argument=argument, evidence=[f"Narrative instability: {sentiment.instability_score:.0%}", "LLM Analysis"], confidence=round(confidence, 4))
             except Exception as e:
                 logger.error(f"OpenAI call failed in BearAgent: {e}")
 
         # Fallback to heuristics
         argument_parts = [f"Bear Case for {ticker} (Round {round_number}):"]
+        if text_negatives:
+            argument_parts.append(f"Bearish signals detected in coverage: {', '.join(text_negatives[:4])}.")
+        if sentiment.polarity < 0:
+            argument_parts.append(f"Negative sentiment polarity at {sentiment.polarity:.2f} confirms bearish bias.")
         if sentiment.instability_score > 0.5:
             argument_parts.append(f"High narrative instability at {sentiment.instability_score:.0%} — sentiment could reverse sharply.")
         else:
-            argument_parts.append("Market complacency may be underestimating downside risks.")
-        if momentum > 0.7:
-            argument_parts.append("Excessive narrative momentum suggests crowded positioning and potential for mean reversion.")
+            argument_parts.append("Market conditions may be fragile despite apparent optimism.")
         if sentiment.emotional_intensity > 0.6:
-            argument_parts.append(f"Elevated emotional intensity at {sentiment.emotional_intensity:.0%} is a warning sign of irrational exuberance.")
+            argument_parts.append(f"Elevated emotional intensity at {sentiment.emotional_intensity:.0%} suggests irrational exuberance that may correct.")
         if sentiment.uncertainty > 0.4:
             argument_parts.append(f"Uncertainty level at {sentiment.uncertainty:.0%} creates vulnerability to negative surprises.")
         if counter_arguments:
             for arg in counter_arguments:
                 argument_parts.append(f"Rebuttal to: {arg}")
-        confidence = min(1.0, (momentum * 0.2 + max(0, -sentiment.polarity) * 0.4 + sentiment.instability_score * 0.4))
+        if not text_negatives and sentiment.polarity >= 0 and sentiment.instability_score <= 0.5:
+            argument_parts.append("Valuation concerns may not be fully priced in despite positive sentiment.")
+        confidence = self._compute_bear_confidence(sentiment, momentum, text_negatives)
 
         return DebatePosition(
             agent_role="bear",
@@ -148,6 +187,7 @@ class ArbiterAgent:
         ticker: str,
         rounds: list[DebateRound],
         sentiment: SentimentVector,
+        events: list | None = None,
     ) -> DebateSummary:
         last_round = rounds[-1] if rounds else None
         if not last_round:
@@ -165,7 +205,7 @@ class ArbiterAgent:
                 response = openai_client.chat.completions.create(
                     model="gpt-4o-mini",
                     messages=[
-                        {"role": "system", "content": "You are a professional financial debate arbiter. Synthesize the arguments and provide a clear, objective ruling."},
+                        {"role": "system", "content": "You are a professional financial debate arbiter. Synthesize the arguments and provide a clear, objective ruling. Be objective and balanced."},
                         {"role": "user", "content": prompt}
                     ],
                     temperature=0.4
@@ -180,20 +220,26 @@ class ArbiterAgent:
             except Exception as e:
                 logger.error(f"OpenAI call failed in ArbiterAgent: {e}")
 
-        # Fallback to heuristics
-        if bull_score > bear_score + 0.1:
+        spread = bull_score - bear_score
+        if spread > 0.15 and sentiment.polarity > 0.2:
             ruling = "Bull case prevails — narrative momentum and sentiment support continued upside."
             ruling_detail = f"Bull confidence {bull_score:.0%} vs Bear confidence {bear_score:.0%}. "
             if sentiment.instability_score > 0.5:
                 ruling_detail += "However, elevated instability warrants monitoring for reversal signals."
             elif sentiment.uncertainty > 0.4:
                 ruling_detail += "Moderate uncertainty suggests position sizing should be conservative."
-        elif bear_score > bull_score + 0.1:
+        elif spread < -0.15 and sentiment.polarity < -0.2:
             ruling = "Bear case prevails — risk factors and instability outweigh optimistic positioning."
             ruling_detail = f"Bear confidence {bear_score:.0%} vs Bull confidence {bull_score:.0%}. "
+        elif sentiment.polarity < -0.3:
+            ruling = "Slightly bearish lean — negative sentiment suggests caution despite debate scores."
+            ruling_detail = f"Bull {bull_score:.0%} vs Bear {bear_score:.0%} — bearish tilt from sentiment ({sentiment.polarity:.2f}). "
+        elif sentiment.polarity > 0.6:
+            ruling = "Slightly bullish lean — positive sentiment supports moderate conviction."
+            ruling_detail = f"Bull {bull_score:.0%} vs Bear {bear_score:.0%} — bullish tilt from sentiment. "
         else:
             ruling = "Balanced — both cases have merit. Awaiting additional catalysts for directional conviction."
-            ruling_detail = f"Bull {bull_score:.0%} vs Bear {bear_score:.0%} — near parity. "
+            ruling_detail = f"Bull {bull_score:.0%} vs Bear {bear_score:.0%} — sentiment neutral ({sentiment.polarity:.2f}). "
 
         ruling += " " + ruling_detail
 

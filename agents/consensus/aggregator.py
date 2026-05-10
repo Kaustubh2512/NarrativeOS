@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+
 from agents.models import (
     AnalysisSignal,
     DebateSummary,
@@ -31,8 +33,8 @@ class SignalAggregator:
             + sentiment_score * 0.2
         )
 
-        direction = self._determine_direction(blended, debate_score)
-        confidence = min(1.0, abs(blended) + 0.2)
+        direction = self._determine_direction(blended, debate_score, sentiment)
+        confidence = min(1.0, max(0.1, abs(blended) * 1.2 + 0.15))
         risk_score = max(0.0, min(1.0, sentiment.instability_score * 0.4 + sentiment.uncertainty * 0.3 + (1 - confidence) * 0.3))
         risk_factors = self._assess_risk_factors(sentiment)
         reasoning_trace = self._build_reasoning_trace(ticker, clusters, sentiment, debate_summary)
@@ -54,22 +56,35 @@ class SignalAggregator:
         return signal
 
     def _score_debate(self, debate: DebateSummary) -> float:
+        match = re.search(r"Bull confidence (\d+)%.*Bear confidence (\d+)%", debate.arbiter_ruling)
+        if match:
+            bull_pct = int(match.group(1)) / 100.0
+            bear_pct = int(match.group(2)) / 100.0
+            return round(bull_pct - bear_pct, 4)
         ruling_lower = debate.arbiter_ruling.lower()
         if "bull case prevails" in ruling_lower:
-            return 1.0
+            return 0.6
         elif "bear case prevails" in ruling_lower:
-            return -1.0
+            return -0.6
+        elif "bearish lean" in ruling_lower:
+            return -0.2
+        elif "bullish lean" in ruling_lower:
+            return 0.2
         else:
             return 0.0
 
-    def _determine_direction(self, blended: float, debate_score: float) -> Direction:
-        if debate_score > 0.3:
+    def _determine_direction(self, blended: float, debate_score: float, sentiment: SentimentVector) -> Direction:
+        if debate_score > 0.35 and blended > 0.1:
             return Direction.BUY
-        elif debate_score < -0.3:
+        elif debate_score < -0.35 and blended < -0.1:
             return Direction.SELL
-        elif blended > 0.2:
+        elif blended > 0.45:
             return Direction.BUY
-        elif blended < -0.2:
+        elif blended < -0.45:
+            return Direction.SELL
+        elif debate_score < -0.15 and sentiment.polarity < -0.2:
+            return Direction.SELL
+        elif debate_score < 0.15 and sentiment.polarity < -0.3:
             return Direction.SELL
         else:
             return Direction.HOLD
