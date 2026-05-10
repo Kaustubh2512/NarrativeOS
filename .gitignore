@@ -37,6 +37,9 @@ env/
 
 # Planning & team docs (not part of source)
 MEMBER_*.md
+TEAM_DIVISION.md
+AGENTS.md
+API_CONTRACT.md
 
 # OS files
 Thumbs.db

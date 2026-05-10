@@ -81,7 +81,7 @@ Data Ingestion  →  Narrative Intel  →  Sentiment  →  Debate  →  Signal
 └── render.yaml               Render Blueprint
 ```
 
-See [AGENTS.md](AGENTS.md) for the full system specification.
+Built for the **Agentic Hackathon** — Agent Mesh Track.
 
 ---
 
