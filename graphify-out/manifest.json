@@ -1,11 +1,11 @@
 {
   "/Users/yuvi/projects/NarrativeOS/payload.py": {
-    "mtime": 1778397577.1657653,
+    "mtime": 1778402871.9993482,
     "hash": "9ecd596c3834681f7f3d39d53b841eec"
   },
   "/Users/yuvi/projects/NarrativeOS/agent.py": {
-    "mtime": 1778402708.7400136,
-    "hash": "041c032fcf1bf1a38f996d543fd2dc9f"
+    "mtime": 1778404043.8818,
+    "hash": "d701803fd9dbcccd1014462724a533ba"
   },
   "/Users/yuvi/projects/NarrativeOS/infra/dashboard/tailwind.config.js": {
     "mtime": 1778350354.9365737,
@@ -59,12 +59,20 @@
     "mtime": 1778350354.935911,
     "hash": "55bab72989ed902cf7846ae5e8cde099"
   },
+  "/Users/yuvi/projects/NarrativeOS/infra/superplane/client.py": {
+    "mtime": 1778404037.4740438,
+    "hash": "3daac4a07d5ec4380154bcd43ccb6edd"
+  },
+  "/Users/yuvi/projects/NarrativeOS/infra/superplane/bridge.py": {
+    "mtime": 1778404025.9073935,
+    "hash": "cd04856559fd9a04ba6ed95e4ed28cf6"
+  },
   "/Users/yuvi/projects/NarrativeOS/agents/models.py": {
-    "mtime": 1778397979.530591,
+    "mtime": 1778402901.8444388,
     "hash": "547669e4c9f84d84cb56b58e68c18254"
   },
   "/Users/yuvi/projects/NarrativeOS/agents/sentiment.py": {
-    "mtime": 1778397577.1868556,
+    "mtime": 1778402901.844853,
     "hash": "ec62ae22210536f1d0518801f69cc891"
   },
   "/Users/yuvi/projects/NarrativeOS/agents/__init__.py": {
@@ -111,6 +119,10 @@
     "mtime": 1778394990.5772882,
     "hash": "aaca69a0422e9cb22e6c1612879552c5"
   },
+  "/Users/yuvi/projects/NarrativeOS/agents/tests/test_pipeline_integration.py": {
+    "mtime": 1778402901.826566,
+    "hash": "7fbb444235972a7bf0794fe4e8331189"
+  },
   "/Users/yuvi/projects/NarrativeOS/agents/tests/test_risk_intelligence.py": {
     "mtime": 1778394990.577476,
     "hash": "5d44c7829d9f324a5c26f647a6420de4"
@@ -140,7 +152,7 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "/Users/yuvi/projects/NarrativeOS/agents/debate/engine.py": {
-    "mtime": 1778397577.16305,
+    "mtime": 1778402871.9912257,
     "hash": "e91dea091a81cc57e4851055d932119a"
   },
   "/Users/yuvi/projects/NarrativeOS/agents/risk_intelligence/__init__.py": {
@@ -156,7 +168,7 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "/Users/yuvi/projects/NarrativeOS/agents/registry/agent_cards.py": {
-    "mtime": 1778397577.1634164,
+    "mtime": 1778402871.9915767,
     "hash": "c4812361d6b5d265d9782fc87305959c"
   },
   "/Users/yuvi/projects/NarrativeOS/agents/prompts/__init__.py": {
@@ -184,7 +196,7 @@
     "hash": "76fbdad92f82b588cd995773de84e836"
   },
   "/Users/yuvi/projects/NarrativeOS/agents/webhooks/server.py": {
-    "mtime": 1778397577.163583,
+    "mtime": 1778402871.992522,
     "hash": "d81d0de14e523ab0e6c859e8f04a19fd"
   },
   "/Users/yuvi/projects/NarrativeOS/agents/webhooks/__init__.py": {
@@ -200,7 +212,7 @@
     "hash": "681b58ed0bdd90b91edf0536d8429710"
   },
   "/Users/yuvi/projects/NarrativeOS/data/config.py": {
-    "mtime": 1778397577.1648524,
+    "mtime": 1778402871.996902,
     "hash": "51ed9bf9205c156001781e4727adf24a"
   },
   "/Users/yuvi/projects/NarrativeOS/data/stream/__init__.py": {
@@ -208,11 +220,11 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "/Users/yuvi/projects/NarrativeOS/data/stream/event_bus.py": {
-    "mtime": 1778397577.1656265,
+    "mtime": 1778402871.9991982,
     "hash": "38a81290e47ab208927a876fa3cbe996"
   },
   "/Users/yuvi/projects/NarrativeOS/data/pipelines/normalize.py": {
-    "mtime": 1778402692.1374223,
+    "mtime": 1778402901.8459713,
     "hash": "92562c843bdacc8426866ec602ecf590"
   },
   "/Users/yuvi/projects/NarrativeOS/data/pipelines/__init__.py": {
@@ -220,31 +232,31 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "/Users/yuvi/projects/NarrativeOS/data/pipelines/entity_extractor.py": {
-    "mtime": 1778397577.165019,
+    "mtime": 1778402871.9975212,
     "hash": "ab2ef43592f8d5fa55b9935f44db3b12"
   },
   "/Users/yuvi/projects/NarrativeOS/data/pipelines/pipeline.py": {
-    "mtime": 1778397658.9576402,
+    "mtime": 1778402901.8461761,
     "hash": "d3edbc07dc55dc231ab70935fc998799"
   },
   "/Users/yuvi/projects/NarrativeOS/data/pipelines/test_pipeline.py": {
-    "mtime": 1778397577.1654787,
+    "mtime": 1778402871.9984815,
     "hash": "7aa69e59f88e3b85ddf548ede75b8f39"
   },
   "/Users/yuvi/projects/NarrativeOS/data/mcp/client.py": {
-    "mtime": 1778400385.8739552,
+    "mtime": 1778402901.8457534,
     "hash": "883a33e128d89cf1b75dfa86cbcf5539"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/twitter-scraper/src/normalize.py": {
-    "mtime": 1778395267.5042646,
+    "mtime": 1778402871.9966605,
     "hash": "4422cecf9f63c4a838b8e7f49323d9eb"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/twitter-scraper/src/main.py": {
-    "mtime": 1778397577.1872623,
+    "mtime": 1778402901.8456273,
     "hash": "09638f19b8c4e69b2dfb6b1e343bd660"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/reddit-scraper/src/normalize.py": {
-    "mtime": 1778397577.1642528,
+    "mtime": 1778402871.9944072,
     "hash": "04dd1019961250127e47da724017bd47"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/reddit-scraper/src/__init__.py": {
@@ -252,23 +264,23 @@
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/reddit-scraper/src/main.py": {
-    "mtime": 1778398162.5376203,
+    "mtime": 1778402901.8452716,
     "hash": "0437267fa0a8b4df333d9ae5d1cb45b7"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/news-scraper/src/normalize.py": {
-    "mtime": 1778397577.1639254,
+    "mtime": 1778402871.9939349,
     "hash": "13b3ca17b7725e2ccf628bcf46b12bd0"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/news-scraper/src/main.py": {
-    "mtime": 1778397577.1637661,
+    "mtime": 1778402871.9928188,
     "hash": "87daae1523c5ef2b66c26259c1d4df4d"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/sec-scraper/src/normalize.py": {
-    "mtime": 1778397577.1646016,
+    "mtime": 1778402871.9948413,
     "hash": "742fac6ffd7758a3e002d23424a02ae6"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/sec-scraper/src/main.py": {
-    "mtime": 1778397577.1644595,
+    "mtime": 1778402871.9946544,
     "hash": "1f2aefc055ba131b85dc8dbb4c64031b"
   },
   "/Users/yuvi/projects/NarrativeOS/MEMBER_02_COGNITIVE.md": {
@@ -296,8 +308,8 @@
     "hash": "2ddb71969c015b6e51657472bb8e2417"
   },
   "/Users/yuvi/projects/NarrativeOS/infra/deploy/docker-compose.yml": {
-    "mtime": 1778350354.9379683,
-    "hash": "5a520e5d856cac7ac43426d57c8ab0a2"
+    "mtime": 1778404053.582777,
+    "hash": "c9a54adba6cca31d06b04da9650073d7"
   },
   "/Users/yuvi/projects/NarrativeOS/infra/superplane/canvases/03-execution.yaml": {
     "mtime": 1778350354.938801,
@@ -344,11 +356,11 @@
     "hash": "de55f3153730a96af7def634794245bc"
   },
   "/Users/yuvi/projects/NarrativeOS/data/mcp/README.md": {
-    "mtime": 1778394990.5824246,
+    "mtime": 1778402871.9971344,
     "hash": "f0718a698cccd6a4fdfe33e5e15cd25b"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/twitter-scraper/requirements.txt": {
-    "mtime": 1778397577.18713,
+    "mtime": 1778402901.8454535,
     "hash": "3e2d6dd993265774d30fe4670bb4ccc7"
   },
   "/Users/yuvi/projects/NarrativeOS/data/actors/reddit-scraper/requirements.txt": {

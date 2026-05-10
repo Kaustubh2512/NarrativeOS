@@ -44,6 +44,22 @@ services:
       - ./superplane/components:/etc/superplane/components:ro
       - ./superplane/secrets:/etc/superplane/secrets:ro
 
+  superplane-bridge:
+    build:
+      context: ../..
+      dockerfile: infra/superplane/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    environment:
+      SUPERPLANE_BRIDGE_PORT: 8765
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8765/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
   dashboard:
     build:
       context: ../dashboard
@@ -56,6 +72,7 @@ services:
       NEXT_PUBLIC_API_URL: ${NARRATIVEOS_API_URL:-http://visualization-agent:8001}
     depends_on:
       - superplane
+      - superplane-bridge
       - visualization-agent
     healthcheck:
       test: ["CMD", "wget", "--spider", "http://localhost:5173"]

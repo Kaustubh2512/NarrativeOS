@@ -97,7 +97,15 @@ def run_analysis_pipeline(inbound: HandlerInput, task: TaskHandle) -> dict:
         primary = next(iter(tickers)) if tickers else None
 
         signal = run_analysis(events, primary)
-        return signal.model_dump()
+        signal_dict = signal.model_dump()
+
+        try:
+            from infra.superplane.client import push_signal
+            push_signal(signal_dict)
+        except Exception:
+            pass
+
+        return signal_dict
 
     except Exception as e:
         return task.fail(str(e))

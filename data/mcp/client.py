@@ -35,10 +35,33 @@ class NarrativeOSDataClient:
 
     Agents call fetch_news(), fetch_sec_filings(), or fetch_twitter()
     to get fresh data instead of waiting for scheduled pipeline runs.
+    Falls back to last successful run if free-tier memory is full.
     """
 
     def __init__(self, token: str | None = None):
         self._client = ApifyClient(token or APIFY_TOKEN)
+
+    def _try_call(self, actor_id: str, run_input: dict) -> list[dict[str, Any]]:
+        try:
+            result = self._client.actor(actor_id).call(run_input=run_input)
+            dataset_id = result.get("defaultDatasetId")
+            if dataset_id:
+                return list(self._client.dataset(dataset_id).iterate_items())
+        except Exception as e:
+            error_str = str(e)
+            if "memory limit" in error_str.lower():
+                import logging
+                logging.getLogger(__name__).warning(
+                    "Apify memory limit reached, falling back to last dataset for %s", actor_id
+                )
+        return self._last_dataset(actor_id)
+
+    def _last_dataset(self, actor_id: str) -> list[dict[str, Any]]:
+        runs = self._client.actor(actor_id).runs().list(limit=3)
+        for run in runs.items:
+            if run.get("status") == "SUCCEEDED" and run.get("defaultDatasetId"):
+                return list(self._client.dataset(run["defaultDatasetId"]).iterate_items())
+        return []
 
     def fetch_news(
         self,
@@ -49,19 +72,11 @@ class NarrativeOSDataClient:
             "https://feeds.content.dowjones.io/public/rss/markets",
             "https://finance.yahoo.com/news/rssindex",
         ]
-        result = self._client.actor(NEWS_ACTOR_ID).call(
-            run_input={
-                "rss_sources": rss_sources,
-                "web_sources": [
-                    "https://www.investing.com/news/stock-market-news",
-                ],
-                "max_articles": max_articles,
-            },
-        )
-        dataset_id = result.get("defaultDatasetId")
-        if not dataset_id:
-            return []
-        return list(self._client.dataset(dataset_id).iterate_items())
+        return self._try_call(NEWS_ACTOR_ID, {
+            "rss_sources": rss_sources,
+            "web_sources": ["https://www.investing.com/news/stock-market-news"],
+            "max_articles": max_articles,
+        })
 
     def fetch_sec_filings(
         self,
@@ -74,17 +89,11 @@ class NarrativeOSDataClient:
             "AMZN", "META", "TSLA", "JPM", "GS",
         ]
         form_types = form_types or ["10-K", "10-Q", "8-K"]
-        result = self._client.actor(SEC_ACTOR_ID).call(
-            run_input={
-                "tickers": tickers,
-                "form_types": form_types,
-                "max_filings": max_filings,
-            },
-        )
-        dataset_id = result.get("defaultDatasetId")
-        if not dataset_id:
-            return []
-        return list(self._client.dataset(dataset_id).iterate_items())
+        return self._try_call(SEC_ACTOR_ID, {
+            "tickers": tickers,
+            "form_types": form_types,
+            "max_filings": max_filings,
+        })
 
     def fetch_twitter(
         self,
@@ -95,16 +104,10 @@ class NarrativeOSDataClient:
             "NVDA", "AMD", "AAPL", "MSFT", "GOOGL",
             "AMZN", "META", "TSLA",
         ]
-        result = self._client.actor(TWITTER_ACTOR_ID).call(
-            run_input={
-                "tickers": [f"${t}" for t in tickers],
-                "max_tweets": max_tweets,
-            },
-        )
-        dataset_id = result.get("defaultDatasetId")
-        if not dataset_id:
-            return []
-        return list(self._client.dataset(dataset_id).iterate_items())
+        return self._try_call(TWITTER_ACTOR_ID, {
+            "tickers": [f"${t}" for t in tickers],
+            "max_tweets": max_tweets,
+        })
 
     def fetch_all(
         self,
