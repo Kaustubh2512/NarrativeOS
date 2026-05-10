@@ -140,13 +140,18 @@ export default function Home() {
   const [expandedSignal, setExpandedSignal] = useState<string | null>(null);
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
+  function isMeaningfulStatus(s: PipelineStatus): boolean {
+    return s.ingress.active || s.analysis.active || s.execution.active
+      || s.ingress.events24h > 0 || s.analysis.signals24h > 0 || s.execution.executed24h > 0;
+  }
+
   useEffect(() => {
     async function load() {
       try {
         const [sr, st] = await Promise.all([fetch("/api/signals"), fetch("/api/status")]);
         if (sr.ok) { const d = await sr.json(); if (d.length) setSignals(d); }
-        if (st.ok) { const d = await st.json(); setStatus(d); }
-      } catch { /* use mock data */ }
+        if (st.ok) { const d = await st.json(); if (isMeaningfulStatus(d)) setStatus(d); }
+      } catch { /* keep current state (mock or last known good) */ }
     }
     load();
     const interval = setInterval(load, 15000);
