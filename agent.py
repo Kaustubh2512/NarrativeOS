@@ -100,8 +100,10 @@ def run_analysis_pipeline(inbound: HandlerInput, task: TaskHandle) -> dict:
         signal_dict = signal.model_dump()
 
         try:
-            from infra.superplane.client import push_signal
+            from infra.superplane.client import push_signal, push_event
             push_signal(signal_dict)
+            for e in raw_events[:5]:
+                push_event(e)
         except Exception:
             pass
 
