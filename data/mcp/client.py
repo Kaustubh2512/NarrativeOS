@@ -27,13 +27,14 @@ if not APIFY_TOKEN:
 
 NEWS_ACTOR_ID = "rxTkx6ACrjUdlCgNO"
 SEC_ACTOR_ID = "Q3cP0eqIAlqH2YsrI"
+TWITTER_ACTOR_ID = "0XfiV1wgo6qLV1Xig"
 
 
 class NarrativeOSDataClient:
     """On-demand data client for Zynd agents.
 
-    Agents call fetch_news() or fetch_sec_filings() to get fresh data
-    instead of waiting for scheduled pipeline runs.
+    Agents call fetch_news(), fetch_sec_filings(), or fetch_twitter()
+    to get fresh data instead of waiting for scheduled pipeline runs.
     """
 
     def __init__(self, token: str | None = None):
@@ -85,18 +86,41 @@ class NarrativeOSDataClient:
             return []
         return list(self._client.dataset(dataset_id).iterate_items())
 
-    def fetch_both(
+    def fetch_twitter(
+        self,
+        tickers: list[str] | None = None,
+        max_tweets: int = 10,
+    ) -> list[dict[str, Any]]:
+        tickers = tickers or [
+            "NVDA", "AMD", "AAPL", "MSFT", "GOOGL",
+            "AMZN", "META", "TSLA",
+        ]
+        result = self._client.actor(TWITTER_ACTOR_ID).call(
+            run_input={
+                "tickers": [f"${t}" for t in tickers],
+                "max_tweets": max_tweets,
+            },
+        )
+        dataset_id = result.get("defaultDatasetId")
+        if not dataset_id:
+            return []
+        return list(self._client.dataset(dataset_id).iterate_items())
+
+    def fetch_all(
         self,
         max_articles: int = 10,
         max_filings: int = 3,
+        max_tweets: int = 5,
     ) -> dict[str, list[dict[str, Any]]]:
         import concurrent.futures
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
             news_future = pool.submit(self.fetch_news, max_articles)
             sec_future = pool.submit(self.fetch_sec_filings, max_filings=max_filings)
+            twitter_future = pool.submit(self.fetch_twitter, max_tweets=max_tweets)
             return {
                 "news": news_future.result(),
                 "sec": sec_future.result(),
+                "twitter": twitter_future.result(),
                 "collected_at": datetime.now(timezone.utc).isoformat(),
             }

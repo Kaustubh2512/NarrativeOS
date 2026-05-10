@@ -9,12 +9,17 @@ class SentimentReasoningAgent:
         "positive", "strong", "momentum", "breakout", "rally", "gain", "rising", "boom",
         "record", "exceed", "expansion", "opportunity", "breakthrough", "innovation",
         "partnership", "launch", "accelerate", "dominant", "leader", "ahead",
+        "raise", "raised", "raises", "raising", "boost", "boosts", "boosted", "boosting",
+        "expand", "expands", "expanded", "expanding", "invest", "invests", "investment",
+        "upgraded", "overweight", "outlook", "optimistic", "confidence", "recovery",
     }
     NEGATIVE_WORDS = {
         "bearish", "plunge", "crash", "miss", "loss", "decline", "downgrade", "underperform",
         "negative", "weak", "selloff", "breakdown", "slump", "drop", "falling", "bust",
         "debt", "lawsuit", "investigation", "risk", "volatile", "uncertainty", "fear",
         "recession", "inflation", "slowdown", "layoff", "restructuring", "default",
+        "disaster", "disastrous", "underweight", "cut", "cuts", "cutting", "struggle",
+        "struggles", "struggling", "losses", "fear", "worst", "crisis", "emergency",
     }
     INTENSITY_WORDS = {
         "huge", "massive", "extreme", "panic", "euphoria", "crash", "surge", "meltdown",

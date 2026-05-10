@@ -21,6 +21,7 @@ class SourceType(str, Enum):
     SEC_FILING = "sec_filing"
     TWITTER = "twitter"
     RSS = "rss"
+    FINANCE = "finance"
 
 
 class Entity(BaseModel):

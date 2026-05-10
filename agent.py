@@ -2,13 +2,18 @@
 
 Runs the full multi-agent pipeline (Narrative → Sentiment → Debate → Signal)
 as a discoverable Zynd entity.
+
+When invoked with `{"fetch": true}` — or when no events are provided —
+the agent pulls fresh data from Apify actors via the MCP client.
 """
 
 from __future__ import annotations
 
 import json
+import logging
 import os
 import sys
+from typing import Any
 
 from dotenv import load_dotenv
 from zyndai_agent import AgentConfig, ZyndAIAgent, resolve_registry_url
@@ -16,10 +21,41 @@ from zyndai_agent.a2a.server import HandlerInput, TaskHandle
 
 load_dotenv()
 
+logger = logging.getLogger(__name__)
+
 _config: dict = {}
 if os.path.exists("agent.config.json"):
     with open("agent.config.json") as _f:
         _config = json.load(_f)
+
+
+def _fetch_data() -> list[dict[str, Any]]:
+    """Pull fresh data from Apify actors via MCP client."""
+    try:
+        from data.mcp.client import NarrativeOSDataClient
+        from data.pipelines.normalize import normalize_article, normalize_sec_filing, normalize_tweet
+
+        client = NarrativeOSDataClient()
+        logger.info("Fetching fresh data from Apify actors via MCP client...")
+        result = client.fetch_all(max_articles=10, max_filings=5, max_tweets=5)
+
+        events: list[dict[str, Any]] = []
+        for article in result.get("news", []):
+            events.append(normalize_article(article))
+        for filing in result.get("sec", []):
+            events.append(normalize_sec_filing(filing))
+        for tweet in result.get("twitter", []):
+            events.append(normalize_tweet(tweet))
+
+        news_count = len(result.get("news", []))
+        sec_count = len(result.get("sec", []))
+        twitter_count = len(result.get("twitter", []))
+        logger.info("MCP fetch complete: %d events (%d news, %d sec, %d twitter)", len(events), news_count, sec_count, twitter_count)
+        return events
+
+    except Exception as e:
+        logger.warning("MCP fetch failed (Apify token may not be set): %s", e)
+        return []
 
 
 def run_analysis_pipeline(inbound: HandlerInput, task: TaskHandle) -> dict:
@@ -28,11 +64,31 @@ def run_analysis_pipeline(inbound: HandlerInput, task: TaskHandle) -> dict:
         from agents.models import NarrativeEvent
 
         events_data = inbound.message.content
-        if isinstance(events_data, str):
+        if isinstance(events_data, str) and events_data.strip():
             import json as _json
             events_data = _json.loads(events_data)
 
-        raw_events = events_data if isinstance(events_data, list) else events_data.get("events", [events_data])
+        should_fetch = False
+        if isinstance(events_data, dict):
+            should_fetch = events_data.pop("fetch", False)
+        if not should_fetch and inbound.payload.get("fetch"):
+            should_fetch = True
+
+        raw_events: list[dict[str, Any]] = []
+        if should_fetch:
+            raw_events = _fetch_data()
+        elif isinstance(events_data, list):
+            raw_events = events_data
+        elif isinstance(events_data, dict):
+            raw_events = events_data.get("events", [events_data])
+        else:
+            raw_events = []
+
+        if not raw_events:
+            noop = {"signal_id": "", "ticker": "UNKNOWN", "direction": "HOLD", "confidence": 0.0,
+                    "error": "No events to analyze"}
+            return noop
+
         events = [NarrativeEvent(**e) for e in raw_events]
 
         tickers = set()
@@ -70,7 +126,7 @@ if __name__ == "__main__":
     )
 
     zynd_agent = ZyndAIAgent(config=agent_config)
-    zynd_agent.set_custom_agent(run_analysis_pipeline)
+    zynd_agent.on_message(run_analysis_pipeline)
     zynd_agent.start()
 
     print("\nNarrativeOS Cognitive Mesh is running on Zynd")

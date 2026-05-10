@@ -79,6 +79,30 @@ def normalize_sec_filing(filing: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def normalize_tweet(tweet: dict[str, Any]) -> dict[str, Any]:
+    text = f"{tweet.get('title', '')} {tweet.get('body', '')}"
+    return {
+        "id": build_event_id("twitter", tweet.get("url", "")),
+        "source": "twitter",
+        "source_actor": "narrativeos-twitter-scraper",
+        "title": tweet.get("title", ""),
+        "body": tweet.get("body", ""),
+        "url": tweet.get("url", ""),
+        "author": tweet.get("author", ""),
+        "published_at": _to_iso(tweet.get("published_at")),
+        "collected_at": _now_iso(),
+        "ticker_mentions": extract_tickers(text),
+        "entities": extract_entities(text),
+        "sentiment_score": None,
+        "metadata": {
+            "likes": tweet.get("likes", 0),
+            "retweets": tweet.get("retweets", 0),
+            "replies": tweet.get("replies", 0),
+            "search_query": tweet.get("search_query", ""),
+        },
+    }
+
+
 def _to_iso(val: Any) -> str:
     if val is None:
         return _now_iso()

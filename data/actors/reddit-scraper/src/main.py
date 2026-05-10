@@ -35,18 +35,25 @@ async def main() -> None:
         max_posts: int = inp.get("max_posts", 25)
         sort: str = inp.get("sort", "new")
 
-        proxy = Actor.proxy_configuration
         proxy_url = None
-        if proxy and proxy.is_enabled:
-            proxy_url = await proxy.get_url()
-            Actor.log.info("Using Apify proxy")
+        try:
+            proxy = await Actor.create_proxy_configuration(
+                groups=["BUYPROXIES94952"],
+            )
+            if proxy:
+                await proxy.initialize()
+                proxy_url = await proxy.new_url()
+                if proxy_url:
+                    Actor.log.info("Using Apify proxy: %s", proxy_url[:50])
+        except Exception as e:
+            Actor.log.warning("Proxy not available: %s", e)
 
         posts: list[dict] = []
 
-        async with httpx.AsyncClient(
-            timeout=30, follow_redirects=True,
-            proxies=proxy_url or None,
-        ) as client:
+        client_kwargs = {"timeout": 30, "follow_redirects": True}
+        if proxy_url:
+            client_kwargs["proxy"] = proxy_url
+        async with httpx.AsyncClient(**client_kwargs) as client:
             for sub_name in subreddits:
                 url = RSS_URL.format(subreddit=sub_name, sort=sort)
                 Actor.log.info("Fetching %s (via proxy)", url)

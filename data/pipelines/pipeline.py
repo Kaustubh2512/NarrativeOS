@@ -20,6 +20,33 @@ NEWS_RUN_ID = "QgROEyqZvSsukXh8e"
 SEC_RUN_ID = "ldaLOgnrdLZXo1eam"
 WEBHOOK_URL = os.environ.get("NARRATIVEOS_EVENT_STREAM_URL", "")
 
+_SENTIMENT_POSITIVE = {
+    "bullish", "surge", "soar", "beat", "growth", "profit", "upgrade", "outperform",
+    "positive", "strong", "momentum", "breakout", "rally", "gain", "rising", "boom",
+    "record", "exceed", "expansion", "opportunity", "breakthrough", "innovation",
+    "partnership", "launch", "accelerate", "dominant", "leader", "ahead",
+    "raise", "raised", "raises", "raising", "boost", "boosts", "boosted", "boosting",
+    "expand", "expands", "expanded", "expanding", "invest", "invests", "investment",
+    "upgraded", "overweight", "outlook", "optimistic", "confidence", "recovery",
+}
+_SENTIMENT_NEGATIVE = {
+    "bearish", "plunge", "crash", "miss", "loss", "decline", "downgrade", "underperform",
+    "negative", "weak", "selloff", "breakdown", "slump", "drop", "falling", "bust",
+    "debt", "lawsuit", "investigation", "risk", "volatile", "uncertainty", "fear",
+    "recession", "inflation", "slowdown", "layoff", "restructuring", "default",
+    "disaster", "disastrous", "underweight", "cut", "cuts", "cutting", "struggle",
+    "struggles", "struggling", "losses", "fear", "worst", "crisis", "emergency",
+}
+
+
+def compute_sentiment(text: str) -> float:
+    words = text.lower().split()
+    pos = sum(1 for w in words if w in _SENTIMENT_POSITIVE)
+    neg = sum(1 for w in words if w in _SENTIMENT_NEGATIVE)
+    if pos + neg == 0:
+        return 0.0
+    return round((pos - neg) / (pos + neg), 4)
+
 
 def enrich_event(event: dict[str, Any]) -> dict[str, Any]:
     text = f"{event.get('title', '')} {event.get('body', '')}"
@@ -27,10 +54,12 @@ def enrich_event(event: dict[str, Any]) -> dict[str, Any]:
     if not existing_tickers:
         event["ticker_mentions"] = extract_tickers(text)
         event["entities"] = extract_entities(text)
+    if event.get("sentiment_score") is None:
+        event["sentiment_score"] = compute_sentiment(text)
     return event
 
 
-def run_pipeline() -> list[dict[str, Any]]:
+def run_pipeline() -> tuple[list[dict[str, Any]], Any]:
     client = ApifyClient(APIFY_TOKEN)
     bus = EventBus(webhook_url=WEBHOOK_URL)
 
@@ -61,7 +90,6 @@ def run_pipeline() -> list[dict[str, Any]]:
     flushed = bus.flush()
     bus.close()
 
-    # E2E Agent Graph Execution
     narrative_events = []
     for e in deduped:
         try:
@@ -77,11 +105,11 @@ def run_pipeline() -> list[dict[str, Any]]:
                 collected_at=e.get("collected_at", datetime.now(timezone.utc).isoformat()),
                 ticker_mentions=e.get("ticker_mentions", []),
                 entities=[Entity(**ent) for ent in e.get("entities", [])],
-                metadata=e.get("metadata", {})
+                metadata=e.get("metadata", {}),
             )
             narrative_events.append(ne)
         except Exception as err:
-            logger.warning(f"Skipping event due to parsing error: {err}")
+            logger.warning("Skipping event due to parsing error: %s", err)
 
     signal = None
     if narrative_events:
@@ -101,15 +129,26 @@ def main() -> None:
     with_tickers = [e for e in events if e.get("ticker_mentions")]
     for e in with_tickers[:5]:
         tickers = ", ".join(e.get("ticker_mentions", []))
-        print(f"  {e['id']} | {tickers} | {e['title'][:70]}")
+        score = e.get("sentiment_score", 0)
+        emoji = "🟢" if score > 0.15 else ("🔴" if score < -0.15 else "⚪")
+        print(f"  {emoji} {e['id']} | {tickers} | {e['title'][:70]} | s={score:+.3f}")
     if len(with_tickers) > 5:
         print(f"  ... and {len(with_tickers) - 5} more with tickers")
 
     if signal:
         print(f"\n{'='*60}")
-        print(f"Final E2E Signal Generated: {signal.direction.value} {signal.ticker} @ {signal.confidence:.0%}")
-        print(f"Arbiter Ruling: {signal.debate_summary.arbiter_ruling if signal.debate_summary else 'N/A'}")
+        print(f"Final E2E Signal: {signal.direction.value} {signal.ticker} @ {signal.confidence:.0%}")
+        if signal.debate_summary:
+            print(f"Arbiter: {signal.debate_summary.arbiter_ruling}")
         print(f"{'='*60}")
+
+    scores = [e.get("sentiment_score", 0) for e in events if e.get("sentiment_score") is not None]
+    if scores:
+        avg = sum(scores) / len(scores)
+        pos = sum(1 for s in scores if s > 0.15)
+        neg = sum(1 for s in scores if s < -0.15)
+        neu = len(scores) - pos - neg
+        print(f"Batch sentiment: avg={avg:+.3f} bullish={pos} bearish={neg} neutral={neu}")
 
 if __name__ == "__main__":
     main()
