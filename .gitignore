@@ -35,8 +35,10 @@ env/
 # Graphify (derivative content)
 # graphify-out/ 
 
+# Planning & team docs (not part of source)
+MEMBER_*.md
+
 # OS files
-.DS_Store
 Thumbs.db
 .venv/
 
