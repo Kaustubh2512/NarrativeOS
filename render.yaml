@@ -2,10 +2,10 @@ services:
   - type: web
     name: narrativeos-bridge
     runtime: docker
-    repo: https://github.com/0xYuvi/NarrativeOS
     branch: main
-    sourceDir: infra/superplane
+    rootDir: infra/superplane
     dockerfilePath: Dockerfile
+    plan: free
     envVars:
       - key: PORT
         value: "8765"
